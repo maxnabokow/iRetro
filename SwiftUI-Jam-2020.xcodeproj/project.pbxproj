@@ -28,6 +28,12 @@
 		EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */; };
 		EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */; };
 		EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA1E378025E02C4800C88BAF /* SwiftUIX */; };
+		EA1E378525E02CD100C88BAF /* iPodClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378425E02CD100C88BAF /* iPodClassic.swift */; };
+		EA1E378A25E0300C00C88BAF /* iPodMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378925E0300C00C88BAF /* iPodMenu.swift */; };
+		EA1E378E25E0304300C88BAF /* iPodClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */; };
+		EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* iPodStatusBar.swift */; };
+		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
+		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +59,12 @@
 		EA1E376325E02B8B00C88BAF /* AnimatableFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableFontSize.swift; sourceTree = "<group>"; };
 		EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToPopViewController.swift; sourceTree = "<group>"; };
+		EA1E378425E02CD100C88BAF /* iPodClassic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodClassic.swift; sourceTree = SOURCE_ROOT; };
+		EA1E378925E0300C00C88BAF /* iPodMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodMenu.swift; sourceTree = "<group>"; };
+		EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodClickWheel.swift; sourceTree = "<group>"; };
+		EA1E379125E0306400C88BAF /* iPodStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodStatusBar.swift; sourceTree = "<group>"; };
+		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
+		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +173,7 @@
 		EA1E377825E02BAD00C88BAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA1E378325E02CBB00C88BAF /* Devices */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +181,7 @@
 		EA1E377925E02BB300C88BAF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EA1E379725E030C800C88BAF /* SoundManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -181,6 +195,26 @@
 				EA1E374825E028C000C88BAF /* Preview Content */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA1E378325E02CBB00C88BAF /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E378C25E0303200C88BAF /* Shared */,
+				EA1E378425E02CD100C88BAF /* iPodClassic.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		EA1E378C25E0303200C88BAF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E378925E0300C00C88BAF /* iPodMenu.swift */,
+				EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */,
+				EA1E379125E0306400C88BAF /* iPodStatusBar.swift */,
+				EA1E379425E0308900C88BAF /* PlayShape.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +295,9 @@
 			files = (
 				EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */,
 				EA1E374125E028BB00C88BAF /* AppDelegate.swift in Sources */,
+				EA1E378525E02CD100C88BAF /* iPodClassic.swift in Sources */,
+				EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */,
+				EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */,
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
@@ -269,8 +306,11 @@
 				EA1E376925E02B8B00C88BAF /* THaptics.swift in Sources */,
 				EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */,
 				EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */,
+				EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */,
+				EA1E378A25E0300C00C88BAF /* iPodMenu.swift in Sources */,
 				EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
+				EA1E378E25E0304300C88BAF /* iPodClickWheel.swift in Sources */,
 				EA1E376F25E02B8B00C88BAF /* TConditionalModifier.swift in Sources */,
 				EA1E376E25E02B8B00C88BAF /* TFloatingButtonShadow.swift in Sources */,
 				EA1E376D25E02B8B00C88BAF /* TFillerZView.swift in Sources */,
@@ -418,7 +458,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = U5KYHQSZAZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SwiftUI-Jam-2020/Info.plist";
+				INFOPLIST_FILE = "SwiftUI-Jam-2020/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,7 +479,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = U5KYHQSZAZ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SwiftUI-Jam-2020/Info.plist";
+				INFOPLIST_FILE = "SwiftUI-Jam-2020/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -36,6 +36,7 @@
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
 		EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9825E0529800ED99D4 /* Test.swift */; };
 		EA8F6D9C25E052AE00ED99D4 /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9B25E052AE00ED99D4 /* Test1.swift */; };
+		EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		EA8F6D9825E0529800ED99D4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EA8F6D9B25E052AE00ED99D4 /* Test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1.swift; sourceTree = "<group>"; };
+		EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1E379725E030C800C88BAF /* SoundManager.swift */,
+				EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				EA1E378A25E0300C00C88BAF /* iPodMenu.swift in Sources */,
 				EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
+				EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */,
 				EA1E378E25E0304300C88BAF /* iPodClickWheel.swift in Sources */,
 				EA1E376F25E02B8B00C88BAF /* TConditionalModifier.swift in Sources */,
 				EA1E376E25E02B8B00C88BAF /* TFloatingButtonShadow.swift in Sources */,

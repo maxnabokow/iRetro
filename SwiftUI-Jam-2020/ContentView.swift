@@ -56,7 +56,7 @@ struct ContentView: View {
                     .clipShape(Circle())
             }
             Spacer()
-            Button { print("tapped") } label: {
+            Button { MusicManager.shared.previous() } label: {
                 Text("Select")
                     .fontWeight(.semibold)
                     .padding()

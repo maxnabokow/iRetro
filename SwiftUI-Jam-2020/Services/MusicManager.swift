@@ -38,7 +38,27 @@ class MusicManager {
             player.skipToBeginning()
         }
     }
-
+    func getPlaylists() -> [MPMediaItemCollection]  {
+        let playlists = MPMediaQuery.playlists()
+        let collections = playlists.collections
+        
+        return collections ?? [MPMediaItemCollection]()
+         
+        
+}
+    func getAllSongs() -> [MPMediaItem]  {
+        let songs = MPMediaQuery.songs()
+        let items = songs.items
+        
+        return items ?? [MPMediaItem]()
+         
+        
+}
+    
+    func playSong(id: String) {
+        player.setQueue(with: [id])
+        player.play()
+    }
     func nowPlayingChanged() -> AnyPublisher<Notification, Never> {
         return NotificationCenter.default
             .publisher(for: Notification.Name.MPMusicPlayerControllerNowPlayingItemDidChange)

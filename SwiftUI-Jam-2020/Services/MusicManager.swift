@@ -11,14 +11,14 @@ import MediaPlayer
 
 class MusicManager {
     static let shared = MusicManager()
-
+    
     let player: MPMusicPlayerController
-
+    
     private init() {
         player = MPMusicPlayerController.systemMusicPlayer
         player.beginGeneratingPlaybackNotifications()
     }
-
+    
     func playPause() {
         if player.playbackState == .playing {
             player.pause()
@@ -26,11 +26,11 @@ class MusicManager {
             player.play()
         }
     }
-
+    
     func next() {
         player.skipToNextItem()
     }
-
+    
     func previous() {
         if player.currentPlaybackTime <= 5 {
             player.skipToPreviousItem()
@@ -38,21 +38,24 @@ class MusicManager {
             player.skipToBeginning()
         }
     }
+    
     func getPlaylists() -> [MPMediaItemCollection]  {
         let playlists = MPMediaQuery.playlists()
         let collections = playlists.collections
         return collections ?? [MPMediaItemCollection]()
-}
+    }
+    
     func getAllSongs() -> [MPMediaItem]  {
         let songs = MPMediaQuery.songs()
         let items = songs.items
         return items ?? [MPMediaItem]()
-}
+    }
     
     func playSong(id: String) {
         player.setQueue(with: [id])
         player.play()
     }
+    
     func shuffleAllSongs() {
         let allSongs = getAllSongs()
         var suffledIDs = [String]()
@@ -63,6 +66,7 @@ class MusicManager {
         player.setQueue(with: suffledIDs)
         player.play()
     }
+    
     func nowPlayingChanged() -> AnyPublisher<Notification, Never> {
         return NotificationCenter.default
             .publisher(for: Notification.Name.MPMusicPlayerControllerNowPlayingItemDidChange)

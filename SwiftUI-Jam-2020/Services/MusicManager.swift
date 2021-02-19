@@ -41,22 +41,26 @@ class MusicManager {
     func getPlaylists() -> [MPMediaItemCollection]  {
         let playlists = MPMediaQuery.playlists()
         let collections = playlists.collections
-        
         return collections ?? [MPMediaItemCollection]()
-         
-        
 }
     func getAllSongs() -> [MPMediaItem]  {
         let songs = MPMediaQuery.songs()
         let items = songs.items
-        
         return items ?? [MPMediaItem]()
-         
-        
 }
     
     func playSong(id: String) {
         player.setQueue(with: [id])
+        player.play()
+    }
+    func shuffleAllSongs() {
+        let allSongs = getAllSongs()
+        var suffledIDs = [String]()
+        let suffled = allSongs.shuffled()
+        for song in suffled {
+            suffledIDs.append(song.playbackStoreID)
+        }
+        player.setQueue(with: suffledIDs)
         player.play()
     }
     func nowPlayingChanged() -> AnyPublisher<Notification, Never> {

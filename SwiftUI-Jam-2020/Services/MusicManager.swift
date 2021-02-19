@@ -17,6 +17,8 @@ class MusicManager {
     private init() {
         player = MPMusicPlayerController.systemMusicPlayer
         player.beginGeneratingPlaybackNotifications()
+        
+        player.prepareToPlay()
     }
     
     func playPause() {
@@ -39,16 +41,19 @@ class MusicManager {
         }
     }
     
-    func getPlaylists() -> [MPMediaItemCollection]  {
+    func stop() {
+        player.stop()
+    }
+    
+    func getPlaylists() -> [MPMediaItemCollection] {
         let playlists = MPMediaQuery.playlists()
         let collections = playlists.collections
         return collections ?? [MPMediaItemCollection]()
     }
     
-    func getAllSongs() -> [MPMediaItem]  {
-        let songs = MPMediaQuery.songs()
-        let items = songs.items
-        return items ?? [MPMediaItem]()
+    func getAllSongs() -> [MPMediaItem] {
+        let songs = MPMediaQuery.songs().items
+        return songs ?? [MPMediaItem]()
     }
     
     func playSong(id: String) {
@@ -56,14 +61,14 @@ class MusicManager {
         player.play()
     }
     
-    func shuffleAllSongs() {
+    func playShuffledSongs() {
         let allSongs = getAllSongs()
-        var suffledIDs = [String]()
-        let suffled = allSongs.shuffled()
-        for song in suffled {
-            suffledIDs.append(song.playbackStoreID)
+        var shuffledIDs = [String]()
+        let shuffled = allSongs.shuffled()
+        for song in shuffled {
+            shuffledIDs.append(song.playbackStoreID)
         }
-        player.setQueue(with: suffledIDs)
+        player.setQueue(with: shuffledIDs)
         player.play()
     }
     

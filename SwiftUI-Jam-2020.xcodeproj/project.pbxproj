@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,21 @@
 		EA1E374725E028C000C88BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1E374625E028C000C88BAF /* Assets.xcassets */; };
 		EA1E374A25E028C000C88BAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1E374925E028C000C88BAF /* Preview Assets.xcassets */; };
 		EA1E374D25E028C000C88BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1E374B25E028C000C88BAF /* LaunchScreen.storyboard */; };
+		EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375725E02B8B00C88BAF /* TextField+ClearButton.swift */; };
+		EA1E376825E02B8B00C88BAF /* TTapDismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375925E02B8B00C88BAF /* TTapDismissKeyboard.swift */; };
+		EA1E376925E02B8B00C88BAF /* THaptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375A25E02B8B00C88BAF /* THaptics.swift */; };
+		EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375B25E02B8B00C88BAF /* TRunBlock.swift */; };
+		EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375C25E02B8B00C88BAF /* TBlurView.swift */; };
+		EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375D25E02B8B00C88BAF /* TNonDismissableSheet.swift */; };
+		EA1E376D25E02B8B00C88BAF /* TFillerZView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375E25E02B8B00C88BAF /* TFillerZView.swift */; };
+		EA1E376E25E02B8B00C88BAF /* TFloatingButtonShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E375F25E02B8B00C88BAF /* TFloatingButtonShadow.swift */; };
+		EA1E376F25E02B8B00C88BAF /* TConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376025E02B8B00C88BAF /* TConditionalModifier.swift */; };
+		EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376125E02B8B00C88BAF /* TRoundCorners.swift */; };
+		EA1E377125E02B8B00C88BAF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376225E02B8B00C88BAF /* Extensions.swift */; };
+		EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376325E02B8B00C88BAF /* AnimatableFontSize.swift */; };
+		EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */; };
+		EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */; };
+		EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA1E378025E02C4800C88BAF /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +39,20 @@
 		EA1E374925E028C000C88BAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA1E374C25E028C000C88BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA1E374E25E028C000C88BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA1E375725E02B8B00C88BAF /* TextField+ClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+ClearButton.swift"; sourceTree = "<group>"; };
+		EA1E375925E02B8B00C88BAF /* TTapDismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTapDismissKeyboard.swift; sourceTree = "<group>"; };
+		EA1E375A25E02B8B00C88BAF /* THaptics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THaptics.swift; sourceTree = "<group>"; };
+		EA1E375B25E02B8B00C88BAF /* TRunBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRunBlock.swift; sourceTree = "<group>"; };
+		EA1E375C25E02B8B00C88BAF /* TBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBlurView.swift; sourceTree = "<group>"; };
+		EA1E375D25E02B8B00C88BAF /* TNonDismissableSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNonDismissableSheet.swift; sourceTree = "<group>"; };
+		EA1E375E25E02B8B00C88BAF /* TFillerZView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFillerZView.swift; sourceTree = "<group>"; };
+		EA1E375F25E02B8B00C88BAF /* TFloatingButtonShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFloatingButtonShadow.swift; sourceTree = "<group>"; };
+		EA1E376025E02B8B00C88BAF /* TConditionalModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TConditionalModifier.swift; sourceTree = "<group>"; };
+		EA1E376125E02B8B00C88BAF /* TRoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRoundCorners.swift; sourceTree = "<group>"; };
+		EA1E376225E02B8B00C88BAF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EA1E376325E02B8B00C88BAF /* AnimatableFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableFontSize.swift; sourceTree = "<group>"; };
+		EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToPopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,10 +89,12 @@
 				EA1E374025E028BB00C88BAF /* AppDelegate.swift */,
 				EA1E374225E028BB00C88BAF /* SceneDelegate.swift */,
 				EA1E374425E028BB00C88BAF /* ContentView.swift */,
-				EA1E374625E028C000C88BAF /* Assets.xcassets */,
-				EA1E374B25E028C000C88BAF /* LaunchScreen.storyboard */,
-				EA1E374E25E028C000C88BAF /* Info.plist */,
-				EA1E374825E028C000C88BAF /* Preview Content */,
+				EA1E377625E02B9400C88BAF /* Models */,
+				EA1E377725E02BA500C88BAF /* ViewModels */,
+				EA1E377825E02BAD00C88BAF /* Views */,
+				EA1E377925E02BB300C88BAF /* Services */,
+				EA1E375625E02B8B00C88BAF /* Util */,
+				EA1E377A25E02BDB00C88BAF /* Supporting Files */,
 			);
 			path = "SwiftUI-Jam-2020";
 			sourceTree = "<group>";
@@ -73,6 +105,82 @@
 				EA1E374925E028C000C88BAF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EA1E375625E02B8B00C88BAF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E375725E02B8B00C88BAF /* TextField+ClearButton.swift */,
+				EA1E375825E02B8B00C88BAF /* T */,
+				EA1E376225E02B8B00C88BAF /* Extensions.swift */,
+				EA1E376325E02B8B00C88BAF /* AnimatableFontSize.swift */,
+				EA1E376425E02B8B00C88BAF /* LazyPop */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EA1E375825E02B8B00C88BAF /* T */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E375925E02B8B00C88BAF /* TTapDismissKeyboard.swift */,
+				EA1E375A25E02B8B00C88BAF /* THaptics.swift */,
+				EA1E375B25E02B8B00C88BAF /* TRunBlock.swift */,
+				EA1E375C25E02B8B00C88BAF /* TBlurView.swift */,
+				EA1E375D25E02B8B00C88BAF /* TNonDismissableSheet.swift */,
+				EA1E375E25E02B8B00C88BAF /* TFillerZView.swift */,
+				EA1E375F25E02B8B00C88BAF /* TFloatingButtonShadow.swift */,
+				EA1E376025E02B8B00C88BAF /* TConditionalModifier.swift */,
+				EA1E376125E02B8B00C88BAF /* TRoundCorners.swift */,
+			);
+			path = T;
+			sourceTree = "<group>";
+		};
+		EA1E376425E02B8B00C88BAF /* LazyPop */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */,
+				EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */,
+			);
+			path = LazyPop;
+			sourceTree = "<group>";
+		};
+		EA1E377625E02B9400C88BAF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA1E377725E02BA500C88BAF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EA1E377825E02BAD00C88BAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA1E377925E02BB300C88BAF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EA1E377A25E02BDB00C88BAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E374625E028C000C88BAF /* Assets.xcassets */,
+				EA1E374B25E028C000C88BAF /* LaunchScreen.storyboard */,
+				EA1E374E25E028C000C88BAF /* Info.plist */,
+				EA1E374825E028C000C88BAF /* Preview Content */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +199,9 @@
 			dependencies = (
 			);
 			name = "SwiftUI-Jam-2020";
+			packageProductDependencies = (
+				EA1E378025E02C4800C88BAF /* SwiftUIX */,
+			);
 			productName = "SwiftUI-Jam-2020";
 			productReference = EA1E373D25E028BB00C88BAF /* SwiftUI-Jam-2020.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +229,9 @@
 				Base,
 			);
 			mainGroup = EA1E373425E028BB00C88BAF;
+			packageReferences = (
+				EA1E377F25E02C4800C88BAF /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = EA1E373E25E028BB00C88BAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,9 +259,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */,
 				EA1E374125E028BB00C88BAF /* AppDelegate.swift in Sources */,
+				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
+				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
+				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
+				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,
 				EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */,
+				EA1E376925E02B8B00C88BAF /* THaptics.swift in Sources */,
 				EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */,
+				EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */,
+				EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */,
+				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
+				EA1E376F25E02B8B00C88BAF /* TConditionalModifier.swift in Sources */,
+				EA1E376E25E02B8B00C88BAF /* TFloatingButtonShadow.swift in Sources */,
+				EA1E376D25E02B8B00C88BAF /* TFillerZView.swift in Sources */,
+				EA1E376825E02B8B00C88BAF /* TTapDismissKeyboard.swift in Sources */,
+				EA1E377125E02B8B00C88BAF /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = U5KYHQSZAZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-Jam-2020/Info.plist";
@@ -308,7 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = U5KYHQSZAZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-Jam-2020/Info.plist";
@@ -345,6 +473,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA1E377F25E02C4800C88BAF /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA1E378025E02C4800C88BAF /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA1E377F25E02C4800C88BAF /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA1E373525E028BB00C88BAF /* Project object */;
 }

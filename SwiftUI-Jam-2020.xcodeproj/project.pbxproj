@@ -34,6 +34,8 @@
 		EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* iPodStatusBar.swift */; };
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
+		EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9825E0529800ED99D4 /* Test.swift */; };
+		EA8F6D9C25E052AE00ED99D4 /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9B25E052AE00ED99D4 /* Test1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		EA1E379125E0306400C88BAF /* iPodStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodStatusBar.swift; sourceTree = "<group>"; };
 		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		EA8F6D9825E0529800ED99D4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		EA8F6D9B25E052AE00ED99D4 /* Test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		EA1E377625E02B9400C88BAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA8F6D9825E0529800ED99D4 /* Test.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 		EA1E377725E02BA500C88BAF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EA8F6D9B25E052AE00ED99D4 /* Test1.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -298,7 +304,9 @@
 				EA1E378525E02CD100C88BAF /* iPodClassic.swift in Sources */,
 				EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */,
 				EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */,
+				EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */,
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
+				EA8F6D9C25E052AE00ED99D4 /* Test1.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
 				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,

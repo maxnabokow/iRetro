@@ -70,7 +70,7 @@ struct OnboardingScene: View {
     }
     func createHostingController(for node: SCNBox) {
            // create a hosting controller with SwiftUI view
-        let arVC = UIHostingController(rootView: iPodClassic())
+        let arVC = UIHostingController(rootView: iPodClassic(isOnboarding: true))
            
            // Do this on the main thread
            DispatchQueue.main.async {

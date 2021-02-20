@@ -14,6 +14,8 @@ class MusicManager {
     
     let player: MPMusicPlayerController
     
+    
+    
     private init() {
         player = MPMusicPlayerController.systemMusicPlayer
         player.beginGeneratingPlaybackNotifications()
@@ -71,10 +73,30 @@ class MusicManager {
         player.setQueue(with: shuffledIDs)
         player.play()
     }
-    
+    var disposal = Set<AnyCancellable>()
     func nowPlayingChanged() -> AnyPublisher<Notification, Never> {
         return NotificationCenter.default
             .publisher(for: Notification.Name.MPMusicPlayerControllerNowPlayingItemDidChange)
             .eraseToAnyPublisher()
+    }
+    func queueChanged() -> AnyPublisher<Notification, Never> {
+        return NotificationCenter.default
+            .publisher(for: Notification.Name.MPMusicPlayerControllerQueueDidChange)
+            .eraseToAnyPublisher()
+           
+    }
+   
+    func libraryChanged() -> AnyPublisher<Notification, Never> {
+        return NotificationCenter.default
+            .publisher(for: Notification.Name.MPMediaLibraryDidChange)
+            .eraseToAnyPublisher()
+          
+       
+    } 
+    func volumeChanged() -> AnyPublisher<Notification, Never> {
+        return NotificationCenter.default
+            .publisher(for: Notification.Name.MPMusicPlayerControllerVolumeDidChange)
+            .eraseToAnyPublisher()
+            
     }
 }

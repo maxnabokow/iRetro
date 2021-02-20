@@ -34,11 +34,13 @@ class NowPlayingViewModel: ObservableObject {
     func prevClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
+        MusicManager.shared.previous()
     }
 
     func nextClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
+        MusicManager.shared.next()
     }
 
     func menuClick() {
@@ -49,11 +51,13 @@ class NowPlayingViewModel: ObservableObject {
     func playPauseClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
+        MusicManager.shared.playPause()
     }
 
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
+        MusicManager.shared.stop()
     }
 
     func startClickWheelSubscriptions(

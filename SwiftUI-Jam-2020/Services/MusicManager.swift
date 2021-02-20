@@ -51,6 +51,7 @@ class MusicManager {
     
     func stop() {
         player.stop()
+        player.skipToBeginning()
     }
     
     func getPlaylists() -> [MPMediaItemCollection] {

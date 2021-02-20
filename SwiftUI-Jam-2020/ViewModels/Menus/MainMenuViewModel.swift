@@ -23,13 +23,14 @@ class MainMenuViewModel: MenuViewModel, ObservableObject {
 
     @Published var currentIndex: Int = 0
 
-//    @Published var showNowPlayingMenuOption = (MusicManager.shared.playState == .playing)
     var playState: MPMusicPlaybackState = MusicManager.shared.playState
+    var showsNowPlayingMenuOption = false
 
     var sinks = Set<AnyCancellable>()
 
     func startPlayStateSubscriptions() {
         playState = MusicManager.shared.playState
+        if playState == .playing { addNowPlayingMenuOption() }
 
         MusicManager.shared.playStateChanged()
             .sink { state in
@@ -57,15 +58,19 @@ class MainMenuViewModel: MenuViewModel, ObservableObject {
     }
 
     func addNowPlayingMenuOption() {
-        menuOptions.append(
-            MenuOption(title: "Now Playing", nextMenu: nil, onSelect: showNowPlayingView)
-        )
+        if !showsNowPlayingMenuOption {
+            menuOptions.append(
+                MenuOption(title: "Now Playing", nextMenu: nil, onSelect: showNowPlayingView)
+            )
+            showsNowPlayingMenuOption = true
+        }
         objectWillChange.send()
     }
 
     func removeNowPlayingMenuOption() {
         if menuOptions.last?.title == "Now Playing" {
             menuOptions.removeLast()
+            showsNowPlayingMenuOption = false
             objectWillChange.send()
         }
     }

@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 class MusicMenuViewModel: MenuViewModel, ObservableObject {
-    let menuOptions = [
+    lazy var menuOptions = [
         MenuOption(title: "Cover Flow", destination: AnyView(Text("Cover Flow"))),
         MenuOption(title: "Playlists", destination: AnyView(Text("Playlists"))),
         MenuOption(title: "Artists", destination: AnyView(Text("Artists"))),
@@ -111,7 +111,7 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
                 }
             }
             .store(in: &sinks)
-        
+
         ClickWheelService.shared.menuClick
             .receive(on: RunLoop.main)
             .sink {
@@ -121,7 +121,7 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
                 }
             }
             .store(in: &sinks)
-        
+
         ClickWheelService.shared.playPauseClick
             .receive(on: RunLoop.main)
             .sink {
@@ -131,7 +131,6 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
                 }
             }
             .store(in: &sinks)
-
 
         ClickWheelService.shared.centerClick
             .receive(on: RunLoop.main)

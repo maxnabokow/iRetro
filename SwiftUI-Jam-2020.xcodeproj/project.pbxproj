@@ -34,6 +34,8 @@
 		EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* iPodStatusBar.swift */; };
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
+		EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */; };
+		EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */; };
 		EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9825E0529800ED99D4 /* Test.swift */; };
 		EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */; };
 		EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */; };
@@ -71,6 +73,8 @@
 		EA1E379125E0306400C88BAF /* iPodStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodStatusBar.swift; sourceTree = "<group>"; };
 		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodDisplay.swift; sourceTree = "<group>"; };
+		EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewModel.swift; sourceTree = "<group>"; };
 		EA8F6D9825E0529800ED99D4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenuViewModel.swift; sourceTree = "<group>"; };
 		EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
@@ -179,9 +183,8 @@
 		EA1E377725E02BA500C88BAF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */,
-				EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */,
-				EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */,
+				EA71B0A225E0F62700FCF427 /* Menus */,
+				EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -230,8 +233,19 @@
 				EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */,
 				EA1E379125E0306400C88BAF /* iPodStatusBar.swift */,
 				EA1E379425E0308900C88BAF /* PlayShape.swift */,
+				EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		EA71B0A225E0F62700FCF427 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */,
+				EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */,
+				EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */,
+			);
+			path = Menus;
 			sourceTree = "<group>";
 		};
 		EAE0A3EB25E0B8DB00632290 /* Menus */ = {
@@ -325,9 +339,11 @@
 				EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */,
 				EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */,
 				EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */,
+				EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */,
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
 				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
+				EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
 				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,
 				EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */,

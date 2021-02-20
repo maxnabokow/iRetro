@@ -30,11 +30,8 @@ class ClickWheelService {
 }
 
 struct iPodClickWheel: View {
-    @Binding var menuIndex: Int
-
     @State private var lastAngle: CGFloat = 0
     @State private var counter: CGFloat = 0
-    @State private var menus = [1, 2, 3, 4, 5, 6, 7, 8]
 
     @GestureState private var centerClicked = false
 

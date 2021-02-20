@@ -9,19 +9,29 @@ import Combine
 import SwiftUI
 
 class MainMenuViewModel: MenuViewModel, ObservableObject {
-    let menuOptions = [
+    lazy var menuOptions = [
         MenuOption(title: "Music", destination: AnyView(MusicMenu())),
         MenuOption(title: "Videos", destination: AnyView(Text("Hi"))),
         MenuOption(title: "Photos", destination: AnyView(Text("Hi"))),
         MenuOption(title: "Podcasts", destination: AnyView(Text("Hi"))),
         MenuOption(title: "Extras", destination: AnyView(Text("Hi"))),
         MenuOption(title: "Settings", destination: AnyView(Text("Hi"))),
-        MenuOption(title: "Shuffle Songs", destination: AnyView(Text("Hi")), withDisclosure: false),
+        MenuOption(title: "Shuffle Songs", destination: nil,
+                   withDisclosure: false, onSelect: shuffleAndPlay),
         MenuOption(title: "Now Playing", destination: AnyView(Text("Hi"))),
     ]
 
     @Published var currentIndex: Int = 0
     @Published internal var sinks = Set<AnyCancellable>()
+
+    func shuffleAndPlay() {
+        MusicManager.shared.playShuffledSongs()
+        let dict: [String: AnyView] = ["view": AnyView(Color.red)]
+        let notification = Notification(name: .init("showFullScreenView"), userInfo: dict)
+        NotificationCenter.default.post(notification)
+    }
+
+    // MARK: - Wheel clicks
 
     func prevTick() {
         if currentIndex != 0 {
@@ -60,6 +70,10 @@ class MainMenuViewModel: MenuViewModel, ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
+
+        if let onSelect = menuOptions[currentIndex].onSelect {
+            onSelect()
+        }
     }
 
     func startClickWheelSubscriptions(

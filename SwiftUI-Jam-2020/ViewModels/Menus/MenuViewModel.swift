@@ -44,7 +44,7 @@ extension MenuViewModel {
         )
     }
 
-    func destination(at i: Int) -> some View {
+    func destination(at i: Int) -> AnyView? {
         guard let option = menuOptions[safe: i] else { fatalError() }
         return option.destination
     }
@@ -58,6 +58,8 @@ extension MenuViewModel {
 
 struct MenuOption<Content: View> {
     let title: String
-    let destination: Content
+    let destination: Content?
     var withDisclosure: Bool = true
+    var fullScreen: Bool = false
+    var onSelect: (() -> Void)?
 }

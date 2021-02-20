@@ -15,9 +15,13 @@ struct MainMenu: View {
         NavigationView {
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(0 ..< vm.menuOptions.count, id: \.self) { i in
-                    NavigationLink(destination: vm.destination(at: i), isActive: $childrenShowing[i], label: {
+                    if let dest = vm.destination(at: i) {
+                        NavigationLink(destination: dest, isActive: $childrenShowing[i], label: {
+                            vm.row(at: i)
+                        })
+                    } else {
                         vm.row(at: i)
-                    })
+                    }
                 }
                 Spacer()
             }

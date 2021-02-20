@@ -10,7 +10,7 @@ import SwiftUIX
 
 struct iPodClassic: View {
     @Environment(\.colorScheme) private var colorScheme
-    @State var isOnboarding = true
+    @State var isOnboarding = false
     private var lightMode: Bool {
         colorScheme == .light
     }

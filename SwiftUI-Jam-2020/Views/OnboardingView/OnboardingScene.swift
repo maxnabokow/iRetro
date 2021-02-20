@@ -30,7 +30,7 @@ struct OnboardingScene: View {
                    
                     scene.background.contents = UIColor.systemBackground
                     scene.lightingEnvironment.intensity = 0
-                    cameraNode.position = SCNVector3(x: 0, y: -10, z: 50)
+                    cameraNode.position = SCNVector3(x: 0, y: 0, z: 50)
                     cameraNode.pivot = SCNMatrix4MakeTranslation(0, 0, 90)
                    
                     let box = SCNBox(width: 27, height: 27*1.8, length: 5, chamferRadius: 32)

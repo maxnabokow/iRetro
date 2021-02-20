@@ -22,6 +22,8 @@ struct OnboardingPage: View {
     @Binding var show: Bool
    // @EnvironmentObject var userData: UserData
     let screenSize = UIScreen.main.bounds
+    
+    @Binding var nextCount: Int
     var body: some View {
         GeometryReader { geo in
         ZStack {
@@ -78,13 +80,16 @@ struct OnboardingPage: View {
                 }
                 if animate5 {
               
-                    OnboardingScene()
-                       
+                    OnboardingScene(nextCount: $nextCount)
+                }
                     if animate6 {
                 
-                        if show {
+                       
                         Button(action: {
-                   ///         userData.isOnboardingCompleted = true
+                           // withAnimation(.easeInOut(duration: 0.1)) {
+                           nextCount += 1
+                         //   }
+                            print("next")
                         }) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 25.0)
@@ -95,9 +100,9 @@ struct OnboardingPage: View {
                                 .foregroundColor(Color(.white))
                             } .padding()
                         } .padding(.bottom)
-                        }
+                        
                         Spacer()
-                    }
+                    
                 }
                // Text("Skip for now")
                   //  .font(.custom("Montserrat-Regular", size: 17))
@@ -106,10 +111,15 @@ struct OnboardingPage: View {
 
            
             }
-            
+            if nextCount == 1 {
+          
+                OnboardingScene(nextCount: $nextCount)
+                    .transition(.opacity)
+            }
         }  .ignoresSafeArea(.all)
     }
 }
 }
+
 
 

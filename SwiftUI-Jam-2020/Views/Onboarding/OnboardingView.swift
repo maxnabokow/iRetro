@@ -13,7 +13,7 @@ struct OnboardingView: View {
     @State var settings: Bool = false
     @State var show: Bool = false
    
-
+   @State var nextCount = 0
         
     
     var body: some View {
@@ -21,9 +21,9 @@ struct OnboardingView: View {
             Color(.white)
                 .ignoresSafeArea(.all)
             TabView {
-                OnboardingPage(titleText: "Welcome", bodyText: "This is Retro, an app to remind you of the past while building your future through music", image: "posture", show: $show)
+                OnboardingPage(titleText: "Welcome", bodyText: "This is Retro, an app to remind you of the past while building your future through music", image: "posture", show: $show, nextCount: $nextCount)
                     .ignoresSafeArea(.all)
-               
+                   
             }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
             .transition(.opacity)

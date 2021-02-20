@@ -46,7 +46,7 @@ extension MenuViewModel {
 
     func destination(at i: Int) -> AnyView? {
         guard let option = menuOptions[safe: i] else { fatalError() }
-        return option.destination
+        return option.nextMenu
     }
 
     func stopClickWheelSubscriptions() {
@@ -58,7 +58,7 @@ extension MenuViewModel {
 
 struct MenuOption<Content: View> {
     let title: String
-    let destination: Content?
+    let nextMenu: Content?
     var withDisclosure: Bool = true
     var fullScreen: Bool = false
     var onSelect: (() -> Void)?

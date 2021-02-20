@@ -6,29 +6,68 @@
 //
 
 import Combine
+import MediaPlayer
 import SwiftUI
 
 class MainMenuViewModel: MenuViewModel, ObservableObject {
     lazy var menuOptions = [
-        MenuOption(title: "Music", destination: AnyView(MusicMenu())),
-        MenuOption(title: "Videos", destination: AnyView(Text("Hi"))),
-        MenuOption(title: "Photos", destination: AnyView(Text("Hi"))),
-        MenuOption(title: "Podcasts", destination: AnyView(Text("Hi"))),
-        MenuOption(title: "Extras", destination: AnyView(Text("Hi"))),
-        MenuOption(title: "Settings", destination: AnyView(Text("Hi"))),
-        MenuOption(title: "Shuffle Songs", destination: nil,
+        MenuOption(title: "Music", nextMenu: AnyView(MusicMenu())),
+        MenuOption(title: "Videos", nextMenu: AnyView(Text("Hi"))),
+        MenuOption(title: "Photos", nextMenu: AnyView(Text("Hi"))),
+        MenuOption(title: "Podcasts", nextMenu: AnyView(Text("Hi"))),
+        MenuOption(title: "Extras", nextMenu: AnyView(Text("Hi"))),
+        MenuOption(title: "Settings", nextMenu: AnyView(Text("Hi"))),
+        MenuOption(title: "Shuffle Songs", nextMenu: nil,
                    withDisclosure: false, onSelect: shuffleAndPlay),
-        MenuOption(title: "Now Playing", destination: AnyView(Text("Hi"))),
     ]
 
     @Published var currentIndex: Int = 0
-    @Published internal var sinks = Set<AnyCancellable>()
+
+//    @Published var showNowPlayingMenuOption = (MusicManager.shared.playState == .playing)
+    var playState: MPMusicPlaybackState = MusicManager.shared.playState
+
+    var sinks = Set<AnyCancellable>()
+
+    func startPlayStateSubscriptions() {
+        playState = MusicManager.shared.playState
+
+        MusicManager.shared.playStateChanged()
+            .sink { state in
+                let previous = self.playState
+
+                if state == .stopped {
+                    self.removeNowPlayingMenuOption()
+                } else if previous == .stopped {
+                    self.addNowPlayingMenuOption()
+                }
+                self.playState = state
+            }
+            .store(in: &sinks)
+    }
 
     func shuffleAndPlay() {
         MusicManager.shared.playShuffledSongs()
-        let dict: [String: AnyView] = ["view": AnyView(Color.red)]
+        showNowPlayingView()
+    }
+
+    func showNowPlayingView() {
+        let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let notification = Notification(name: .init("showFullScreenView"), userInfo: dict)
         NotificationCenter.default.post(notification)
+    }
+
+    func addNowPlayingMenuOption() {
+        menuOptions.append(
+            MenuOption(title: "Now Playing", nextMenu: nil, onSelect: showNowPlayingView)
+        )
+        objectWillChange.send()
+    }
+
+    func removeNowPlayingMenuOption() {
+        if menuOptions.last?.title == "Now Playing" {
+            menuOptions.removeLast()
+            objectWillChange.send()
+        }
     }
 
     // MARK: - Wheel clicks
@@ -120,6 +159,26 @@ class MainMenuViewModel: MenuViewModel, ObservableObject {
             .sink {
                 self.nextClick()
                 if let click = nextClick {
+                    click()
+                }
+            }
+            .store(in: &sinks)
+
+        ClickWheelService.shared.menuClick
+            .receive(on: RunLoop.main)
+            .sink {
+                self.menuClick()
+                if let click = menuClick {
+                    click()
+                }
+            }
+            .store(in: &sinks)
+
+        ClickWheelService.shared.playPauseClick
+            .receive(on: RunLoop.main)
+            .sink {
+                self.playPauseClick()
+                if let click = playPauseClick {
                     click()
                 }
             }

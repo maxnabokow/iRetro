@@ -11,6 +11,10 @@ struct MainMenu: View {
     @StateObject private var vm = MainMenuViewModel()
     @State private var childrenShowing = Array(repeating: false, count: 12) // dangerous, yes.
 
+    init() {
+        childrenShowing = Array(repeating: false, count: vm.menuOptions.count)
+    }
+
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 0) {
@@ -23,11 +27,13 @@ struct MainMenu: View {
                         vm.row(at: i)
                     }
                 }
+
                 Spacer()
             }
             .font(.headline)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
+            .onAppear(perform: vm.startPlayStateSubscriptions)
             .onAppear(perform: startClickWheelSubscriptions)
             .onDisappear(perform: stopClickWheelSubscriptions)
         }

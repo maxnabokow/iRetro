@@ -12,6 +12,10 @@ struct MusicMenu: View {
     @Environment(\.presentationMode) private var presentationMode
     @State private var childrenShowing = Array(repeating: false, count: 12) // dangerous, yes.
 
+    init() {
+        childrenShowing = Array(repeating: false, count: vm.menuOptions.count)
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(0 ..< vm.menuOptions.count, id: \.self) { i in
@@ -23,7 +27,6 @@ struct MusicMenu: View {
         }
         .font(.headline)
         .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
         .onAppear(perform: startClickWheelSubscriptions)
         .onDisappear(perform: stopClickWheelSubscriptions)
     }
@@ -36,7 +39,7 @@ struct MusicMenu: View {
             nextClick: { childrenShowing[vm.currentIndex] = true },
             menuClick: { presentationMode.wrappedValue.dismiss() },
             playPauseClick: nil,
-            center: { childrenShowing[vm.currentIndex] = true })
+            centerClick: { childrenShowing[vm.currentIndex] = true })
     }
 
     private func stopClickWheelSubscriptions() {

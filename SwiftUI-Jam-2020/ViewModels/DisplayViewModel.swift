@@ -11,7 +11,9 @@ import SwiftUI
 class DisplayViewModel: ObservableObject {
     @Published var showFullScreen: Bool = false {
         didSet {
-            if !showFullScreen {}
+            if !showFullScreen {
+                resetFullScreenView()
+            }
         }
     }
 

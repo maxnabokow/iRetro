@@ -12,14 +12,21 @@ import MediaPlayer
 class MusicManager {
     static let shared = MusicManager()
     
-    let player: MPMusicPlayerController
+    private let player: MPMusicPlayerController
+    
+    var playState: MPMusicPlaybackState {
+        player.playbackState
+    }
+    
+    var nowPlayingItem: MPMediaItem? {
+        player.nowPlayingItem
+    }
     
     private init() {
         player = MPMusicPlayerController.systemMusicPlayer
         player.beginGeneratingPlaybackNotifications()
         
         player.prepareToPlay()
-        
     }
     
     func playPause() {
@@ -71,8 +78,8 @@ class MusicManager {
         }
         player.setQueue(with: shuffledIDs)
         player.play()
-      
     }
+
     func playFavoriteSong() {
         let songs = getAllSongs()
         var songsPlayCount = [Int]()
@@ -82,35 +89,49 @@ class MusicManager {
             if songsPlayCount.max() == song.playCount {
                 favSongID = song.playbackStoreID
             }
-           
         }
         
         player.setQueue(with: [favSongID])
         player.play()
     }
 
-    var disposal = Set<AnyCancellable>()
-    func nowPlayingChanged() -> AnyPublisher<Notification, Never> {
+    private var sinks = Set<AnyCancellable>()
+    
+    func playStateChanged() -> AnyPublisher<MPMusicPlaybackState, Never> {
         return NotificationCenter.default
-            .publisher(for: Notification.Name.MPMusicPlayerControllerNowPlayingItemDidChange)
+            .publisher(for: .MPMusicPlayerControllerPlaybackStateDidChange)
+            .map { _ in
+                self.playState
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func nowPlayingChanged() -> AnyPublisher<Void, Never> {
+        return NotificationCenter.default
+            .publisher(for: .MPMusicPlayerControllerNowPlayingItemDidChange)
+            .map { _ in }
             .eraseToAnyPublisher()
     }
 
-    func queueChanged() -> AnyPublisher<Notification, Never> {
+    func queueChanged() -> AnyPublisher<Void, Never> {
         return NotificationCenter.default
-            .publisher(for: Notification.Name.MPMusicPlayerControllerQueueDidChange)
+            .publisher(for: .MPMusicPlayerControllerQueueDidChange)
+            .map { _ in }
             .eraseToAnyPublisher()
     }
    
-    func libraryChanged() -> AnyPublisher<Notification, Never> {
+    #warning("Doesn't work yet")
+    func libraryChanged() -> AnyPublisher<Void, Never> {
         return NotificationCenter.default
-            .publisher(for: Notification.Name.MPMediaLibraryDidChange)
+            .publisher(for: .MPMediaLibraryDidChange)
+            .map { _ in }
             .eraseToAnyPublisher()
     }
 
-    func volumeChanged() -> AnyPublisher<Notification, Never> {
+    func volumeChanged() -> AnyPublisher<Void, Never> {
         return NotificationCenter.default
-            .publisher(for: Notification.Name.MPMusicPlayerControllerVolumeDidChange)
+            .publisher(for: .MPMusicPlayerControllerVolumeDidChange)
+            .map { _ in }
             .eraseToAnyPublisher()
     }
 }

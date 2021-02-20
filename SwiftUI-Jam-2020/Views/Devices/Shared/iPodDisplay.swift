@@ -13,7 +13,7 @@ struct iPodDisplay: View {
     private let animateCover: Bool = true
 
     var body: some View {
-        NavigationView {
+        NavigationView { // Full Screen Navigation View
             GeometryReader { proxy in
                 HStack(spacing: 0) {
                     VStack(spacing: 0) {

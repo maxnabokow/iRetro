@@ -1,42 +1,35 @@
 //
-//  MusicMenuViewModel.swift
+//  NowPlayingViewModel.swift
 //  SwiftUI-Jam-2020
 //
-//  Created by Max Nabokow on 2/19/21.
+//  Created by Max Nabokow on 2/20/21.
 //
 
 import Combine
 import SwiftUI
+import MediaPlayer
 
-class MusicMenuViewModel: MenuViewModel, ObservableObject {
-    lazy var menuOptions = [
-        MenuOption(title: "Cover Flow", nextMenu: AnyView(Text("Cover Flow"))),
-        MenuOption(title: "Playlists", nextMenu: AnyView(Text("Playlists"))),
-        MenuOption(title: "Artists", nextMenu: AnyView(Text("Artists"))),
-        MenuOption(title: "Albums", nextMenu: AnyView(Text("Albums"))),
-        MenuOption(title: "Compilations", nextMenu: AnyView(Text("Compilations"))),
-        MenuOption(title: "Songs", nextMenu: AnyView(Text("Songs"))),
-        MenuOption(title: "Genres", nextMenu: AnyView(Text("Genres"))),
-        MenuOption(title: "Composers", nextMenu: AnyView(Text("Composers"))),
-        MenuOption(title: "Audiobooks", nextMenu: AnyView(Text("Audiobooks"))),
-    ]
-
-    @Published var currentIndex: Int = 0
-    var sinks = Set<AnyCancellable>()
-
-    func prevTick() {
-        if currentIndex != 0 {
-            currentIndex -= 1
-            ClickWheelService.shared.playTick()
-        }
+class NowPlayingViewModel: ObservableObject {
+    @Published var nowPlayingItem: MPMediaItem? // not sure, might be bad
+    
+    private var sinks = Set<AnyCancellable>()
+    
+    func startNowPlayingSubscriptions() {
+        self.nowPlayingItem = MusicManager.shared.nowPlayingItem
+        
+        MusicManager.shared.nowPlayingChanged()
+            .print()
+            .sink {
+                self.nowPlayingItem = MusicManager.shared.nowPlayingItem
+            }
+            .store(in: &sinks)
     }
 
-    func nextTick() {
-        if currentIndex != menuOptions.count - 1 {
-            currentIndex += 1
-            ClickWheelService.shared.playTick()
-        }
-    }
+    // MARK: - Wheel clicks
+
+    func prevTick() {}
+
+    func nextTick() {}
 
     func prevClick() {
         Haptics.rigid()
@@ -141,5 +134,11 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
                 }
             }
             .store(in: &sinks)
+    }
+
+    func stopClickWheelSubscriptions() {
+        sinks.forEach { cancellable in
+            cancellable.cancel()
+        }
     }
 }

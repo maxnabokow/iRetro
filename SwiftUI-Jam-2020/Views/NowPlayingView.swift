@@ -16,8 +16,7 @@ struct NowPlayingView: View {
             VStack {
                 iPodStatusBar()
                 HStack {
-                    Image(uiImage: vm.nowPlayingItem?.artwork?.image(at: CGSize(width: proxy.size.width/4, height: proxy.size.width/4)) ?? UIImage(named: "abbeyRoad")!)
-                        .scaledToFit()
+                    artwork(for: proxy)
                     VStack {
                         HStack {
                             Text(vm.nowPlayingItem?.title ?? "NO TITLE")
@@ -36,7 +35,7 @@ struct NowPlayingView: View {
                             Spacer()
                         }
                         
-                    } .padding(3)
+                    }.padding(3)
                 }
                 Spacer()
                 ProgressView(value: /*@START_MENU_TOKEN@*/0.5/*@END_MENU_TOKEN@*/)
@@ -44,6 +43,17 @@ struct NowPlayingView: View {
                     .padding()
             }
         }
+    }
+    
+    private func artwork(for proxy: GeometryProxy) -> some View {
+        Image(uiImage: vm.artwork?.image(at: imageSize(for: proxy)) ?? UIImage(named: "abbeyRoad")!)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(imageSize(for: proxy))
+    }
+    
+    private func imageSize(for proxy: GeometryProxy) -> CGSize {
+        return CGSize(width: proxy.size.width/4, height: proxy.size.width/4)
     }
     
     private func startNowPlayingSubscriptions() {

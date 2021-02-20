@@ -6,17 +6,21 @@
 //
 
 import Combine
-import SwiftUI
 import MediaPlayer
+import SwiftUI
 
 class NowPlayingViewModel: ObservableObject {
     @Published var nowPlayingItem: MPMediaItem? // not sure, might be bad
-    
+
     private var sinks = Set<AnyCancellable>()
-    
+
+    var artwork: MPMediaItemArtwork? {
+        return nowPlayingItem?.artwork
+    }
+
     func startNowPlayingSubscriptions() {
-        self.nowPlayingItem = MusicManager.shared.nowPlayingItem
-        
+        nowPlayingItem = MusicManager.shared.nowPlayingItem
+
         MusicManager.shared.nowPlayingChanged()
             .print()
             .sink {

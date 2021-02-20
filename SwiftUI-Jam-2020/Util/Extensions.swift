@@ -22,4 +22,6 @@ extension GeometryProxy {
     var minY: CGFloat {
         return self.frame(in: .global).minY
     }
+    
 }
+let screenDemensions = UIScreen.main.bounds

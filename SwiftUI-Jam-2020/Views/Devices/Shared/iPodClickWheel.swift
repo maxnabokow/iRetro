@@ -5,19 +5,38 @@
 //  Created by Max Nabokow on 2/19/21.
 //
 
+import Combine
 import SwiftUI
 
-struct iPodClickWheel: View {
-    @Binding var menuIndex: Int
+class ClickWheelService {
+    static let shared = ClickWheelService()
+    private init() {}
 
+    let nextTick = PassthroughSubject<Void, Never>()
+    let prevTick = PassthroughSubject<Void, Never>()
+    let prevClick = PassthroughSubject<Void, Never>()
+    let nextClick = PassthroughSubject<Void, Never>()
+    let menuClick = PassthroughSubject<Void, Never>()
+    let playPauseClick = PassthroughSubject<Void, Never>()
+    let centerClick = PassthroughSubject<Void, Never>()
+
+    func playTick() {
+        SoundManager.shared.playTick()
+    }
+
+    func playTock() {
+        SoundManager.shared.playTock()
+    }
+}
+
+struct iPodClickWheel: View {
     @State private var lastAngle: CGFloat = 0
     @State private var counter: CGFloat = 0
-    @State private var menus = [1, 2, 3, 4, 5, 6, 7, 8]
 
-    @GestureState private var buttonClicked = false
-    
+    @GestureState private var centerClicked = false
+
     @Environment(\.colorScheme) private var colorScheme
-    
+
     private var lightMode: Bool {
         colorScheme == .light
     }
@@ -26,10 +45,10 @@ struct iPodClickWheel: View {
         wheel
             .padding()
             .padding(.top, 24)
-            .onChange(of: buttonClicked) { clicked in
+            .onChange(of: centerClicked) { clicked in
                 if clicked {
                     Haptics.rigid()
-                    playTock()
+                    ClickWheelService.shared.centerClick.send()
                 } else {
                     Haptics.light()
                 }
@@ -49,7 +68,7 @@ struct iPodClickWheel: View {
                     .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 0)
                     .overlay(
                         centerButton
-                            .frame(width: proxy.width / 3, height: proxy.width / 3)
+                            .frame(width: proxy.width / 3.2, height: proxy.width / 3.2)
                     )
                     .overlay(ringItems)
                     .frame(frame(with: proxy))
@@ -62,13 +81,13 @@ struct iPodClickWheel: View {
 
     private var centerButton: some View {
         Circle()
-            .fill(lightMode ? Color.secondarySystemFill : Color.systemFill)
-            .gesture(buttonClickGesture)
+            .gesture(centerClickGesture)
+            .foregroundColor(lightMode ? Color.secondarySystemFill : Color.systemFill)
             .overlay(
                 Circle()
                     .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)
                     .shadow(color: Color.primary.opacity(0.8), radius: 10, x: 0, y: lightMode ? 4 : -4)
-                    .if(buttonClicked) {
+                    .if(centerClicked) {
                         $0.shadow(color: .primary, radius: 1, x: 0, y: 1)
                     }
                     .clipShape(Circle())
@@ -91,15 +110,36 @@ struct iPodClickWheel: View {
         VStack(spacing: 0) {
             Text("MENU")
                 .fontWeight(.bold)
+                .padding(.horizontal)
+                .padding(.bottom)
+                .onTapGesture {
+                    ClickWheelService.shared.menuClick.send()
+                }
             Spacer()
             HStack {
                 Image(systemName: "backward.end.alt.fill")
+                    .padding(.vertical)
+                    .padding(.trailing)
+                    .onTapGesture {
+                        ClickWheelService.shared.prevClick.send()
+                    }
 
                 Spacer()
+
                 Image(systemName: "forward.end.alt.fill")
+                    .padding(.vertical)
+                    .padding(.leading)
+                    .onTapGesture {
+                        ClickWheelService.shared.nextClick.send()
+                    }
             }
             Spacer()
             Image(systemName: "playpause.fill")
+                .padding(.horizontal)
+                .padding(.top)
+                .onTapGesture {
+                    ClickWheelService.shared.playPauseClick.send()
+                }
         }
         .foregroundColor(lightMode ? .tertiaryLabel : Color.white.opacity(0.8))
         .font(.footnote)
@@ -107,10 +147,10 @@ struct iPodClickWheel: View {
         .padding(.vertical, 12)
     }
 
-    private var buttonClickGesture: some Gesture {
+    private var centerClickGesture: some Gesture {
         DragGesture(minimumDistance: 0)
-            .updating($buttonClicked) { _, buttonClicked, _ in
-                buttonClicked = true
+            .updating($centerClicked) { _, clicked, _ in
+                clicked = true
             }
     }
 
@@ -128,27 +168,15 @@ struct iPodClickWheel: View {
                     self.counter += theta
                 }
                 // Move menu cursor when the counter become more(less) sensitivity.
-                if self.counter > CGFloat(sensitivity), self.menuIndex > 0 {
-                    self.menuIndex -= 1
-                    Haptics.light()
-                    playTick()
-                } else if self.counter < -CGFloat(sensitivity), self.menuIndex < self.menus.count - 1 {
-                    self.menuIndex += 1
-                    Haptics.light()
-                    playTick()
+                if self.counter > CGFloat(sensitivity) {
+                    ClickWheelService.shared.prevTick.send()
+                } else if self.counter < -CGFloat(sensitivity) {
+                    ClickWheelService.shared.nextTick.send()
                 }
                 if abs(self.counter) > CGFloat(sensitivity) { self.counter = 0 }
             }
             .onEnded { _ in
                 self.counter = 0
             }
-    }
-
-    private func playTick() {
-        SoundManager.shared.playTick()
-    }
-
-    private func playTock() {
-        SoundManager.shared.playTock()
     }
 }

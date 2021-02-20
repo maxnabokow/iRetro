@@ -20,6 +20,8 @@ struct iPodStatusBar: View {
                 .font(.caption)
                 .fontWeight(.semibold)
             Spacer()
+            Image(systemName: "lock.fill")
+                .font(.caption)
             playIcon
             battery
         }

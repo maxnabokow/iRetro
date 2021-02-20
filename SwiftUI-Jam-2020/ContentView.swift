@@ -19,7 +19,7 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 Spacer()
                 TabView(selection: $selectedDevice) {
-                    ForEach(0 ..< 5) { _ in
+                    ForEach(0 ..< 1) { _ in
                         iPodView
                             .padding(24)
                     }

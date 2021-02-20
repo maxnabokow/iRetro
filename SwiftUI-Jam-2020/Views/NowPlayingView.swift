@@ -10,11 +10,17 @@ import SwiftUI
 struct NowPlayingView: View {
     @StateObject private var vm = NowPlayingViewModel()
     @Environment(\.presentationMode) private var presentationMode
-    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var time = 0.0
     var body: some View {
         GeometryReader { proxy in
             VStack {
+
                 iPodStatusBar(title: "Now Playing")
+                Spacer()
+
+                
+
                 HStack {
                     artwork(for: proxy)
                     VStack {
@@ -35,12 +41,17 @@ struct NowPlayingView: View {
                             Spacer()
                         }
                         
-                    }.padding(3)
-                }
+                    }
+                } .padding(.leading)
                 Spacer()
-                ProgressView(value: /*@START_MENU_TOKEN@*/0.5/*@END_MENU_TOKEN@*/)
+                ProgressView(value: time)
                     .accentColor(.blue)
                     .padding()
+                    .onReceive(timer) { input in
+                        withAnimation(.linear(duration: 1)) {
+                            time = vm.currentTimeInSong()/vm.totalTimeInSong()
+                    }
+                    }
             }
         }
     }

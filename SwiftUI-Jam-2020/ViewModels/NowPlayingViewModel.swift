@@ -17,7 +17,12 @@ class NowPlayingViewModel: ObservableObject {
     var artwork: MPMediaItemArtwork? {
         return nowPlayingItem?.artwork
     }
-
+    func currentTimeInSong() -> TimeInterval{
+        return MusicManager.shared.currentTimeInSong()
+    }
+    func totalTimeInSong() -> TimeInterval{
+        return MusicManager.shared.totalTimeInSong()
+    }
     func startNowPlayingSubscriptions() {
         nowPlayingItem = MusicManager.shared.nowPlayingItem
 

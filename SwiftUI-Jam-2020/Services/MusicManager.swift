@@ -53,6 +53,12 @@ class MusicManager {
         player.stop()
         player.skipToBeginning()
     }
+    func currentTimeInSong() -> TimeInterval{
+        return player.currentPlaybackTime
+    }
+    func totalTimeInSong() -> TimeInterval{
+        return player.nowPlayingItem!.playbackDuration
+    }
     
     func getPlaylists() -> [MPMediaItemCollection] {
         let playlists = MPMediaQuery.playlists()

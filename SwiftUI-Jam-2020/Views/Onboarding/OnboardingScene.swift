@@ -57,7 +57,7 @@ struct OnboardingScene: View {
                         node.runAction(moveAction)
                         node.runAction(roteAction)
                         node.runAction(scaleAction)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.16) {
                         ready = false
                         }
                     }

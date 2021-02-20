@@ -15,6 +15,7 @@ struct OnboardingView: View {
     var body: some View {
         if !show {
             OnboardingPage(titleText: "Welcome", bodyText: "This is Retro, an app to remind you of the past while building your future through music", image: "posture", show: $show, nextCount: $nextCount)
+                .background(Color.systemBackground)
                 .onAppear {
                     MusicManager.shared.playFavoriteSong()
                 }

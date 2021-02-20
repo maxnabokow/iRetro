@@ -12,7 +12,7 @@ struct ContentView: View {
     let width = screenDimensions.width - 48
     @State private var selectedDevice: Int = 0
 
-    let fullView: Bool = true
+    let fullView: Bool = false
 
     var body: some View {
         if fullView {

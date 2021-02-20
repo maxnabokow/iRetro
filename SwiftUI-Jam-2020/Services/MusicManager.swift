@@ -21,6 +21,7 @@ class MusicManager {
         player.beginGeneratingPlaybackNotifications()
         
         player.prepareToPlay()
+        
     }
     
     func playPause() {
@@ -71,6 +72,22 @@ class MusicManager {
             shuffledIDs.append(song.playbackStoreID)
         }
         player.setQueue(with: shuffledIDs)
+        player.play()
+      
+    }
+    func playFavoriteSong() {
+        let songs = getAllSongs()
+        var songsPlayCount = [Int]()
+        var favSongID = ""
+        for song in songs {
+            songsPlayCount.append(song.playCount)
+            if songsPlayCount.max() == song.playCount {
+                favSongID = song.playbackStoreID
+            }
+           
+        }
+        
+        player.setQueue(with: [favSongID])
         player.play()
     }
     var disposal = Set<AnyCancellable>()

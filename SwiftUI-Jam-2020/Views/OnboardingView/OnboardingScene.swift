@@ -17,7 +17,7 @@ struct OnboardingScene: View {
     
     @State var node = SCNNode()
 
-    @State var ready = false
+    @State var ready = true
     
     @Binding var nextCount: Int
     var body: some View {
@@ -57,16 +57,20 @@ struct OnboardingScene: View {
                         node.runAction(moveAction)
                         node.runAction(roteAction)
                         node.runAction(scaleAction)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        ready = false
+                        }
                     }
                     
-                    ready = true
-                    
+                   
+                   
                 })
-               
+            if ready {
             SceneView(
                 scene: scene,
                 pointOfView: cameraNode, options: [], preferredFramesPerSecond: 60
             )
+            }
         }
     }
 

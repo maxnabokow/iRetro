@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingiPodDisplay: View {
     @StateObject private var vm = DisplayViewModel()
     @State private var move: Bool = false
-    private let animateCover: Bool = true
+    private let animateCover: Bool = false
     var body: some View {
         GeometryReader { proxy in
             HStack(spacing: 0) {
@@ -61,23 +61,23 @@ struct OnboardingiPodDisplay: View {
 struct MainMenuOnboarding: View {
     @StateObject private var vm = MainMenuViewModel()
     @State private var childrenShowing = Array(repeating: false, count: 12) // dangerous, yes.
-
+    init() {
+        childrenShowing = Array(repeating: false, count: vm.menuOptions.count)
+    }
     var body: some View {
-        
+        ZStack {
+            Color.systemBackground
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(0 ..< vm.menuOptions.count, id: \.self) { i in
-                    if let dest = vm.destination(at: i) {
-                        NavigationLink(destination: dest, isActive: $childrenShowing[i], label: {
-                            vm.row(at: i)
-                        })
-                    } else {
+                  
                         vm.row(at: i)
-                    }
+                    
                 }
+                
                 Spacer()
             }
             .font(.headline)
-            
+        }
     }
 
     private func startClickWheelSubscriptions() {

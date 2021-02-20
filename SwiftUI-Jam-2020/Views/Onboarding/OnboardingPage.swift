@@ -78,7 +78,8 @@ struct OnboardingPage: View {
                     }
                     if animate5 {
                         OnboardingScene(nextCount: $nextCount)
-                            .frame(height: geo.size.height / 3)
+                           // .frame(height: geo.size.height / 3)
+                        
                     }
                     if animate6 {
                         Button(action: {

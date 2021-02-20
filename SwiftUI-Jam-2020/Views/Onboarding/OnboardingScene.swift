@@ -38,7 +38,7 @@ struct OnboardingScene: View {
                     node = SCNNode(geometry: box)
                     node.rotation = SCNVector4Make(0.2, 0.2, 0.2, -.pi / 4)
                     let roteAction = SCNAction.rotate(toAxisAngle: SCNVector4Make(1, 1, 0, -.pi / 8), duration: 30)
-                    node.scale = SCNVector3(1.5, 1.5, 1.5)
+                    node.scale = SCNVector3(1.0, 1.0, 1.0)
                     node.runAction(roteAction)
                        
                     node.position = SCNVector3(0, 10, 0)

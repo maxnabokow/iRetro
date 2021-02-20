@@ -14,7 +14,7 @@ struct NowPlayingView: View {
     var body: some View {
         GeometryReader { proxy in
             VStack {
-                iPodStatusBar()
+                iPodStatusBar(title: "Now Playing")
                 HStack {
                     artwork(for: proxy)
                     VStack {

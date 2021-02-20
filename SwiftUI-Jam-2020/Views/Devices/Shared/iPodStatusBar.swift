@@ -9,6 +9,7 @@ import SwiftUI
 
 struct iPodStatusBar: View {
     @Environment(\.colorScheme) private var colorScheme
+    var title: String = "iPod"
 
     private var lightMode: Bool {
         colorScheme == .light
@@ -16,7 +17,7 @@ struct iPodStatusBar: View {
 
     var body: some View {
         HStack {
-            Text("iPod")
+            Text(title)
                 .font(.caption)
                 .fontWeight(.semibold)
             Spacer()

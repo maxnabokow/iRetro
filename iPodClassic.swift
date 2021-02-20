@@ -10,7 +10,7 @@ import SwiftUIX
 
 struct iPodClassic: View {
     @Environment(\.colorScheme) private var colorScheme
-    @State var isOnboarding = false
+    @State var isOnboarding = true
     private var lightMode: Bool {
         colorScheme == .light
     }
@@ -18,7 +18,7 @@ struct iPodClassic: View {
     var body: some View {
         VStack(spacing: 0) {
             if !isOnboarding {
-            iPodDisplay()
+                iPodDisplay()
             } else {
                 OnboardingiPodDisplay()
             }

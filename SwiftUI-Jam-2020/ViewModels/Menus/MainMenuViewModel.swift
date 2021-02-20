@@ -53,7 +53,8 @@ class MainMenuViewModel: MenuViewModel, ObservableObject {
 
     func showNowPlayingView() {
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
-        let notification = Notification(name: .init("showFullScreenView"), userInfo: dict)
+        let name = MyNotifications.showFullScreenView.rawValue
+        let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
     }
 

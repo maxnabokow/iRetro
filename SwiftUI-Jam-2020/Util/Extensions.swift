@@ -10,6 +10,10 @@ import CoreLocation
 import SwiftUI
 import UIKit
 
+enum MyNotifications: String {
+    case showFullScreenView
+}
+
 extension Collection {
     subscript(safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil

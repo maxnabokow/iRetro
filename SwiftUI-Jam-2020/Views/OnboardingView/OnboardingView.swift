@@ -16,7 +16,7 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            Color(.white)
+            Color.systemBackground
                 .ignoresSafeArea(.all)
             //TabView {
             

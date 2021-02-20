@@ -44,6 +44,11 @@
 		EAE0A3E525E09A1800632290 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */; };
 		EAE0A3E925E0B7F300632290 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */; };
 		EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */; };
+		EAEE65A625E1958A003A654A /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A125E1958A003A654A /* OnboardingPage.swift */; };
+		EAEE65A725E1958A003A654A /* OnboardingiPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A225E1958A003A654A /* OnboardingiPodDisplay.swift */; };
+		EAEE65A825E1958A003A654A /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A325E1958A003A654A /* OnboardingScene.swift */; };
+		EAEE65A925E1958A003A654A /* iPodSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A425E1958A003A654A /* iPodSlides.swift */; };
+		EAEE65AA25E1958A003A654A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A525E1958A003A654A /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +90,11 @@
 		EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenu.swift; sourceTree = "<group>"; };
+		EAEE65A125E1958A003A654A /* OnboardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		EAEE65A225E1958A003A654A /* OnboardingiPodDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingiPodDisplay.swift; sourceTree = "<group>"; };
+		EAEE65A325E1958A003A654A /* OnboardingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
+		EAEE65A425E1958A003A654A /* iPodSlides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPodSlides.swift; sourceTree = "<group>"; };
+		EAEE65A525E1958A003A654A /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +209,7 @@
 			children = (
 				EAE0A3EB25E0B8DB00632290 /* Menus */,
 				EA1E378325E02CBB00C88BAF /* Devices */,
+				EAEE65A025E1958A003A654A /* OnboardingView */,
 				EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */,
 			);
 			path = Views;
@@ -261,6 +272,18 @@
 				EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */,
 			);
 			path = Menus;
+			sourceTree = "<group>";
+		};
+		EAEE65A025E1958A003A654A /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				EAEE65A525E1958A003A654A /* OnboardingView.swift */,
+				EAEE65A125E1958A003A654A /* OnboardingPage.swift */,
+				EAEE65A325E1958A003A654A /* OnboardingScene.swift */,
+				EAEE65A225E1958A003A654A /* OnboardingiPodDisplay.swift */,
+				EAEE65A425E1958A003A654A /* iPodSlides.swift */,
+			);
+			path = OnboardingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,14 +373,19 @@
 				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
 				EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */,
+				EAEE65AA25E1958A003A654A /* OnboardingView.swift in Sources */,
+				EAEE65A725E1958A003A654A /* OnboardingiPodDisplay.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
 				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,
+				EAEE65A625E1958A003A654A /* OnboardingPage.swift in Sources */,
 				EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */,
 				EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */,
 				EA1E376925E02B8B00C88BAF /* THaptics.swift in Sources */,
+				EAEE65A925E1958A003A654A /* iPodSlides.swift in Sources */,
 				EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */,
 				EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */,
 				EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */,
+				EAEE65A825E1958A003A654A /* OnboardingScene.swift in Sources */,
 				EAE0A3E925E0B7F300632290 /* MenuViewModel.swift in Sources */,
 				EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */,
 				EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */,

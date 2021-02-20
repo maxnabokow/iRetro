@@ -30,7 +30,7 @@ struct OnboardingScene: View {
                    
                     scene.background.contents = UIColor.systemBackground
                     scene.lightingEnvironment.intensity = 0
-                    cameraNode.position = SCNVector3(x: 0, y: 0, z: 50)
+                    cameraNode.position = SCNVector3(x: 0, y: -10, z: 50)
                     cameraNode.pivot = SCNMatrix4MakeTranslation(0, 0, 90)
                    
                     let box = SCNBox(width: 27, height: 27*1.8, length: 5, chamferRadius: 32)
@@ -38,7 +38,7 @@ struct OnboardingScene: View {
                     node = SCNNode(geometry: box)
                     node.rotation = SCNVector4Make(0.2, 0.2, 0.2, -.pi / 4)
                     let roteAction = SCNAction.rotate(toAxisAngle: SCNVector4Make(1, 1, 0, -.pi / 8), duration: 30)
-                    node.scale = SCNVector3(0.8, 0.8, 0.8)
+                    node.scale = SCNVector3(1.7, 1.7, 1.7)
                     node.runAction(roteAction)
                        
                     node.position = SCNVector3(0, 10, 0)

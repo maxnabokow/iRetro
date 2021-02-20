@@ -9,11 +9,13 @@ import SwiftUI
 
 struct MusicMenu: View {
     @StateObject private var vm = MusicMenuViewModel()
+    @Environment(\.presentationMode) private var presentationMode
+    @State private var childrenShowing = Array(repeating: false, count: 12) // dangerous, yes.
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(0 ..< vm.menuOptions.count, id: \.self) { i in
-                NavigationLink(destination: vm.destination(at: i), label: {
+                NavigationLink(destination: vm.destination(at: i), isActive: $childrenShowing[i], label: {
                     vm.row(at: i)
                 })
             }
@@ -22,7 +24,22 @@ struct MusicMenu: View {
         .font(.headline)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .onAppear(perform: vm.startClickWheelSubscriptions)
-        .onDisappear(perform: vm.stopClickWheelSubscriptions)
+        .onAppear(perform: startClickWheelSubscriptions)
+        .onDisappear(perform: stopClickWheelSubscriptions)
+    }
+
+    private func startClickWheelSubscriptions() {
+        vm.startClickWheelSubscriptions(
+            prevTick: nil,
+            nextTick: nil,
+            prevClick: { presentationMode.wrappedValue.dismiss() },
+            nextClick: { childrenShowing[vm.currentIndex] = true },
+            menuClick: { presentationMode.wrappedValue.dismiss() },
+            playPauseClick: nil,
+            center: { childrenShowing[vm.currentIndex] = true })
+    }
+
+    private func stopClickWheelSubscriptions() {
+        vm.stopClickWheelSubscriptions()
     }
 }

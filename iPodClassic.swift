@@ -38,13 +38,14 @@ struct iPodClassic: View {
     struct Display: View {
         @Binding var menuIndex: Int
         @State private var move: Bool = false
+        private let animateCover: Bool = false
 
         var body: some View {
             GeometryReader { proxy in
                 HStack(spacing: 0) {
                     VStack(spacing: 0) {
                         iPodStatusBar()
-                        iPodMenu(menuIndex: $menuIndex)
+                        MainMenu()
                     }
 
                     Image("abbeyRoad")
@@ -52,10 +53,14 @@ struct iPodClassic: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: proxy.width / 2)
                         .frame(maxHeight: .infinity)
-                        .offset(x: imageOffset(for: proxy.width))
+                        .if(animateCover) {
+                            $0.offset(x: imageOffset(for: proxy.width))
+                        }
                         .clipped()
                         .overlay(shadowOverlay)
-                        .onAppear(perform: startImageAnimation)
+                        .if(animateCover) {
+                            $0.onAppear(perform: startImageAnimation)
+                        }
                 }
             }
             .tRoundCorners()

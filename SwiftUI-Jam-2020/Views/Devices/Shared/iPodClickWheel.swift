@@ -5,7 +5,26 @@
 //  Created by Max Nabokow on 2/19/21.
 //
 
+import Combine
 import SwiftUI
+
+class ClickWheelService {
+    static let shared = ClickWheelService()
+    private init() {}
+
+    let nextTick = PassthroughSubject<Void, Never>()
+    let prevTick = PassthroughSubject<Void, Never>()
+    let centerClick = PassthroughSubject<Void, Never>()
+
+    func playTick() {
+        SoundManager.shared.playTick()
+    }
+
+    func playTock() {
+        Haptics.rigid()
+        SoundManager.shared.playTock()
+    }
+}
 
 struct iPodClickWheel: View {
     @Binding var menuIndex: Int
@@ -15,9 +34,9 @@ struct iPodClickWheel: View {
     @State private var menus = [1, 2, 3, 4, 5, 6, 7, 8]
 
     @GestureState private var buttonClicked = false
-    
+
     @Environment(\.colorScheme) private var colorScheme
-    
+
     private var lightMode: Bool {
         colorScheme == .light
     }
@@ -29,7 +48,7 @@ struct iPodClickWheel: View {
             .onChange(of: buttonClicked) { clicked in
                 if clicked {
                     Haptics.rigid()
-                    playTock()
+                    ClickWheelService.shared.centerClick.send()
                 } else {
                     Haptics.light()
                 }
@@ -49,7 +68,7 @@ struct iPodClickWheel: View {
                     .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 0)
                     .overlay(
                         centerButton
-                            .frame(width: proxy.width / 3, height: proxy.width / 3)
+                            .frame(width: proxy.width / 3.2, height: proxy.width / 3.2)
                     )
                     .overlay(ringItems)
                     .frame(frame(with: proxy))
@@ -62,8 +81,8 @@ struct iPodClickWheel: View {
 
     private var centerButton: some View {
         Circle()
-            .fill(lightMode ? Color.secondarySystemFill : Color.systemFill)
             .gesture(buttonClickGesture)
+            .foregroundColor(lightMode ? Color.secondarySystemFill : Color.systemFill)
             .overlay(
                 Circle()
                     .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)
@@ -128,27 +147,15 @@ struct iPodClickWheel: View {
                     self.counter += theta
                 }
                 // Move menu cursor when the counter become more(less) sensitivity.
-                if self.counter > CGFloat(sensitivity), self.menuIndex > 0 {
-                    self.menuIndex -= 1
-                    Haptics.light()
-                    playTick()
-                } else if self.counter < -CGFloat(sensitivity), self.menuIndex < self.menus.count - 1 {
-                    self.menuIndex += 1
-                    Haptics.light()
-                    playTick()
+                if self.counter > CGFloat(sensitivity) {
+                    ClickWheelService.shared.prevTick.send()
+                } else if self.counter < -CGFloat(sensitivity) {
+                    ClickWheelService.shared.nextTick.send()
                 }
                 if abs(self.counter) > CGFloat(sensitivity) { self.counter = 0 }
             }
             .onEnded { _ in
                 self.counter = 0
             }
-    }
-
-    private func playTick() {
-        SoundManager.shared.playTick()
-    }
-
-    private func playTock() {
-        SoundManager.shared.playTock()
     }
 }

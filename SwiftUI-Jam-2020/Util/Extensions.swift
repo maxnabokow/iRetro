@@ -10,6 +10,12 @@ import CoreLocation
 import SwiftUI
 import UIKit
 
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+
 extension GeometryProxy {
     var height: CGFloat {
         return self.frame(in: .global).height

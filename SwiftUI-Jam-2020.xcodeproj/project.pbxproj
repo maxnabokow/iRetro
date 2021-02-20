@@ -29,14 +29,17 @@
 		EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */; };
 		EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA1E378025E02C4800C88BAF /* SwiftUIX */; };
 		EA1E378525E02CD100C88BAF /* iPodClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378425E02CD100C88BAF /* iPodClassic.swift */; };
-		EA1E378A25E0300C00C88BAF /* iPodMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378925E0300C00C88BAF /* iPodMenu.swift */; };
+		EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378925E0300C00C88BAF /* MainMenu.swift */; };
 		EA1E378E25E0304300C88BAF /* iPodClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */; };
 		EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* iPodStatusBar.swift */; };
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
 		EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9825E0529800ED99D4 /* Test.swift */; };
-		EA8F6D9C25E052AE00ED99D4 /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9B25E052AE00ED99D4 /* Test1.swift */; };
+		EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */; };
 		EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */; };
+		EAE0A3E525E09A1800632290 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */; };
+		EAE0A3E925E0B7F300632290 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */; };
+		EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,14 +66,17 @@
 		EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToPopViewController.swift; sourceTree = "<group>"; };
 		EA1E378425E02CD100C88BAF /* iPodClassic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodClassic.swift; sourceTree = SOURCE_ROOT; };
-		EA1E378925E0300C00C88BAF /* iPodMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodMenu.swift; sourceTree = "<group>"; };
+		EA1E378925E0300C00C88BAF /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodClickWheel.swift; sourceTree = "<group>"; };
 		EA1E379125E0306400C88BAF /* iPodStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodStatusBar.swift; sourceTree = "<group>"; };
 		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		EA8F6D9825E0529800ED99D4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		EA8F6D9B25E052AE00ED99D4 /* Test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1.swift; sourceTree = "<group>"; };
+		EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenuViewModel.swift; sourceTree = "<group>"; };
 		EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
+		EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +179,9 @@
 		EA1E377725E02BA500C88BAF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				EA8F6D9B25E052AE00ED99D4 /* Test1.swift */,
+				EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */,
+				EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */,
+				EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -218,12 +226,21 @@
 		EA1E378C25E0303200C88BAF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				EA1E378925E0300C00C88BAF /* iPodMenu.swift */,
+				EAE0A3EB25E0B8DB00632290 /* Menus */,
 				EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */,
 				EA1E379125E0306400C88BAF /* iPodStatusBar.swift */,
 				EA1E379425E0308900C88BAF /* PlayShape.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		EAE0A3EB25E0B8DB00632290 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E378925E0300C00C88BAF /* MainMenu.swift */,
+				EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */,
+			);
+			path = Menus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,16 +326,18 @@
 				EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */,
 				EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */,
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
-				EA8F6D9C25E052AE00ED99D4 /* Test1.swift in Sources */,
+				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
 				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,
 				EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */,
+				EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */,
 				EA1E376925E02B8B00C88BAF /* THaptics.swift in Sources */,
 				EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */,
 				EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */,
+				EAE0A3E925E0B7F300632290 /* MenuViewModel.swift in Sources */,
 				EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */,
-				EA1E378A25E0300C00C88BAF /* iPodMenu.swift in Sources */,
+				EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */,
 				EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
 				EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */,
@@ -328,6 +347,7 @@
 				EA1E376D25E02B8B00C88BAF /* TFillerZView.swift in Sources */,
 				EA1E376825E02B8B00C88BAF /* TTapDismissKeyboard.swift in Sources */,
 				EA1E377125E02B8B00C88BAF /* Extensions.swift in Sources */,
+				EAE0A3E525E09A1800632290 /* MainMenuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

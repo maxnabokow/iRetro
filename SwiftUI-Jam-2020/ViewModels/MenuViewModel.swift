@@ -17,7 +17,8 @@ protocol MenuViewModel {
 extension MenuViewModel {
     func row(at index: Int) -> some View {
         if index == currentIndex {
-            return AnyView(selectedMenuRow(for: menuOptions[index].title))
+            let option = menuOptions[index]
+            return AnyView(selectedMenuRow(for: option.title, withDisclosure: option.withDisclosure))
         } else {
             return
                 AnyView(Text(menuOptions[index].title)
@@ -27,11 +28,13 @@ extension MenuViewModel {
         }
     }
 
-    private func selectedMenuRow(for title: String) -> some View {
+    private func selectedMenuRow(for title: String, withDisclosure: Bool) -> some View {
         HStack {
             Text(title)
             Spacer()
-            Image(systemName: "chevron.right")
+            if withDisclosure {
+                Image(systemName: "chevron.right")
+            }
         }
         .foregroundColor(.white)
         .padding(.vertical, 3)
@@ -56,4 +59,5 @@ extension MenuViewModel {
 struct MenuOption<Content: View> {
     let title: String
     let destination: Content
+    var withDisclosure: Bool = true
 }

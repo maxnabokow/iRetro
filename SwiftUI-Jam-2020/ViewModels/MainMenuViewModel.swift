@@ -16,7 +16,7 @@ class MainMenuViewModel: MenuViewModel, ObservableObject {
         MenuOption(title: "Podcasts", destination: AnyView(Text("Hi"))),
         MenuOption(title: "Extras", destination: AnyView(Text("Hi"))),
         MenuOption(title: "Settings", destination: AnyView(Text("Hi"))),
-        MenuOption(title: "Shuffle Songs", destination: AnyView(Text("Hi"))),
+        MenuOption(title: "Shuffle Songs", destination: AnyView(Text("Hi")), withDisclosure: false),
         MenuOption(title: "Now Playing", destination: AnyView(Text("Hi"))),
     ]
 

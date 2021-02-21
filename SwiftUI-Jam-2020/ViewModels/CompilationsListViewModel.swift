@@ -17,7 +17,7 @@ class CompilationsListViewModel: ObservableObject {
 
     var sinks = Set<AnyCancellable>()
 
-    func playAlbum() {
+    func playCompilation() {
         guard let item = items[safe: currentIndex] else { fatalError() }
         #warning("play compilation")
 
@@ -67,7 +67,7 @@ class CompilationsListViewModel: ObservableObject {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
         #warning("FIX THIS")
-//        playAlbum()
+//        playCompilation()
     }
 
     func startClickWheelSubscriptions(

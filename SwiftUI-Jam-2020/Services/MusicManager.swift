@@ -185,7 +185,7 @@ class MusicManager {
         var filteredSongs = [MPMediaItem]()
        
         for song in songs {
-            if song.composer == artist.composer {
+            if song.albumTitle == artist.albumTitle {
                 filteredSongs.append(song)
             }
         }

@@ -10,7 +10,7 @@ import MediaPlayer
 import SwiftUI
 
 class ArtistsListViewModel: ObservableObject {
-  //  #warning("Remove duplicates or filter here")
+    //  #warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getArtists().removeDuplicates()
 
     @Published var currentIndex: Int = 0
@@ -19,13 +19,13 @@ class ArtistsListViewModel: ObservableObject {
 
     func playArtist() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-       // #warning("play artist")
+        // #warning("play artist")
+        MusicManager.shared.playArtistsSongs(artist: item.representativeItem ?? MPMediaItem())
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
-        MusicManager.shared.playArtistsSongs(artist: item.representativeItem ?? MPMediaItem())
     }
 
     // MARK: - Wheel clicks
@@ -67,7 +67,6 @@ class ArtistsListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-        //#warning("FIX THIS")
         playArtist()
     }
 

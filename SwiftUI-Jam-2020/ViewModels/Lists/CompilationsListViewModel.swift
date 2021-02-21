@@ -10,7 +10,7 @@ import MediaPlayer
 import SwiftUI
 
 class CompilationsListViewModel: ObservableObject {
-   // #warning("Remove duplicates or filter here")
+    // #warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getCompilations()
 
     @Published var currentIndex: Int = 0
@@ -19,14 +19,13 @@ class CompilationsListViewModel: ObservableObject {
 
     func playCompilation() {
         let item = items[safe: currentIndex] ?? MPMediaItemCollection()
-        #warning("play compilation")
+        MusicManager.shared.setQueue(with: item)
+        MusicManager.shared.play()
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
-        #warning("FIX THIS")
-        MusicManager.shared.setQueue(with: item)
     }
 
     // MARK: - Wheel clicks

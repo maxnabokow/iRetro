@@ -11,6 +11,10 @@ import MediaPlayer
 
 class MusicManager {
     static let shared = MusicManager()
+    private init() {
+        player = MPMusicPlayerController.systemMusicPlayer
+        player.beginGeneratingPlaybackNotifications()
+    }
     
     private let player: MPMusicPlayerController
     
@@ -20,11 +24,6 @@ class MusicManager {
     
     var nowPlayingItem: MPMediaItem? {
         player.nowPlayingItem
-    }
-    
-    private init() {
-        player = MPMusicPlayerController.systemMusicPlayer
-        player.beginGeneratingPlaybackNotifications()
     }
     
     func play() {
@@ -137,11 +136,10 @@ class MusicManager {
     }
     
     func setQueue(with collection: MPMediaItemCollection) {
-       
         player.setQueue(with: collection)
     }
     
-    func playArtistsSongs(artist: MPMediaItem)  {
+    func playArtistsSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()
        
@@ -154,7 +152,8 @@ class MusicManager {
         setQueue(with: MPMediaItemCollection(items: filteredSongs))
         player.play()
     }
-    func playComposersSongs(artist: MPMediaItem)  {
+
+    func playComposersSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()
        
@@ -167,7 +166,8 @@ class MusicManager {
         setQueue(with: MPMediaItemCollection(items: filteredSongs))
         player.play()
     }
-    func playGenreSongs(genre: MPMediaItem)  {
+
+    func playGenreSongs(genre: MPMediaItem) {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()
       
@@ -180,7 +180,8 @@ class MusicManager {
         setQueue(with: MPMediaItemCollection(items: filteredSongs.removeDuplicates()))
         player.play()
     }
-    func playAlbumSongs(artist: MPMediaItem)  {
+
+    func playAlbumSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()
        
@@ -193,6 +194,7 @@ class MusicManager {
         setQueue(with: MPMediaItemCollection(items: filteredSongs))
         player.play()
     }
+
     private var sinks = Set<AnyCancellable>()
     
     func playStateChanged() -> AnyPublisher<MPMusicPlaybackState, Never> {

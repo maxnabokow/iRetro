@@ -10,7 +10,7 @@ import MediaPlayer
 import SwiftUI
 
 class AlbumsListViewModel: ObservableObject {
-   // #warning("Remove duplicates or filter here")
+    // #warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getAlbums()
 
     @Published var currentIndex: Int = 0
@@ -19,13 +19,12 @@ class AlbumsListViewModel: ObservableObject {
 
     func playAlbum() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-       // #warning("play album")
+        MusicManager.shared.playAlbumSongs(artist: item.representativeItem ?? MPMediaItem())
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
-        MusicManager.shared.playAlbumSongs(artist: item.representativeItem ?? MPMediaItem())
     }
 
     // MARK: - Wheel clicks
@@ -67,7 +66,6 @@ class AlbumsListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-       // #warning("FIX THIS")
         playAlbum()
     }
 

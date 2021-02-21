@@ -1,5 +1,5 @@
 //
-//  CompilationsListView.swift
+//  GenresListView.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/21/21.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct CompilationsListView: View {
-    @StateObject private var vm = CompilationsListViewModel()
+struct GenresListView: View {
+    @StateObject private var vm = GenresListViewModel()
     @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
         VStack(spacing: 0) {
-            iPodStatusBar(title: "Compilations")
+            iPodStatusBar(title: "Genres")
 
             ScrollViewReader { proxy in
                 ScrollView {
@@ -46,19 +46,19 @@ struct CompilationsListView: View {
 
         return
             HStack {
-                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "play.rectangle.fill")!)
+                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "sun.min")!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60, height: 60)
 
                 VStack(alignment: .leading) {
-                    Text(item.albumTitle ?? "Compilation")
+                    Text("GENRE")
+                        .font(.caption)
+                        .foregroundColor(selected ? .white : .secondary)
+                    Text(item.genre ?? "Genre")
                         .lineLimit(1)
                         .font(.headline)
                         .foregroundColor(selected ? .white : .primary)
-                    Text(item.albumArtist ?? "Artist")
-                        .lineLimit(1)
-                        .foregroundColor(selected ? .white : .secondary)
                 }
 
                 Spacer(minLength: 0)
@@ -86,8 +86,8 @@ struct CompilationsListView: View {
     }
 }
 
-struct CompilationsListView_Previews: PreviewProvider {
+struct GenresListView_Previews: PreviewProvider {
     static var previews: some View {
-        CompilationsListView()
+        GenresListView()
     }
 }

@@ -94,14 +94,17 @@ class MusicManager {
         let genres = MPMediaQuery.genres().items
         return genres ?? [MPMediaItem]()
     }
-    func getAudiobooks() -> [MPMediaItem] {
-        let audiobooks = MPMediaQuery.audiobooks().items
-        return audiobooks ?? [MPMediaItem]()
-    }
+    
     func getComposers() -> [MPMediaItem] {
         let composers = MPMediaQuery.composers().items
         return composers ?? [MPMediaItem]()
     }
+    
+    func getAudiobooks() -> [MPMediaItem] {
+        let books = MPMediaQuery.audiobooks().items
+        return books ?? [MPMediaItem]()
+    }
+    
     func playSong(id: String) {
         player.setQueue(with: [id])
         player.play()

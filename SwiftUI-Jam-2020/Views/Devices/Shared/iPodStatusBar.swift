@@ -44,6 +44,7 @@ struct iPodStatusBar: View {
     @State private var sinks = Set<AnyCancellable>()
 
     private func startPlayStateSubscription() {
+        playState = MusicManager.shared.playState
         MusicManager.shared.playStateChanged()
             .receive(on: RunLoop.main)
             .sink { state in

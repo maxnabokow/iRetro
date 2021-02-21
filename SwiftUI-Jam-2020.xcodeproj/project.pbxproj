@@ -231,14 +231,8 @@
 			children = (
 				EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */,
 				EA71B0A225E0F62700FCF427 /* Menus */,
+				EA5E771A25E2C2E6004587E2 /* Lists */,
 				EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */,
-				EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */,
-				EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */,
-				EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */,
-				EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */,
-				EA5E76FE25E2B73B004587E2 /* CompilationsListViewModel.swift */,
-				EA5E770425E2B899004587E2 /* GenresListViewModel.swift */,
-				EA5E770B25E2BD18004587E2 /* ComposersListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -246,18 +240,11 @@
 		EA1E377825E02BAD00C88BAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EAE0A3EB25E0B8DB00632290 /* Menus */,
 				EA1E378325E02CBB00C88BAF /* Devices */,
 				EAEE65A025E1958A003A654A /* Onboarding */,
+				EAE0A3EB25E0B8DB00632290 /* Menus */,
+				EA5E771D25E2C2F6004587E2 /* Lists */,
 				EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */,
-				EA5E76E425E1BACE004587E2 /* SongsListView.swift */,
-				EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */,
-				EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */,
-				EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */,
-				EA5E770125E2B770004587E2 /* CompilationsListView.swift */,
-				EA5E770725E2B8D9004587E2 /* GenresListView.swift */,
-				EA5E770E25E2BD84004587E2 /* ComposersListView.swift */,
-				EA5E771425E2BEFD004587E2 /* AudiobooksListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +287,35 @@
 				EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		EA5E771A25E2C2E6004587E2 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */,
+				EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */,
+				EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */,
+				EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */,
+				EA5E76FE25E2B73B004587E2 /* CompilationsListViewModel.swift */,
+				EA5E770425E2B899004587E2 /* GenresListViewModel.swift */,
+				EA5E770B25E2BD18004587E2 /* ComposersListViewModel.swift */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		EA5E771D25E2C2F6004587E2 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				EA5E76E425E1BACE004587E2 /* SongsListView.swift */,
+				EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */,
+				EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */,
+				EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */,
+				EA5E770125E2B770004587E2 /* CompilationsListView.swift */,
+				EA5E770725E2B8D9004587E2 /* GenresListView.swift */,
+				EA5E770E25E2BD84004587E2 /* ComposersListView.swift */,
+				EA5E771425E2BEFD004587E2 /* AudiobooksListView.swift */,
+			);
+			path = Lists;
 			sourceTree = "<group>";
 		};
 		EA71B0A225E0F62700FCF427 /* Menus */ = {

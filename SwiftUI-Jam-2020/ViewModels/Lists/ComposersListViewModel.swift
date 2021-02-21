@@ -19,7 +19,7 @@ class ComposersListViewModel: ObservableObject {
 
     func playComposer() {
          let item = items[safe: currentIndex]
-        #warning("play composer")
+      //  #warning("play composer")
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue

@@ -137,6 +137,7 @@ class MusicManager {
     }
     
     func setQueue(with collection: MPMediaItemCollection) {
+       
         player.setQueue(with: collection)
     }
     
@@ -184,7 +185,7 @@ class MusicManager {
         var filteredSongs = [MPMediaItem]()
        
         for song in songs {
-            if song.albumTitle == artist.albumTitle {
+            if song.composer == artist.composer {
                 filteredSongs.append(song)
             }
         }

@@ -10,7 +10,7 @@
 
 ![alt text](https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Group%2016-3.png?alt=media&token=f736333f-615e-44ef-a4eb-6415fad4533e)
 
-## What if iRetro?
+## What is iRetro?
 iRetro is a music app built for SwiftUIJam that reminds you of the past while building your future with the power of music.  
 
 ## Why we built it

@@ -34,6 +34,10 @@
 		EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* iPodStatusBar.swift */; };
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
+		EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E425E1BACE004587E2 /* SongsListView.swift */; };
+		EA5E76E825E1BB6A004587E2 /* SongsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */; };
+		EA5E76EC25E1FAA1004587E2 /* PlaylistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */; };
+		EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */; };
 		EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */; };
 		EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */; };
 		EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */; };
@@ -80,6 +84,10 @@
 		EA1E379125E0306400C88BAF /* iPodStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodStatusBar.swift; sourceTree = "<group>"; };
 		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		EA5E76E425E1BACE004587E2 /* SongsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListView.swift; sourceTree = "<group>"; };
+		EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewModel.swift; sourceTree = "<group>"; };
+		EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsListView.swift; sourceTree = "<group>"; };
+		EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistListViewModel.swift; sourceTree = "<group>"; };
 		EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodDisplay.swift; sourceTree = "<group>"; };
 		EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewModel.swift; sourceTree = "<group>"; };
 		EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -200,6 +208,8 @@
 				EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */,
 				EA71B0A225E0F62700FCF427 /* Menus */,
 				EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */,
+				EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */,
+				EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 				EA1E378325E02CBB00C88BAF /* Devices */,
 				EAEE65A025E1958A003A654A /* Onboarding */,
 				EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */,
+				EA5E76E425E1BACE004587E2 /* SongsListView.swift */,
+				EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,10 +382,13 @@
 				EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */,
 				EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */,
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
+				EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */,
 				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
 				EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */,
 				EAEE65AA25E1958A003A654A /* OnboardingView.swift in Sources */,
+				EA5E76EC25E1FAA1004587E2 /* PlaylistsListView.swift in Sources */,
+				EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */,
 				EAEE65A725E1958A003A654A /* OnboardingiPodDisplay.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
 				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,
@@ -390,6 +405,7 @@
 				EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */,
 				EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */,
 				EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */,
+				EA5E76E825E1BB6A004587E2 /* SongsListViewModel.swift in Sources */,
 				EA71B0AB25E1692E00FCF427 /* NowPlayingViewModel.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
 				EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */,

@@ -58,8 +58,7 @@ extension MenuViewModel {
 
 struct MenuOption<Content: View> {
     let title: String
-    let nextMenu: Content?
+    var nextMenu: Content? = nil
     var withDisclosure: Bool = true
-    var fullScreen: Bool = false
     var onSelect: (() -> Void)?
 }

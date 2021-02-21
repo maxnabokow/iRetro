@@ -13,7 +13,8 @@ struct MusicMenu: View {
     @State private var childrenShowing = Array(repeating: false, count: 12) // dangerous, yes.
 
     init() {
-        childrenShowing = Array(repeating: false, count: vm.menuOptions.count)
+        let count = vm.menuOptions.count
+        childrenShowing = Array(repeating: false, count: count)
     }
 
     var body: some View {
@@ -35,11 +36,12 @@ struct MusicMenu: View {
         vm.startClickWheelSubscriptions(
             prevTick: nil,
             nextTick: nil,
-            prevClick: { presentationMode.wrappedValue.dismiss() },
-            nextClick: { childrenShowing[vm.currentIndex] = true },
+            prevClick: nil,
+            nextClick: nil,
             menuClick: { presentationMode.wrappedValue.dismiss() },
             playPauseClick: nil,
-            centerClick: { childrenShowing[vm.currentIndex] = true })
+            centerClick: nil
+        )
     }
 
     private func stopClickWheelSubscriptions() {

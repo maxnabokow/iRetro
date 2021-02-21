@@ -26,7 +26,7 @@ class DisplayViewModel: ObservableObject {
     }
 
     func startListeningToFullScreenNotifications() {
-        NotificationCenter.default.publisher(for: .init("showFullScreenView"))
+        NotificationCenter.default.publisher(for: .init(MyNotifications.showFullScreenView.rawValue))
             .sink { notification in
                 if let view = notification.userInfo?["view"] as? AnyView {
                     self.fullScreenView = view

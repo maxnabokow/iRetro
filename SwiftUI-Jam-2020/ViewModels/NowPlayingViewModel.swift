@@ -12,17 +12,21 @@ import SwiftUI
 class NowPlayingViewModel: ObservableObject {
     @Published var nowPlayingItem: MPMediaItem? // not sure, might be bad
 
+    let dateFormatter = DateComponentsFormatter()
     private var sinks = Set<AnyCancellable>()
 
     var artwork: MPMediaItemArtwork? {
         return nowPlayingItem?.artwork
     }
-    func currentTimeInSong() -> TimeInterval{
-        return MusicManager.shared.currentTimeInSong()
+
+    var currentTimeInSong: TimeInterval {
+        MusicManager.shared.currentTimeInSong()
     }
-    func totalTimeInSong() -> TimeInterval{
-        return MusicManager.shared.totalTimeInSong()
+
+    var totalTimeInSong: TimeInterval {
+        MusicManager.shared.totalTimeInSong()
     }
+
     func startNowPlayingSubscriptions() {
         nowPlayingItem = MusicManager.shared.nowPlayingItem
 

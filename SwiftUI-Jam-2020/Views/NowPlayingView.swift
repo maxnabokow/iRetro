@@ -10,16 +10,15 @@ import SwiftUI
 struct NowPlayingView: View {
     @StateObject private var vm = NowPlayingViewModel()
     @Environment(\.presentationMode) private var presentationMode
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var time = 0.0
+    
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    @State var progress = 0.0
+    
     var body: some View {
         GeometryReader { proxy in
             VStack {
-
                 iPodStatusBar(title: "Now Playing")
                 Spacer()
-
-                
 
                 HStack {
                     artwork(for: proxy)
@@ -40,20 +39,41 @@ struct NowPlayingView: View {
                                 .font(.footnote)
                             Spacer()
                         }
-                        
                     }
-                } .padding(.leading)
+                }
+                .padding(.leading)
+                
                 Spacer()
-                ProgressView(value: time)
-                    .accentColor(.blue)
-                    .padding()
-                    .onReceive(timer) { input in
-                        withAnimation(.linear(duration: 1)) {
-                            time = vm.currentTimeInSong()/vm.totalTimeInSong()
-                    }
-                    }
+                
+                HStack {
+                    Text(formattedProgress)
+                        .font(.caption2)
+                    ProgressView(value: progress)
+                        .scaleEffect(x: 1, y: 4, anchor: .center)
+                        .onReceive(timer) { _ in updateProgress() }
+                    Text(formattedTotalTime)
+                        .font(.caption2)
+                }
+                .padding()
             }
         }
+        .onAppear(perform: updateProgress)
+    }
+    
+    private var formattedProgress: String {
+        timeString(from: vm.currentTimeInSong)
+    }
+
+    private var formattedTotalTime: String {
+        timeString(from: vm.totalTimeInSong)
+    }
+    
+    private var timeProgress: Double {
+        vm.currentTimeInSong / vm.totalTimeInSong
+    }
+    
+    private func updateProgress() {
+        progress = timeProgress
     }
     
     private func artwork(for proxy: GeometryProxy) -> some View {
@@ -63,8 +83,17 @@ struct NowPlayingView: View {
             .frame(imageSize(for: proxy))
     }
     
+    private func timeString(from time: TimeInterval) -> String {
+        let hour = Int(time) / 3600
+        let minute = Int(time) / 60 % 60
+        let second = Int(time) % 60
+
+        if hour == 0 { return String(format: "%i:%02i", minute, second) }
+        else { return String(format: "%02i:%02i:%02i", hour, minute, second) }
+    }
+    
     private func imageSize(for proxy: GeometryProxy) -> CGSize {
-        return CGSize(width: proxy.size.width/4, height: proxy.size.width/4)
+        return CGSize(width: proxy.size.width / 4, height: proxy.size.width / 4)
     }
     
     private func startNowPlayingSubscriptions() {

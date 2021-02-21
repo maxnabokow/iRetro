@@ -10,7 +10,7 @@ import SwiftUI
 struct iPodDisplay: View {
     @StateObject private var vm = DisplayViewModel()
     @State private var move: Bool = false
-    private let animateCover: Bool = true
+    private let animateCover: Bool = false
 
     var body: some View {
         NavigationView { // Full Screen Navigation View

@@ -7,8 +7,16 @@
 //
 
 import CoreLocation
+import MediaPlayer
 import SwiftUI
 import UIKit
+
+extension MPMediaItem {
+    func artworkImage(width: CGFloat = 100, height: CGFloat = 100) -> UIImage? {
+        let size = CGSize(width: width, height: height)
+        return self.artwork?.image(at: size)
+    }
+}
 
 enum MyNotifications: String {
     case showFullScreenView

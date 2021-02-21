@@ -12,7 +12,8 @@ struct MainMenu: View {
     @State private var childrenShowing = Array(repeating: false, count: 12) // dangerous, yes.
 
     init() {
-        childrenShowing = Array(repeating: false, count: vm.menuOptions.count)
+        let count = vm.menuOptions.count
+        childrenShowing = Array(repeating: false, count:  count)
     }
 
     var body: some View {
@@ -32,7 +33,6 @@ struct MainMenu: View {
             }
             .font(.headline)
             .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
             .onAppear(perform: vm.startPlayStateSubscriptions)
             .onAppear(perform: startClickWheelSubscriptions)
             .onDisappear(perform: stopClickWheelSubscriptions)
@@ -44,8 +44,8 @@ struct MainMenu: View {
             prevTick: nil,
             nextTick: nil,
             prevClick: nil,
-            nextClick: { childrenShowing[vm.currentIndex] = true },
-            menuClick: nil,
+            nextClick: nil,
+            menuClick: { vm.currentIndex = 0 },
             playPauseClick: nil,
             centerClick: { childrenShowing[vm.currentIndex] = true })
     }

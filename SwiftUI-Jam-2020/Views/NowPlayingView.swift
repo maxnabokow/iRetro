@@ -16,14 +16,23 @@ struct NowPlayingView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            VStack {
+            VStack(spacing: 0) {
                 iPodStatusBar(title: "Now Playing")
-                Spacer()
-
-                HStack {
-                    artwork(for: proxy)
-                    VStack {
-                        HStack {
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        artwork(for: proxy)
+                            .overlay(
+                                artwork(for: proxy, withHeightFactor: 0.3)
+                                    .overlay(
+                                        LinearGradient(gradient: .init(colors: [.clear, .systemBackground]), startPoint: .bottom, endPoint: .top)
+                                    )
+                                    .rotation3DEffect(.degrees(180 + 70), axis: (x: 1.0, y: 0, z: 0), anchor: .bottomLeading)
+                                    .opacity(0.3),
+                                alignment: .bottom
+                            )
+                            .rotation3DEffect(.degrees(7), axis: (x: 0, y: 1.0, z: 0))
+                        VStack(alignment: .leading) {
                             Text(vm.nowPlayingItem?.title ?? "NO TITLE")
                                 .font(.footnote)
                                 .bold()
@@ -31,28 +40,23 @@ struct NowPlayingView: View {
                                 .onAppear(perform: startNowPlayingSubscriptions)
                                 .onAppear(perform: startClickWheelSubscriptions)
                                 .onDisappear(perform: stopClickWheelSubscriptions)
-                            Spacer()
-                        }
-                        HStack {
                             Text(vm.nowPlayingItem?.artist ?? "NO ARTIST")
                                 .navigationBarHidden(true)
                                 .font(.footnote)
-                            Spacer()
                         }
                     }
-                }
-                .padding(.leading)
                 
-                Spacer()
+                    Spacer()
                 
-                HStack {
-                    Text(formattedProgress)
-                        .font(.system(.caption2, design: .monospaced))
-                    ProgressView(value: progress)
-                        .scaleEffect(x: 1, y: 4, anchor: .center)
-                        .onReceive(timer) { _ in updateProgress() }
-                    Text(formattedTotalTime)
-                        .font(.system(.caption2, design: .monospaced))
+                    HStack {
+                        Text(formattedProgress)
+                            .font(.system(.caption2, design: .monospaced))
+                        ProgressView(value: progress)
+                            .scaleEffect(x: 1, y: 4, anchor: .center)
+                            .onReceive(timer) { _ in updateProgress() }
+                        Text(formattedRemainingTime)
+                            .font(.system(.caption2, design: .monospaced))
+                    }
                 }
                 .padding()
             }
@@ -63,8 +67,9 @@ struct NowPlayingView: View {
         timeString(from: vm.currentTimeInSong)
     }
 
-    private var formattedTotalTime: String {
-        timeString(from: vm.totalTimeInSong)
+    private var formattedRemainingTime: String {
+        let timeRemaining = vm.totalTimeInSong - vm.currentTimeInSong
+        return "-\(timeString(from: timeRemaining))"
     }
     
     private var timeProgress: Double {
@@ -75,11 +80,18 @@ struct NowPlayingView: View {
         progress = timeProgress
     }
     
-    private func artwork(for proxy: GeometryProxy) -> some View {
-        Image(uiImage: vm.artwork?.image(at: imageSize(for: proxy)) ?? UIImage(named: "abbeyRoad")!)
+    private func artwork(for proxy: GeometryProxy, withHeightFactor heightFactor: CGFloat = 1) -> some View {
+        Image(uiImage: vm.artwork?.image(at: imageSize(for: proxy, withHeightFactor: heightFactor)) ?? UIImage(named: "abbeyRoad")!)
             .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(imageSize(for: proxy))
+            .if(heightFactor == 1) {
+                $0.aspectRatio(contentMode: .fill)
+            }
+            .frame(imageSize(for: proxy, withHeightFactor: heightFactor))
+    }
+
+    private func imageSize(for proxy: GeometryProxy, withHeightFactor heightFactor: CGFloat) -> CGSize {
+        let sideLength = proxy.size.width / 2.3
+        return CGSize(width: sideLength, height: sideLength * heightFactor)
     }
     
     private func timeString(from time: TimeInterval) -> String {
@@ -89,10 +101,6 @@ struct NowPlayingView: View {
 
         if hour == 0 { return String(format: "%i:%02i", minute, second) }
         else { return String(format: "%02i:%02i:%02i", hour, minute, second) }
-    }
-    
-    private func imageSize(for proxy: GeometryProxy) -> CGSize {
-        return CGSize(width: proxy.size.width / 4, height: proxy.size.width / 4)
     }
     
     private func startNowPlayingSubscriptions() {

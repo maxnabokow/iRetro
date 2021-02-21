@@ -129,7 +129,19 @@ class MusicManager {
     func setQueue(with collection: MPMediaItemCollection) {
         player.setQueue(with: collection)
     }
-
+    func playArtistsSongs(artist: MPMediaItem)  {
+        let songs = getAllSongs()
+        var filteredSongs = [MPMediaItem]()
+       
+        for song in songs {
+            if song.artist == artist.artist {
+                filteredSongs.append(song)
+            }
+        }
+        
+        setQueue(with: MPMediaItemCollection(items: filteredSongs))
+        player.play()
+    }
     private var sinks = Set<AnyCancellable>()
     
     func playStateChanged() -> AnyPublisher<MPMusicPlaybackState, Never> {

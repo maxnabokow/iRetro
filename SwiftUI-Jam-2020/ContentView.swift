@@ -12,17 +12,44 @@ struct ContentView: View {
     let width = screenDimensions.width - 48
     @State private var selectedDevice: Int = 0
 
-    let fullView: Bool = false
+    @State var fullView: Bool = false
+
+    @State var zoomIn: Bool = false
+    #warning("Fix match geo, tabs")
+    @Namespace private var nameSpace
+    @Namespace private var externalNameSpace
+    @Environment(\.colorScheme) private var colorScheme
+    
+    private var lightMode: Bool {
+        colorScheme == .light
+    }
 
     var body: some View {
+       
+        Group {
+        if zoomIn {
+            ZStack {
+                Group {
+                lightMode ? Color.secondarySystemFill : Color.systemFill
+                } .ignoresSafeArea()
+            VStack(spacing: 0) {
+            iPodDisplay()
+                iPodClickWheel()
+            bottomBar
+                .padding(.horizontal)
+            } .padding()
+            }
+           
+        } else {
         if fullView {
             VStack(spacing: 0) {
                 Spacer()
                 TabView(selection: $selectedDevice) {
-                    ForEach(0 ..< 1) { _ in
+                   
                         iPodView
+                            .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
                             .padding(24)
-                    }
+                    
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
@@ -30,11 +57,25 @@ struct ContentView: View {
 
                 bottomBar
                     .padding(.horizontal)
+                    .transition(.move(edge: .bottom))
+                   
             }
+          
         } else {
             iPodView
+                .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
                 .padding(24)
+                
         }
+        }
+         
+    } .onAppear {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation(.easeInOut) {
+            fullView = true
+            }
+        }
+    }
     }
 
     private var iPodView: some View {
@@ -63,6 +104,13 @@ struct ContentView: View {
                     .padding(.horizontal, 24)
                     .background(Color.secondarySystemBackground)
                     .clipShape(Capsule())
+            }
+            Spacer()
+            Button { withAnimation() {zoomIn.toggle()} } label: {
+                Image(systemName: "magnifyingglass")
+                    .padding()
+                    .background(Color.secondarySystemBackground)
+                    .clipShape(Circle())
             }
             Spacer()
             Button { print("Right") } label: {

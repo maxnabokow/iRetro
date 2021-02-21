@@ -58,8 +58,8 @@ struct iPodStatusBar: View {
         case .playing: return AnyView(PlayShape().withGradient())
         case .paused, .interrupted: return AnyView(
                 LinearGradient(
-                    gradient: Gradient(colors: [Color(.cyan), Color.blue]),
-                    startPoint: .topTrailing, endPoint: .leading
+                    gradient: Gradient(colors: [Color.blue, Color(.cyan), Color.blue]),
+                    startPoint: .top, endPoint: .bottom
                 )
                 .mask(
                     Image(systemName: "pause.fill")

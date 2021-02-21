@@ -18,7 +18,7 @@ class ComposersListViewModel: ObservableObject {
     var sinks = Set<AnyCancellable>()
 
     func playComposer() {
-        guard items[safe: currentIndex] != nil else { fatalError() }
+         let item = items[safe: currentIndex]
         #warning("play composer")
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
@@ -26,7 +26,7 @@ class ComposersListViewModel: ObservableObject {
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
         
-        MusicManager.shared.playComposersSongs(artist: items.first?.representativeItem ?? MPMediaItem())
+        MusicManager.shared.playComposersSongs(artist: item?.representativeItem ?? MPMediaItem())
     }
 
     // MARK: - Wheel clicks

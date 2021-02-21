@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E15F610A25E2E44E00501A13 /* BatteryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15F610925E2E44E00501A13 /* BatteryManager.swift */; };
 		EA1E374125E028BB00C88BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E374025E028BB00C88BAF /* AppDelegate.swift */; };
 		EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E374225E028BB00C88BAF /* SceneDelegate.swift */; };
 		EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E374425E028BB00C88BAF /* ContentView.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E15F610925E2E44E00501A13 /* BatteryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryManager.swift; sourceTree = "<group>"; };
 		EA1E373D25E028BB00C88BAF /* SwiftUI-Jam-2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Jam-2020.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1E374025E028BB00C88BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA1E374225E028BB00C88BAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +159,6 @@
 				EA1E374025E028BB00C88BAF /* AppDelegate.swift */,
 				EA1E374225E028BB00C88BAF /* SceneDelegate.swift */,
 				EA1E374425E028BB00C88BAF /* ContentView.swift */,
-				EA1E377625E02B9400C88BAF /* Models */,
 				EA1E377725E02BA500C88BAF /* ViewModels */,
 				EA1E377825E02BAD00C88BAF /* Views */,
 				EA1E377925E02BB300C88BAF /* Services */,
@@ -212,13 +213,6 @@
 			path = LazyPop;
 			sourceTree = "<group>";
 		};
-		EA1E377625E02B9400C88BAF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		EA1E377725E02BA500C88BAF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +241,7 @@
 			children = (
 				EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */,
 				EA1E379725E030C800C88BAF /* SoundManager.swift */,
+				E15F610925E2E44E00501A13 /* BatteryManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -434,6 +429,7 @@
 				EA5E76F925E2B456004587E2 /* AlbumsListViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
 				EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */,
+				E15F610A25E2E44E00501A13 /* BatteryManager.swift in Sources */,
 				EAEE65AA25E1958A003A654A /* OnboardingView.swift in Sources */,
 				EA5E76EC25E1FAA1004587E2 /* PlaylistsListView.swift in Sources */,
 				EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */,

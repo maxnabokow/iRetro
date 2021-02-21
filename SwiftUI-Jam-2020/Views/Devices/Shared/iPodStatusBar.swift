@@ -78,12 +78,13 @@ struct iPodStatusBar: View {
                         startPoint: .top, endPoint: .bottom
                     )
                 )
-                .frame(width: 18, height: 10)
+                .frame(width:  CGFloat(BatteryManager.shared.getBatteryLevel()*300/18), height: 10)
                 .overlay(Rectangle().stroke(lineWidth: 0.5))
             Rectangle()
                 .fill(Color.green)
                 .frame(width: 2, height: 5)
                 .overlay(Rectangle().stroke(lineWidth: 0.5))
+           
         }
     }
 

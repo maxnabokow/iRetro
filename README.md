@@ -1,4 +1,4 @@
-# SwiftUI-Jam-2020
+# ![alt text](https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/iTunesArtwork%401x.png?alt=media&token=81788d60-ab53-4c25-8afc-96e65684cefb) SwiftUI-Jam-2020
 
 
 ![alt text](https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Group%2016-2.png?alt=media&token=3385276d-14a8-464b-be7e-903ff6b4060f)

@@ -15,110 +15,68 @@ struct ContentView: View {
     @State var fullView: Bool = false
 
     @State var zoomIn: Bool = false
-    #warning("Fix match geo, tabs")
-    @Namespace private var nameSpace
+    @Namespace private var namespace
     @Namespace private var externalNameSpace
     @Environment(\.colorScheme) private var colorScheme
-    
+
     private var lightMode: Bool {
         colorScheme == .light
     }
-   
+
     var body: some View {
-       
-        Group {
-        if zoomIn {
-            ZStack {
-                Group {
-                lightMode ? Color.secondarySystemFill : Color.systemFill
-                } .ignoresSafeArea()
-            VStack(spacing: 0) {
-            iPodDisplay()
-                iPodClickWheel()
-            bottomBar
-                .padding(.horizontal)
-            } .padding()
-            }
-           
-        } else {
-        if fullView {
-            VStack(spacing: 0) {
-                Spacer()
-                TabView(selection: $selectedDevice) {
-                   
-                        iPodView
-                            .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
-                            .padding(24)
-                    
+        deviceView
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    withAnimation(.easeInOut) {
+                        fullView = true
+                    }
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-
-                Spacer()
-
-                bottomBar
-                    .padding(.horizontal)
-                    .transition(.move(edge: .bottom))
-                   
             }
-          
-        } else {
-            iPodView
-                .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
-                .padding(24)
-                
-        }
-        }
-         
-    } .onAppear {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            withAnimation(.easeInOut) {
-            fullView = true
-            }
-        }
+            .onTapGesture(count: 2) { zoomIn.toggle() }
     }
+
+    private var deviceView: some View {
+        Group {
+            if zoomIn {
+                VStack(spacing: 0) {
+                    iPodDisplay()
+                        .matchedGeometryEffect(id: "display", in: namespace)
+                    iPodClickWheel()
+                        .matchedGeometryEffect(id: "clickwheel", in: namespace)
+                }
+                .padding()
+                .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)
+                .background(lightMode ? Color.secondarySystemFill : Color.systemFill)
+                .ignoresSafeArea()
+
+            } else {
+                if fullView {
+                    VStack(spacing: 0) {
+                        Spacer()
+                        TabView(selection: $selectedDevice) {
+                            iPodView
+                                .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
+                                .padding(24)
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    }
+
+                } else {
+                    iPodView
+                        .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
+                        .padding(24)
+                }
+            }
+        }
     }
 
     private var iPodView: some View {
         GeometryReader { proxy in
             VStack { // Wrapper to work around GeometryReader's .topLeading alignment rule
-                iPodClassic()
-                    .frame(width: proxy.frame(in: .global).width, height: 1.8 * proxy.frame(in: .global).width)
+                iPodClassic(namespace: namespace, width: proxy.frame(in: .global).width)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        }
-    }
-
-    private var bottomBar: some View {
-        HStack {
-            Button { print("Left") } label: {
-                Image(systemName: "chevron.left")
-                    .padding()
-                    .background(Color.secondarySystemBackground)
-                    .clipShape(Circle())
-            }
-            Spacer()
-            Button { MusicManager.shared.previous() } label: {
-                Text("Select")
-                    .fontWeight(.semibold)
-                    .padding()
-                    .padding(.horizontal, 24)
-                    .background(Color.secondarySystemBackground)
-                    .clipShape(Capsule())
-            }
-            Spacer()
-            Button { withAnimation() {zoomIn.toggle()} } label: {
-                Image(systemName: "magnifyingglass")
-                    .padding()
-                    .background(Color.secondarySystemBackground)
-                    .clipShape(Circle())
-            }
-            Spacer()
-            Button { print("Right") } label: {
-                Image(systemName: "chevron.right")
-                    .padding()
-                    .background(Color.secondarySystemBackground)
-                    .clipShape(Circle())
-            }
         }
     }
 }

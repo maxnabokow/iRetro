@@ -48,13 +48,13 @@ struct iPodDisplay: View {
         .onAppear(perform: vm.startListeningToFullScreenNotifications)
     }
 
-    private var shadowOverlay: LinearGradient {
-        LinearGradient(gradient: Gradient(colors: [Color.clear, Color.black.opacity(0.4)]), startPoint: .center, endPoint: .leading)
-    }
-
     private var thickBorder: some View {
         CustomRoundedRectangle(radius: 8)
             .stroke(Color.black, lineWidth: 4)
+    }
+
+    private var shadowOverlay: LinearGradient {
+        LinearGradient(gradient: Gradient(colors: [Color.clear, Color.black.opacity(0.4)]), startPoint: .center, endPoint: .leading)
     }
 
     private func coverOffset(for width: CGFloat) -> CGFloat {

@@ -18,6 +18,7 @@ struct OnboardingScene: View {
     @State var node = SCNNode()
 
     @State var ready = true
+    @Namespace private var namespace
     
     @Binding var nextCount: Int
     var body: some View {
@@ -58,27 +59,23 @@ struct OnboardingScene: View {
                         node.runAction(roteAction)
                         node.runAction(scaleAction)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
-                          
-                          
-                        ready = false
+                            ready = false
                         }
                     }
                     
-                   
-                   
                 })
             if ready {
-            SceneView(
-                scene: scene,
-                pointOfView: cameraNode, options: [], preferredFramesPerSecond: 60
-            )
+                SceneView(
+                    scene: scene,
+                    pointOfView: cameraNode, options: [], preferredFramesPerSecond: 60
+                )
             }
         }
     }
 
     func createHostingController(for node: SCNBox) {
         // create a hosting controller with SwiftUI view
-        let arVC = UIHostingController(rootView: iPodClassic(isOnboarding: true))
+        let arVC = UIHostingController(rootView: iPodClassic(isOnboarding: true, namespace: namespace, width: nil))
            
         // Do this on the main thread
         DispatchQueue.main.async {

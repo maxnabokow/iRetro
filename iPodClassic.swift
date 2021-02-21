@@ -11,6 +11,10 @@ import SwiftUIX
 struct iPodClassic: View {
     @Environment(\.colorScheme) private var colorScheme
     @State var isOnboarding = false
+    var namespace: Namespace.ID?
+
+    let width: CGFloat?
+
     private var lightMode: Bool {
         colorScheme == .light
     }
@@ -19,11 +23,17 @@ struct iPodClassic: View {
         VStack(spacing: 0) {
             if !isOnboarding {
                 iPodDisplay()
+                    .if(namespace != nil) {
+                        $0.matchedGeometryEffect(id: "display", in: namespace!)
+                    }
             } else {
                 OnboardingiPodDisplay()
             }
             Spacer()
             iPodClickWheel()
+                .if(namespace != nil) {
+                    $0.matchedGeometryEffect(id: "clickwheel", in: namespace!)
+                }
             Spacer()
         }
         .padding(24)
@@ -34,7 +44,10 @@ struct iPodClassic: View {
             CustomRoundedRectangle(radius: 32)
                 .stroke(Color.clear, lineWidth: 8)
                 .shadow(color: Color.black.opacity(lightMode ? 0.3 : 0.9), radius: 12, x: 0, y: 0)
-                .tRoundCorners( 32)
+                .tRoundCorners(32)
         )
+        .if(width != nil) {
+            $0.frame(width: width!, height: width! * 1.8)
+        }
     }
 }

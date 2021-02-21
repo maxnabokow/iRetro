@@ -42,6 +42,8 @@
 		EA5E76F625E2B0ED004587E2 /* ArtistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */; };
 		EA5E76F925E2B456004587E2 /* AlbumsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */; };
 		EA5E76FC25E2B4CF004587E2 /* AlbumsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */; };
+		EA5E76FF25E2B73B004587E2 /* CompilationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76FE25E2B73B004587E2 /* CompilationsListViewModel.swift */; };
+		EA5E770225E2B770004587E2 /* CompilationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E770125E2B770004587E2 /* CompilationsListView.swift */; };
 		EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */; };
 		EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */; };
 		EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */; };
@@ -96,6 +98,8 @@
 		EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsListView.swift; sourceTree = "<group>"; };
 		EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewModel.swift; sourceTree = "<group>"; };
 		EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListView.swift; sourceTree = "<group>"; };
+		EA5E76FE25E2B73B004587E2 /* CompilationsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilationsListViewModel.swift; sourceTree = "<group>"; };
+		EA5E770125E2B770004587E2 /* CompilationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilationsListView.swift; sourceTree = "<group>"; };
 		EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodDisplay.swift; sourceTree = "<group>"; };
 		EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewModel.swift; sourceTree = "<group>"; };
 		EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */,
 				EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */,
 				EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */,
+				EA5E76FE25E2B73B004587E2 /* CompilationsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */,
 				EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */,
 				EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */,
+				EA5E770125E2B770004587E2 /* CompilationsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
 				EA5E76FC25E2B4CF004587E2 /* AlbumsListView.swift in Sources */,
 				EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */,
+				EA5E76FF25E2B73B004587E2 /* CompilationsListViewModel.swift in Sources */,
 				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
 				EA5E76F925E2B456004587E2 /* AlbumsListViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
@@ -415,6 +422,7 @@
 				EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */,
 				EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */,
 				EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */,
+				EA5E770225E2B770004587E2 /* CompilationsListView.swift in Sources */,
 				EAEE65A825E1958A003A654A /* OnboardingScene.swift in Sources */,
 				EAE0A3E925E0B7F300632290 /* MenuViewModel.swift in Sources */,
 				EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */,

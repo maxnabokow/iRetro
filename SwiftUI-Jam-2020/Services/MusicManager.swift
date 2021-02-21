@@ -179,6 +179,19 @@ class MusicManager {
         setQueue(with: MPMediaItemCollection(items: filteredSongs.removeDuplicates()))
         player.play()
     }
+    func playAlbumSongs(artist: MPMediaItem)  {
+        let songs = getAllSongs()
+        var filteredSongs = [MPMediaItem]()
+       
+        for song in songs {
+            if song.albumTitle == artist.albumTitle {
+                filteredSongs.append(song)
+            }
+        }
+        
+        setQueue(with: MPMediaItemCollection(items: filteredSongs))
+        player.play()
+    }
     private var sinks = Set<AnyCancellable>()
     
     func playStateChanged() -> AnyPublisher<MPMusicPlaybackState, Never> {

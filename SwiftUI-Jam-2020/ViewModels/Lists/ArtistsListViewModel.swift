@@ -25,6 +25,7 @@ class ArtistsListViewModel: ObservableObject {
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
+        MusicManager.shared.playArtistsSongs(artist: item.representativeItem ?? MPMediaItem())
     }
 
     // MARK: - Wheel clicks

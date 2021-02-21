@@ -45,17 +45,17 @@ struct AlbumsListView: View {
 
         return
             HStack {
-                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "play.rectangle.fill")!)
+                Image(uiImage: item.representativeItem?.artworkImage() ?? UIImage(systemName: "play.rectangle.fill")!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60, height: 60)
 
                 VStack(alignment: .leading) {
-                    Text(item.albumTitle ?? "Album")
+                    Text(item.representativeItem?.albumTitle ?? "Album")
                         .lineLimit(1)
                         .font(.headline)
                         .foregroundColor(selected ? .white : .primary)
-                    Text(item.albumArtist ?? "Artist")
+                    Text(item.representativeItem?.albumArtist ?? "Artist")
                         .lineLimit(1)
                         .foregroundColor(selected ? .white : .secondary)
                 }

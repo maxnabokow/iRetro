@@ -80,9 +80,9 @@ class MusicManager {
         return artists ?? [MPMediaItemCollection]()
     }
     
-    func getAlbums() -> [MPMediaItem] {
-        let albums = MPMediaQuery.albums().items
-        return albums ?? [MPMediaItem]()
+    func getAlbums() -> [MPMediaItemCollection] {
+        let albums = MPMediaQuery.albums().collections
+        return albums ?? [MPMediaItemCollection]()
     }
     
     func getCompilations() -> [MPMediaItemCollection] {

@@ -23,7 +23,7 @@ struct ContentView: View {
     private var lightMode: Bool {
         colorScheme == .light
     }
-
+   
     var body: some View {
        
         Group {

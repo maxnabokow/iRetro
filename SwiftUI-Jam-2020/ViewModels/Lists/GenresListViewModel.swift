@@ -26,7 +26,7 @@ class GenresListViewModel: ObservableObject {
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
         
-        MusicManager.shared.playGenreSongs(genre: item)
+        MusicManager.shared.playGenreSongs(genre: item.representativeItem!)
     }
 
     // MARK: - Wheel clicks

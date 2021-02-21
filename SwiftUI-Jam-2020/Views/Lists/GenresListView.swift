@@ -45,7 +45,7 @@ struct GenresListView: View {
 
         return
             HStack {
-                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "sun.min")!)
+                Image(uiImage: item.representativeItem?.artworkImage() ?? UIImage(systemName: "sun.min")!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60, height: 60)
@@ -54,7 +54,7 @@ struct GenresListView: View {
                     Text("GENRE")
                         .font(.caption)
                         .foregroundColor(selected ? .white : .secondary)
-                    Text(item.genre ?? "Genre")
+                    Text(item.representativeItem?.genre ?? "Genre")
                         .lineLimit(1)
                         .font(.headline)
                         .foregroundColor(selected ? .white : .primary)

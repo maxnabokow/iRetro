@@ -90,9 +90,9 @@ class MusicManager {
         return complications ?? [MPMediaItem]()
     }
     
-    func getGenres() -> [MPMediaItem] {
-        let genres = MPMediaQuery.genres().items
-        return genres ?? [MPMediaItem]()
+    func getGenres() -> [MPMediaItemCollection] {
+        let genres = MPMediaQuery.genres().collections
+        return genres ?? [MPMediaItemCollection]()
     }
     
     func getComposers() -> [MPMediaItem] {
@@ -156,7 +156,7 @@ class MusicManager {
     func playGenreSongs(genre: MPMediaItem)  {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()
-       
+      
         for song in songs {
             if song.genre == genre.genre {
                 filteredSongs.append(song)

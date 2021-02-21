@@ -1,7 +1,7 @@
 # SwiftUI-Jam-2020
 
 
-![alt text](https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Group%2016.png?alt=media&token=883142af-94a5-4e78-a5df-9c85aea213ad)
+![alt text](https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Group%2016-2.png?alt=media&token=3385276d-14a8-464b-be7e-903ff6b4060f)
 
 ## What if iRetro?
 iRetro is a music app built for SwiftUIJam that reminds you of the past while building your future with the power of music.  

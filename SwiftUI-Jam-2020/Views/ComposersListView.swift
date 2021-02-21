@@ -46,7 +46,7 @@ struct ComposersListView: View {
 
         return
             HStack {
-                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "sun.min")!)
+                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "person.fill")!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60, height: 60)

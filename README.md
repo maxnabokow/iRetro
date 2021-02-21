@@ -1,4 +1,4 @@
-<h1> <img src="https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Instagram%20post%20-%2012-2.png?alt=media&token=7a3fb54a-1848-4787-962c-816b9dd4f8a0"
+<h1> <img src="https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Instagram%20post%20-%2012-6.png?alt=media&token=06ca1f80-9664-4fcc-b557-524902e1c252"
   width="128"
   height="128"
   style="float:left;">

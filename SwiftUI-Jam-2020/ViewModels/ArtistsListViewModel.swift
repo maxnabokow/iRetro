@@ -1,52 +1,33 @@
 //
-//  MusicMenuViewModel.swift
+//  ArtistsListViewModel.swift
 //  SwiftUI-Jam-2020
 //
-//  Created by Max Nabokow on 2/19/21.
+//  Created by Max Nabokow on 2/20/21.
 //
 
 import Combine
+import MediaPlayer
 import SwiftUI
 
-class MusicMenuViewModel: MenuViewModel, ObservableObject {
-    lazy var menuOptions = [
-        MenuOption(title: "Cover Flow", nextMenu: AnyView(Text("Cover Flow"))),
-        MenuOption(title: "Playlists", nextMenu: nil,
-                   withDisclosure: true, onSelect: showPlaylistsListView),
-        MenuOption(title: "Artists", nextMenu: nil,
-                   withDisclosure: true, onSelect: showArtistsListView),
-        MenuOption(title: "Albums", nextMenu: AnyView(Text("Albums"))),
-        MenuOption(title: "Compilations", nextMenu: AnyView(Text("Compilations"))),
-        MenuOption(title: "Songs", nextMenu: nil,
-                   withDisclosure: true, onSelect: showSongsListView),
-        MenuOption(title: "Genres", nextMenu: AnyView(Text("Genres"))),
-        MenuOption(title: "Composers", nextMenu: AnyView(Text("Composers"))),
-        MenuOption(title: "Audiobooks", nextMenu: AnyView(Text("Audiobooks"))),
-    ]
+class ArtistsListViewModel: ObservableObject {
+    #warning("Remove duplicates or filter here")
+    @Published var items = MusicManager.shared.getArtists()
 
     @Published var currentIndex: Int = 0
+
     var sinks = Set<AnyCancellable>()
 
-    private func showSongsListView() {
-        let dict: [String: AnyView] = ["view": AnyView(SongsListView())]
+    func playArtist() {
+        guard let item = items[safe: currentIndex] else { fatalError() }
+        #warning("play artist")
+
+        let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
     }
 
-    private func showPlaylistsListView() {
-        let dict: [String: AnyView] = ["view": AnyView(PlaylistsListView())]
-        let name = MyNotifications.showFullScreenView.rawValue
-        let notification = Notification(name: .init(name), userInfo: dict)
-        NotificationCenter.default.post(notification)
-    }
-
-    private func showArtistsListView() {
-        let dict: [String: AnyView] = ["view": AnyView(ArtistsListView())]
-        let name = MyNotifications.showFullScreenView.rawValue
-        let notification = Notification(name: .init(name), userInfo: dict)
-        NotificationCenter.default.post(notification)
-    }
+    // MARK: - Wheel clicks
 
     func prevTick() {
         if currentIndex != 0 {
@@ -56,7 +37,7 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
     }
 
     func nextTick() {
-        if currentIndex != menuOptions.count - 1 {
+        if currentIndex != items.count - 1 {
             currentIndex += 1
             ClickWheelService.shared.playTick()
         }
@@ -85,10 +66,8 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-
-        if let onSelect = menuOptions[currentIndex].onSelect {
-            onSelect()
-        }
+        #warning("FIX THIS")
+//        playArtist()
     }
 
     func startClickWheelSubscriptions(
@@ -169,5 +148,11 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
                 }
             }
             .store(in: &sinks)
+    }
+
+    func stopClickWheelSubscriptions() {
+        sinks.forEach { cancellable in
+            cancellable.cancel()
+        }
     }
 }

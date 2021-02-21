@@ -38,6 +38,8 @@
 		EA5E76E825E1BB6A004587E2 /* SongsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */; };
 		EA5E76EC25E1FAA1004587E2 /* PlaylistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */; };
 		EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */; };
+		EA5E76F225E205F6004587E2 /* ArtistsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */; };
+		EA5E76F625E2B0ED004587E2 /* ArtistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */; };
 		EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */; };
 		EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */; };
 		EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */; };
@@ -88,6 +90,8 @@
 		EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewModel.swift; sourceTree = "<group>"; };
 		EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsListView.swift; sourceTree = "<group>"; };
 		EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistListViewModel.swift; sourceTree = "<group>"; };
+		EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsListViewModel.swift; sourceTree = "<group>"; };
+		EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsListView.swift; sourceTree = "<group>"; };
 		EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodDisplay.swift; sourceTree = "<group>"; };
 		EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewModel.swift; sourceTree = "<group>"; };
 		EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */,
 				EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */,
 				EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */,
+				EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */,
 				EA5E76E425E1BACE004587E2 /* SongsListView.swift */,
 				EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */,
+				EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 				EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */,
 				EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */,
 				EA1E376925E02B8B00C88BAF /* THaptics.swift in Sources */,
+				EA5E76F225E205F6004587E2 /* ArtistsListViewModel.swift in Sources */,
 				EAEE65A925E1958A003A654A /* iPodSlides.swift in Sources */,
 				EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */,
 				EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */,
@@ -406,6 +413,7 @@
 				EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */,
 				EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */,
 				EA5E76E825E1BB6A004587E2 /* SongsListViewModel.swift in Sources */,
+				EA5E76F625E2B0ED004587E2 /* ArtistsListView.swift in Sources */,
 				EA71B0AB25E1692E00FCF427 /* NowPlayingViewModel.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
 				EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */,

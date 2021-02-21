@@ -13,14 +13,10 @@ class BatteryManager {
     private init() {
         UIDevice.current.isBatteryMonitoringEnabled = true
     }
-    func getBatteryLevel() -> Float {
-        let level = UIDevice.current.batteryLevel
-        return level
-    }
-    func volumeChanged() -> AnyPublisher<Void, Never> {
+    func batteryChanged() -> AnyPublisher<Double, Never> {
         return UIDevice.current
             .publisher(for: \.batteryLevel)
-            .map { _ in }
+            .map { Double( $0) }
             .eraseToAnyPublisher()
     }
 }

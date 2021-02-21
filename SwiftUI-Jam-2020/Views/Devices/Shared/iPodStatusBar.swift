@@ -13,6 +13,8 @@ struct iPodStatusBar: View {
     @Environment(\.colorScheme) private var colorScheme
 
     @State private var playState: MPMusicPlaybackState = .stopped
+    
+    @State private var batteryLevel: Double = 1.0
 
     var title: String = "iPod"
 
@@ -39,6 +41,7 @@ struct iPodStatusBar: View {
         .padding(6)
         .background(background)
         .onAppear(perform: startPlayStateSubscription)
+        .onAppear(perform: startBatteryStateSubscription)
     }
 
     @State private var sinks = Set<AnyCancellable>()
@@ -52,7 +55,15 @@ struct iPodStatusBar: View {
             }
             .store(in: &sinks)
     }
-
+    private func startBatteryStateSubscription() {
+        playState = MusicManager.shared.playState
+        BatteryManager.shared.batteryChanged()
+            .receive(on: RunLoop.main)
+            .sink { state in
+                self.batteryLevel = Double(state)
+            }
+            .store(in: &sinks)
+    }
     private var playIcon: some View {
         switch playState {
         case .playing: return AnyView(PlayShape().withGradient())
@@ -70,23 +81,23 @@ struct iPodStatusBar: View {
     }
 
     private var battery: some View {
-        HStack(spacing: 0) {
-            Rectangle()
-                .fill(
-                    LinearGradient(
-                        gradient: Gradient(colors: [.white, .green]),
-                        startPoint: .top, endPoint: .bottom
-                    )
-                )
-                .frame(width:  CGFloat(BatteryManager.shared.getBatteryLevel()*300/18), height: 10)
-                .overlay(Rectangle().stroke(lineWidth: 0.5))
-            Rectangle()
-                .fill(Color.green)
-                .frame(width: 2, height: 5)
-                .overlay(Rectangle().stroke(lineWidth: 0.5))
-           
-        }
-    }
+         HStack(spacing: 0) {
+             Rectangle()
+                 .fill(
+                     LinearGradient(
+                         gradient: Gradient(colors: [.white, .green]),
+                         startPoint: .top, endPoint: .bottom
+                     )
+                 )
+                 .frame(width:  CGFloat(batteryLevel)*300/18, height: 10)
+                 .overlay(Rectangle().stroke(lineWidth: 0.5))
+             Rectangle()
+                 .fill(Color.green)
+                 .frame(width: 2, height: 5)
+                 .overlay(Rectangle().stroke(lineWidth: 0.5))
+            
+         }
+     }
 
     private var background: some View {
         Color.secondarySystemFill

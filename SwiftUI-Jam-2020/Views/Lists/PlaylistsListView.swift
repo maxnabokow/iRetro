@@ -21,7 +21,6 @@ struct PlaylistsListView: View {
                         ForEach(0 ..< vm.items.count, id: \.self) { i in
                             row(at: i)
                         }
-                        row(at: vm.items.count - 1)
                     }
                     .onChange(of: vm.currentIndex) { index in
                         scroll(to: index, with: proxy)

@@ -45,16 +45,13 @@ struct PlaylistsListView: View {
         let selected = (vm.currentIndex == index)
 
         return
-            HStack(spacing: 0) {
-                #warning("Playlist Artwork")
+            HStack {
                 Image(systemName: "music.note")
-                    .resizable()
+                    .font(.largeTitle)
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 60, height: 60)
 
                 VStack(alignment: .leading) {
-                    #warning("Playlist Name")
-                    Text(item.description ?? "NO TITLE")
+                    Text(item.name ?? "Playlist")
                         .lineLimit(1)
                         .font(.headline)
                         .foregroundColor(selected ? .white : .primary)
@@ -62,10 +59,10 @@ struct PlaylistsListView: View {
                         .lineLimit(1)
                         .foregroundColor(selected ? .white : .primary)
                 }
-                .padding(.horizontal)
 
                 Spacer(minLength: 0)
             }
+            .padding(8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .if(selected) {
                 $0.background(

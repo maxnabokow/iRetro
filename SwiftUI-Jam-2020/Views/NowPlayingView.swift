@@ -47,12 +47,12 @@ struct NowPlayingView: View {
                 
                 HStack {
                     Text(formattedProgress)
-                        .font(.caption2)
+                        .font(.system(.caption2, design: .monospaced))
                     ProgressView(value: progress)
                         .scaleEffect(x: 1, y: 4, anchor: .center)
                         .onReceive(timer) { _ in updateProgress() }
                     Text(formattedTotalTime)
-                        .font(.caption2)
+                        .font(.system(.caption2, design: .monospaced))
                 }
                 .padding()
             }

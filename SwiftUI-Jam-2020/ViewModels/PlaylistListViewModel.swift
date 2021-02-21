@@ -18,7 +18,8 @@ class PlaylistListViewModel: ObservableObject {
 
     func playPlaylist() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-        #warning("play playlist")
+        MusicManager.shared.setQueue(with: item)
+        MusicManager.shared.play()
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue

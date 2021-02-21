@@ -25,8 +25,10 @@ class MusicManager {
     private init() {
         player = MPMusicPlayerController.systemMusicPlayer
         player.beginGeneratingPlaybackNotifications()
-        
-        player.prepareToPlay()
+    }
+    
+    func play() {
+        player.play()
     }
     
     func playPause() {
@@ -53,17 +55,19 @@ class MusicManager {
         player.stop()
         player.skipToBeginning()
     }
-    func currentTimeInSong() -> TimeInterval{
+
+    func currentTimeInSong() -> TimeInterval {
         return player.currentPlaybackTime
     }
-    func totalTimeInSong() -> TimeInterval{
+
+    func totalTimeInSong() -> TimeInterval {
         return player.nowPlayingItem!.playbackDuration
     }
     
-    func getPlaylists() -> [MPMediaItemCollection] {
+    func getPlaylists() -> [MPMediaPlaylist] {
         let playlists = MPMediaQuery.playlists()
-        let collections = playlists.collections
-        return collections ?? [MPMediaItemCollection]()
+        let collections = playlists.collections as? [MPMediaPlaylist]
+        return collections ?? [MPMediaPlaylist]()
     }
     
     func getAllSongs() -> [MPMediaItem] {
@@ -100,6 +104,10 @@ class MusicManager {
         
         player.setQueue(with: [favSongID])
         player.play()
+    }
+    
+    func setQueue(with collection: MPMediaItemCollection) {
+        player.setQueue(with: collection)
     }
 
     private var sinks = Set<AnyCancellable>()

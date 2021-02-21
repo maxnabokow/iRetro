@@ -25,7 +25,7 @@ class CompilationsListViewModel: ObservableObject {
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
-       
+        #warning("FIX THIS")
         MusicManager.shared.setQueue(with: item)
     }
 

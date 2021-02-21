@@ -1,7 +1,6 @@
 <h1> <img src="https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Instagram%20post%20-%2012-6.png?alt=media&token=06ca1f80-9664-4fcc-b557-524902e1c252"
   width="25"
   height="25"
-  padding-bottom="25"
   style="float:left;">
     # SwiftUIJam 2021
 

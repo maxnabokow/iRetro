@@ -1,4 +1,8 @@
-# ![alt text](https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Instagram%20post%20-%2012-4.png?alt=media&token=c102c27c-5bf8-40a5-8e81-448b74092727) SwiftUI-Jam-2020
+<h1> <img src="https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Instagram%20post%20-%2012-2.png?alt=media&token=7a3fb54a-1848-4787-962c-816b9dd4f8a0"
+  width="128"
+  height="128"
+  style="float:left;">
+    # SwiftUIJam 2021
 
 
 ![alt text](https://firebasestorage.googleapis.com/v0/b/eyemaps-c1b86.appspot.com/o/Group%2016-2.png?alt=media&token=3385276d-14a8-464b-be7e-903ff6b4060f)

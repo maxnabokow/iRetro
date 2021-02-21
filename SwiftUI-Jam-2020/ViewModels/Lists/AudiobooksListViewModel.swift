@@ -1,5 +1,5 @@
 //
-//  ComposersListViewModel.swift
+//  AudiobooksListViewModel.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/21/21.
@@ -9,24 +9,21 @@ import Combine
 import MediaPlayer
 import SwiftUI
 
-class ComposersListViewModel: ObservableObject {
-  //  #warning("Remove duplicates or filter here")
-    @Published var items = MusicManager.shared.getComposers().removeDuplicates()
+class AudiobooksListViewModel: ObservableObject {
+    @Published var items = MusicManager.shared.getAudiobooks()
 
     @Published var currentIndex: Int = 0
 
     var sinks = Set<AnyCancellable>()
 
-    func playComposer() {
-         let item = items[safe: currentIndex]
-      //  #warning("play composer")
+    func playAudiobook() {
+        guard let item = items[safe: currentIndex] else { fatalError() }
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
-        
-        MusicManager.shared.playComposersSongs(artist: item?.representativeItem ?? MPMediaItem())
+        MusicManager.shared.setQueue(with: MPMediaItemCollection(items: [item]))
     }
 
     // MARK: - Wheel clicks
@@ -68,8 +65,8 @@ class ComposersListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-       // #warning("FIX THIS")
-        playComposer()
+        // #warning("FIX THIS")
+        playAudiobook()
     }
 
     func startClickWheelSubscriptions(
@@ -158,4 +155,3 @@ class ComposersListViewModel: ObservableObject {
         }
     }
 }
-

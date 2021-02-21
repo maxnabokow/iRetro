@@ -10,7 +10,6 @@ import MediaPlayer
 import SwiftUI
 
 class ArtistsListViewModel: ObservableObject {
-    //  #warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getArtists().removeDuplicates()
 
     @Published var currentIndex: Int = 0
@@ -19,7 +18,6 @@ class ArtistsListViewModel: ObservableObject {
 
     func playArtist() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-        // #warning("play artist")
         MusicManager.shared.playArtistsSongs(artist: item.representativeItem ?? MPMediaItem())
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]

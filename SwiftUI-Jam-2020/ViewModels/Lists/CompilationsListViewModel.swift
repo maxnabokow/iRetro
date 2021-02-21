@@ -10,7 +10,6 @@ import MediaPlayer
 import SwiftUI
 
 class CompilationsListViewModel: ObservableObject {
-    // #warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getCompilations()
 
     @Published var currentIndex: Int = 0

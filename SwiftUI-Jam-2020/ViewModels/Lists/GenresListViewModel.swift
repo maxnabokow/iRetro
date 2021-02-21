@@ -10,7 +10,6 @@ import MediaPlayer
 import SwiftUI
 
 class GenresListViewModel: ObservableObject {
-    //#warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getGenres()
 
     @Published var currentIndex: Int = 0
@@ -19,14 +18,12 @@ class GenresListViewModel: ObservableObject {
 
     func playGenre() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-       // #warning("play genre")
-        
+        MusicManager.shared.playGenreSongs(genre: item.representativeItem!)
+
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
-        
-        MusicManager.shared.playGenreSongs(genre: item.representativeItem!)
     }
 
     // MARK: - Wheel clicks

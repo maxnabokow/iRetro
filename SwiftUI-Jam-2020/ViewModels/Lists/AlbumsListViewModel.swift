@@ -10,7 +10,6 @@ import MediaPlayer
 import SwiftUI
 
 class AlbumsListViewModel: ObservableObject {
-    // #warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getAlbums()
 
     @Published var currentIndex: Int = 0

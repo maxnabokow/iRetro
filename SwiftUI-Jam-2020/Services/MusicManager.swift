@@ -85,9 +85,9 @@ class MusicManager {
         return albums ?? [MPMediaItem]()
     }
     
-    func getCompilations() -> [MPMediaItem] {
-        let complications = MPMediaQuery.compilations().items
-        return complications ?? [MPMediaItem]()
+    func getCompilations() -> [MPMediaItemCollection] {
+        let complications = MPMediaQuery.compilations().collections
+        return complications ?? [MPMediaItemCollection]()
     }
     
     func getGenres() -> [MPMediaItemCollection] {

@@ -10,15 +10,15 @@ import MediaPlayer
 import SwiftUI
 
 class CompilationsListViewModel: ObservableObject {
-    #warning("Remove duplicates or filter here")
-    @Published var items = MusicManager.shared.getCompilations()
+   // #warning("Remove duplicates or filter here")
+    @Published var items = MusicManager.shared.getCompilations().removeDuplicates()
 
     @Published var currentIndex: Int = 0
 
     var sinks = Set<AnyCancellable>()
 
     func playCompilation() {
-        guard let item = items[safe: currentIndex] else { fatalError() }
+        guard items[safe: currentIndex] != nil else { fatalError() }
         #warning("play compilation")
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
@@ -67,7 +67,7 @@ class CompilationsListViewModel: ObservableObject {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
         #warning("FIX THIS")
-//        playCompilation()
+        playCompilation()
     }
 
     func startClickWheelSubscriptions(

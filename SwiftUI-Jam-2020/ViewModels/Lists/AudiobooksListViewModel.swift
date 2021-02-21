@@ -17,7 +17,7 @@ class AudiobooksListViewModel: ObservableObject {
     var sinks = Set<AnyCancellable>()
 
     func playAudiobook() {
-        guard let item = items[safe: currentIndex] else { fatalError() }
+        guard let item = items[safe: currentIndex] else { return }
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue

@@ -57,7 +57,6 @@ struct NowPlayingView: View {
                 .padding()
             }
         }
-        .onAppear(perform: updateProgress)
     }
     
     private var formattedProgress: String {

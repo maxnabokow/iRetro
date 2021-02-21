@@ -18,11 +18,10 @@ struct AudiobooksListView: View {
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(alignment: .leading, spacing: 0) {
-                        ForEach(0 ..< vm.items.count - 1, id: \.self) { i in
+                        ForEach(0 ..< vm.items.count, id: \.self) { i in
                             row(at: i)
                             Divider()
                         }
-                        row(at: vm.items.count - 1)
                     }
                     .onChange(of: vm.currentIndex) { index in
                         scroll(to: index, with: proxy)

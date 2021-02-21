@@ -45,17 +45,17 @@ struct ArtistsListView: View {
 
         return
             HStack {
-                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "person.fill")!)
+                Image(uiImage: item.representativeItem?.artworkImage() ?? UIImage(systemName: "person.fill")!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60, height: 60)
 
                 VStack(alignment: .leading) {
-                    Text(item.artist ?? "Artist")
+                    Text(item.representativeItem?.artist ?? "Artist")
                         .lineLimit(1)
                         .font(.headline)
                         .foregroundColor(selected ? .white : .primary)
-                    Text("\(item.artist?.count ?? 0) Songs")
+                    Text("\(item.representativeItem?.artist?.count ?? 0) Songs")
                         .lineLimit(1)
                         .foregroundColor(selected ? .white : .secondary)
                 }

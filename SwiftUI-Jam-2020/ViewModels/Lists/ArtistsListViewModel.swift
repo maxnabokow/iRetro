@@ -10,8 +10,8 @@ import MediaPlayer
 import SwiftUI
 
 class ArtistsListViewModel: ObservableObject {
-    #warning("Remove duplicates or filter here")
-    @Published var items = MusicManager.shared.getArtists()
+  //  #warning("Remove duplicates or filter here")
+    @Published var items = MusicManager.shared.getArtists().removeDuplicates()
 
     @Published var currentIndex: Int = 0
 

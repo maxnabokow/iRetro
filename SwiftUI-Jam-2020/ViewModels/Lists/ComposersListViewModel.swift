@@ -10,15 +10,15 @@ import MediaPlayer
 import SwiftUI
 
 class ComposersListViewModel: ObservableObject {
-    #warning("Remove duplicates or filter here")
-    @Published var items = MusicManager.shared.getComposers()
+  //  #warning("Remove duplicates or filter here")
+    @Published var items = MusicManager.shared.getComposers().removeDuplicates()
 
     @Published var currentIndex: Int = 0
 
     var sinks = Set<AnyCancellable>()
 
     func playComposer() {
-        guard let item = items[safe: currentIndex] else { fatalError() }
+        guard items[safe: currentIndex] != nil else { fatalError() }
         #warning("play composer")
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
@@ -67,7 +67,7 @@ class ComposersListViewModel: ObservableObject {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
         #warning("FIX THIS")
-//        playComposer()
+        playComposer()
     }
 
     func startClickWheelSubscriptions(

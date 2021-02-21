@@ -75,9 +75,9 @@ class MusicManager {
         return songs ?? [MPMediaItem]()
     }
     
-    func getArtists() -> [MPMediaItem] {
-        let artists = MPMediaQuery.artists().items
-        return artists ?? [MPMediaItem]()
+    func getArtists() -> [MPMediaItemCollection] {
+        let artists = MPMediaQuery.artists().collections
+        return artists ?? [MPMediaItemCollection]()
     }
     
     func getAlbums() -> [MPMediaItem] {

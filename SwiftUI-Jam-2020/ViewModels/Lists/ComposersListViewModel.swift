@@ -25,6 +25,8 @@ class ComposersListViewModel: ObservableObject {
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
+        
+        MusicManager.shared.playComposersSongs(artist: items.first?.representativeItem ?? MPMediaItem())
     }
 
     // MARK: - Wheel clicks
@@ -66,7 +68,7 @@ class ComposersListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-        #warning("FIX THIS")
+       // #warning("FIX THIS")
         playComposer()
     }
 

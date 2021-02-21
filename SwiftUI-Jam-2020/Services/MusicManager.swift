@@ -95,9 +95,9 @@ class MusicManager {
         return genres ?? [MPMediaItemCollection]()
     }
     
-    func getComposers() -> [MPMediaItem] {
-        let composers = MPMediaQuery.composers().items
-        return composers ?? [MPMediaItem]()
+    func getComposers() -> [MPMediaItemCollection] {
+        let composers = MPMediaQuery.composers().collections
+        return composers ?? [MPMediaItemCollection]()
     }
     
     func getAudiobooks() -> [MPMediaItem] {
@@ -146,6 +146,19 @@ class MusicManager {
        
         for song in songs {
             if song.artist == artist.artist {
+                filteredSongs.append(song)
+            }
+        }
+        
+        setQueue(with: MPMediaItemCollection(items: filteredSongs))
+        player.play()
+    }
+    func playComposersSongs(artist: MPMediaItem)  {
+        let songs = getAllSongs()
+        var filteredSongs = [MPMediaItem]()
+       
+        for song in songs {
+            if song.composer == artist.composer {
                 filteredSongs.append(song)
             }
         }

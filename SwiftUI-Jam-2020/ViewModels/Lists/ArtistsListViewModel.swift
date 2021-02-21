@@ -66,8 +66,8 @@ class ArtistsListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-        #warning("FIX THIS")
-//        playArtist()
+        //#warning("FIX THIS")
+        playArtist()
     }
 
     func startClickWheelSubscriptions(

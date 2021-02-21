@@ -19,7 +19,7 @@ class ArtistsListViewModel: ObservableObject {
 
     func playArtist() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-        #warning("play artist")
+       // #warning("play artist")
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue

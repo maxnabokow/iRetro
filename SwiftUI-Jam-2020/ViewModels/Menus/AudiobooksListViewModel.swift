@@ -25,6 +25,7 @@ class AudiobooksListViewModel: ObservableObject {
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
+        MusicManager.shared.setQueue(with: MPMediaItemCollection(items: [item]))
     }
 
     // MARK: - Wheel clicks
@@ -66,8 +67,8 @@ class AudiobooksListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-        #warning("FIX THIS")
-//        playAudiobook()
+        //#warning("FIX THIS")
+        playAudiobook()
     }
 
     func startClickWheelSubscriptions(

@@ -10,7 +10,7 @@ import MediaPlayer
 import SwiftUI
 
 class AlbumsListViewModel: ObservableObject {
-    #warning("Remove duplicates or filter here")
+   // #warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getAlbums()
 
     @Published var currentIndex: Int = 0
@@ -19,7 +19,7 @@ class AlbumsListViewModel: ObservableObject {
 
     func playAlbum() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-        #warning("play album")
+       // #warning("play album")
 
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue

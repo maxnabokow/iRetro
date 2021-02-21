@@ -81,6 +81,7 @@ struct iPodStatusBar: View {
     }
 
     private var battery: some View {
+        
          HStack(spacing: 0) {
              Rectangle()
                  .fill(
@@ -89,15 +90,25 @@ struct iPodStatusBar: View {
                          startPoint: .top, endPoint: .bottom
                      )
                  )
-                 .frame(width: CGFloat(batteryLevel)*300/18, height: 10)
+                .frame(width: CGFloat(batteryLevel)*300/18, height: 10)
                  .overlay(Rectangle().stroke(lineWidth: 0.5))
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [.clear, .clear]),
+                        startPoint: .top, endPoint: .bottom
+                    )
+                )
+                .frame(width: CGFloat(1 - batteryLevel)*300/18, height: 10)
+                .overlay(Rectangle().stroke(lineWidth: 0.5))
              Rectangle()
                  .fill(Color.green)
                  .frame(width: 2, height: 5)
                  .overlay(Rectangle().stroke(lineWidth: 0.5))
             
          }
-     }
+        }
+     
 
     private var background: some View {
         Color.secondarySystemFill

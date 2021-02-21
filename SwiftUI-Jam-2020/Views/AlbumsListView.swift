@@ -1,5 +1,5 @@
 //
-//  ArtistsListView.swift
+//  AlbumsListView.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/21/21.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ArtistsListView: View {
-    @StateObject private var vm = ArtistsListViewModel()
+struct AlbumsListView: View {
+    @StateObject private var vm = AlbumsListViewModel()
     @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
         VStack(spacing: 0) {
-            iPodStatusBar(title: "Artists")
+            iPodStatusBar(title: "Albums")
 
             ScrollViewReader { proxy in
                 ScrollView {
@@ -46,17 +46,17 @@ struct ArtistsListView: View {
 
         return
             HStack {
-                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "person.fill")!)
+                Image(uiImage: item.artworkImage() ?? UIImage(systemName: "play.rectangle.fill")!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60, height: 60)
 
                 VStack(alignment: .leading) {
-                    Text(item.artist ?? "Artist")
+                    Text(item.albumTitle ?? "Album")
                         .lineLimit(1)
                         .font(.headline)
                         .foregroundColor(selected ? .white : .primary)
-                    Text("\(item.artist?.count ?? 0) Songs")
+                    Text(item.albumArtist ?? "Artist")
                         .lineLimit(1)
                         .foregroundColor(selected ? .white : .secondary)
                 }
@@ -86,8 +86,8 @@ struct ArtistsListView: View {
     }
 }
 
-struct ArtistsListView_Previews: PreviewProvider {
+struct AlbumsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ArtistsListView()
+        AlbumsListView()
     }
 }

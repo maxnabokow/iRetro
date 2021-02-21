@@ -40,6 +40,8 @@
 		EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */; };
 		EA5E76F225E205F6004587E2 /* ArtistsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */; };
 		EA5E76F625E2B0ED004587E2 /* ArtistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */; };
+		EA5E76F925E2B456004587E2 /* AlbumsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */; };
+		EA5E76FC25E2B4CF004587E2 /* AlbumsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */; };
 		EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */; };
 		EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */; };
 		EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */; };
@@ -92,6 +94,8 @@
 		EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistListViewModel.swift; sourceTree = "<group>"; };
 		EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsListViewModel.swift; sourceTree = "<group>"; };
 		EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsListView.swift; sourceTree = "<group>"; };
+		EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewModel.swift; sourceTree = "<group>"; };
+		EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListView.swift; sourceTree = "<group>"; };
 		EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodDisplay.swift; sourceTree = "<group>"; };
 		EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewModel.swift; sourceTree = "<group>"; };
 		EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */,
 				EA5E76EE25E1FAC2004587E2 /* PlaylistListViewModel.swift */,
 				EA5E76F125E205F6004587E2 /* ArtistsListViewModel.swift */,
+				EA5E76F825E2B456004587E2 /* AlbumsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				EA5E76E425E1BACE004587E2 /* SongsListView.swift */,
 				EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */,
 				EA5E76F525E2B0ED004587E2 /* ArtistsListView.swift */,
+				EA5E76FB25E2B4CF004587E2 /* AlbumsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -388,8 +394,10 @@
 				EA8F6D9925E0529800ED99D4 /* Test.swift in Sources */,
 				EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */,
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
+				EA5E76FC25E2B4CF004587E2 /* AlbumsListView.swift in Sources */,
 				EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */,
 				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
+				EA5E76F925E2B456004587E2 /* AlbumsListViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
 				EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */,
 				EAEE65AA25E1958A003A654A /* OnboardingView.swift in Sources */,

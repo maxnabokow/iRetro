@@ -59,7 +59,7 @@ struct SongsListView: View {
                         .foregroundColor(selected ? .white : .primary)
                     Text(item.artist ?? "NO ARTIST")
                         .lineLimit(1)
-                        .foregroundColor(selected ? .white : .primary)
+                        .foregroundColor(selected ? .white : .secondary)
                 }
                 .padding(.horizontal)
 

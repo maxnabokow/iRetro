@@ -57,7 +57,7 @@ struct PlaylistsListView: View {
                         .foregroundColor(selected ? .white : .primary)
                     Text("\(item.items.count) Songs")
                         .lineLimit(1)
-                        .foregroundColor(selected ? .white : .primary)
+                        .foregroundColor(selected ? .white : .secondary)
                 }
 
                 Spacer(minLength: 0)

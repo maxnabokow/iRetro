@@ -48,6 +48,8 @@
 		EA5E770825E2B8D9004587E2 /* GenresListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E770725E2B8D9004587E2 /* GenresListView.swift */; };
 		EA5E770C25E2BD18004587E2 /* ComposersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E770B25E2BD18004587E2 /* ComposersListViewModel.swift */; };
 		EA5E770F25E2BD84004587E2 /* ComposersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E770E25E2BD84004587E2 /* ComposersListView.swift */; };
+		EA5E771225E2BEAD004587E2 /* AudiobooksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E771125E2BEAD004587E2 /* AudiobooksListViewModel.swift */; };
+		EA5E771525E2BEFD004587E2 /* AudiobooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E771425E2BEFD004587E2 /* AudiobooksListView.swift */; };
 		EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */; };
 		EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */; };
 		EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */; };
@@ -108,6 +110,8 @@
 		EA5E770725E2B8D9004587E2 /* GenresListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListView.swift; sourceTree = "<group>"; };
 		EA5E770B25E2BD18004587E2 /* ComposersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposersListViewModel.swift; sourceTree = "<group>"; };
 		EA5E770E25E2BD84004587E2 /* ComposersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposersListView.swift; sourceTree = "<group>"; };
+		EA5E771125E2BEAD004587E2 /* AudiobooksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobooksListViewModel.swift; sourceTree = "<group>"; };
+		EA5E771425E2BEFD004587E2 /* AudiobooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobooksListView.swift; sourceTree = "<group>"; };
 		EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodDisplay.swift; sourceTree = "<group>"; };
 		EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewModel.swift; sourceTree = "<group>"; };
 		EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 				EA5E770125E2B770004587E2 /* CompilationsListView.swift */,
 				EA5E770725E2B8D9004587E2 /* GenresListView.swift */,
 				EA5E770E25E2BD84004587E2 /* ComposersListView.swift */,
+				EA5E771425E2BEFD004587E2 /* AudiobooksListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */,
 				EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */,
 				EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */,
+				EA5E771125E2BEAD004587E2 /* AudiobooksListViewModel.swift */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
 				EA5E76FC25E2B4CF004587E2 /* AlbumsListView.swift in Sources */,
 				EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */,
+				EA5E771525E2BEFD004587E2 /* AudiobooksListView.swift in Sources */,
 				EA5E770F25E2BD84004587E2 /* ComposersListView.swift in Sources */,
 				EA5E76FF25E2B73B004587E2 /* CompilationsListViewModel.swift in Sources */,
 				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
@@ -427,6 +434,7 @@
 				EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */,
 				EAEE65A725E1958A003A654A /* OnboardingiPodDisplay.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
+				EA5E771225E2BEAD004587E2 /* AudiobooksListViewModel.swift in Sources */,
 				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,
 				EAEE65A625E1958A003A654A /* OnboardingPage.swift in Sources */,
 				EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */,

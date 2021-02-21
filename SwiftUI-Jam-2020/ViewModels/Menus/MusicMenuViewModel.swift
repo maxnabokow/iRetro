@@ -25,7 +25,8 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
                    withDisclosure: true, onSelect: showGenresListView),
         MenuOption(title: "Composers", nextMenu: nil,
                    withDisclosure: true, onSelect: showComposersListView),
-        MenuOption(title: "Audiobooks", nextMenu: AnyView(Text("Audiobooks"))),
+        MenuOption(title: "Audiobooks", nextMenu: nil,
+                   withDisclosure: true, onSelect: showAudiobooksListView),
     ]
 
     @Published var currentIndex: Int = 0
@@ -75,6 +76,13 @@ class MusicMenuViewModel: MenuViewModel, ObservableObject {
 
     private func showComposersListView() {
         let dict: [String: AnyView] = ["view": AnyView(ComposersListView())]
+        let name = MyNotifications.showFullScreenView.rawValue
+        let notification = Notification(name: .init(name), userInfo: dict)
+        NotificationCenter.default.post(notification)
+    }
+
+    private func showAudiobooksListView() {
+        let dict: [String: AnyView] = ["view": AnyView(AudiobooksListView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)

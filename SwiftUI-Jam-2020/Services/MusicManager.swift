@@ -139,6 +139,7 @@ class MusicManager {
     func setQueue(with collection: MPMediaItemCollection) {
         player.setQueue(with: collection)
     }
+    
     func playArtistsSongs(artist: MPMediaItem)  {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()
@@ -150,6 +151,19 @@ class MusicManager {
         }
         
         setQueue(with: MPMediaItemCollection(items: filteredSongs))
+        player.play()
+    }
+    func playGenreSongs(genre: MPMediaItem)  {
+        let songs = getAllSongs()
+        var filteredSongs = [MPMediaItem]()
+       
+        for song in songs {
+            if song.genre == genre.genre {
+                filteredSongs.append(song)
+            }
+        }
+        
+        setQueue(with: MPMediaItemCollection(items: filteredSongs.removeDuplicates()))
         player.play()
     }
     private var sinks = Set<AnyCancellable>()

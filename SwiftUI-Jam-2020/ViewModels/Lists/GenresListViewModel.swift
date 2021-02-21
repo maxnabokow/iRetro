@@ -10,7 +10,7 @@ import MediaPlayer
 import SwiftUI
 
 class GenresListViewModel: ObservableObject {
-    #warning("Remove duplicates or filter here")
+    //#warning("Remove duplicates or filter here")
     @Published var items = MusicManager.shared.getGenres()
 
     @Published var currentIndex: Int = 0
@@ -19,12 +19,14 @@ class GenresListViewModel: ObservableObject {
 
     func playGenre() {
         guard let item = items[safe: currentIndex] else { fatalError() }
-        #warning("play genre")
-
+       // #warning("play genre")
+        
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
+        
+        MusicManager.shared.playGenreSongs(genre: item)
     }
 
     // MARK: - Wheel clicks
@@ -67,7 +69,7 @@ class GenresListViewModel: ObservableObject {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
         #warning("FIX THIS")
-//        playGenre()
+        playGenre()
     }
 
     func startClickWheelSubscriptions(

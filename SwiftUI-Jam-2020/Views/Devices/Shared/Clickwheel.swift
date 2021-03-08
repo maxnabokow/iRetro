@@ -1,5 +1,5 @@
 //
-//  iPodClickWheel.swift
+//  Clickwheel.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/19/21.
@@ -29,7 +29,7 @@ class ClickWheelService {
     }
 }
 
-struct iPodClickWheel: View {
+struct Clickwheel: View {
     @State private var lastAngle: CGFloat = 0
     @State private var counter: CGFloat = 0
 

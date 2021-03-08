@@ -39,9 +39,9 @@ struct ContentView: View {
         Group {
             if zoomIn {
                 VStack(spacing: 0) {
-                    iPodDisplay()
+                    Display()
                         .matchedGeometryEffect(id: "display", in: namespace)
-                    iPodClickWheel()
+                    Clickwheel()
                         .matchedGeometryEffect(id: "clickwheel", in: namespace)
                 }
                 .padding()
@@ -55,26 +55,26 @@ struct ContentView: View {
                     VStack(spacing: 0) {
                         Spacer()
                         TabView(selection: $selectedDevice) {
-                            iPodView
-                                .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
+                            DeviceView
+                                .matchedGeometryEffect(id: "device", in: externalNameSpace)
                                 .padding(24)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                     }
 
                 } else {
-                    iPodView
-                        .matchedGeometryEffect(id: "iPod", in: externalNameSpace)
+                    DeviceView
+                        .matchedGeometryEffect(id: "device", in: externalNameSpace)
                         .padding(24)
                 }
             }
         }
     }
 
-    private var iPodView: some View {
+    private var DeviceView: some View {
         GeometryReader { proxy in
             VStack { // Wrapper to work around GeometryReader's .topLeading alignment rule
-                iPodClassic(namespace: namespace, width: proxy.frame(in: .global).width)
+                Classic(namespace: namespace, width: proxy.frame(in: .global).width)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }

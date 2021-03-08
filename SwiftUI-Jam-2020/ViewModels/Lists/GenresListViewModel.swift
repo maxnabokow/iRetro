@@ -65,7 +65,6 @@ class GenresListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-        #warning("FIX THIS")
         playGenre()
     }
 

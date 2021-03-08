@@ -1,5 +1,5 @@
 //
-//  iPodClassic.swift
+//  Classic.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/19/21.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftUIX
 
-struct iPodClassic: View {
+struct Classic: View {
     @Environment(\.colorScheme) private var colorScheme
     @State var isOnboarding = false
     var namespace: Namespace.ID?
@@ -22,15 +22,15 @@ struct iPodClassic: View {
     var body: some View {
         VStack(spacing: 0) {
             if !isOnboarding {
-                iPodDisplay()
+                Display()
                     .if(namespace != nil) {
                         $0.matchedGeometryEffect(id: "display", in: namespace!)
                     }
             } else {
-                OnboardingiPodDisplay()
+                OnboardingDeviceDisplay()
             }
             Spacer()
-            iPodClickWheel()
+            Clickwheel()
                 .if(namespace != nil) {
                     $0.matchedGeometryEffect(id: "clickwheel", in: namespace!)
                 }

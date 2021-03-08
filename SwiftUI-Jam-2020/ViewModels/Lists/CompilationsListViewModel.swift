@@ -66,7 +66,6 @@ class CompilationsListViewModel: ObservableObject {
     func centerClick() {
         Haptics.rigid()
         ClickWheelService.shared.playTock()
-        #warning("FIX THIS")
         playCompilation()
     }
 

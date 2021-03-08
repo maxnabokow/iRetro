@@ -31,10 +31,10 @@
 		EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */; };
 		EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */; };
 		EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA1E378025E02C4800C88BAF /* SwiftUIX */; };
-		EA1E378525E02CD100C88BAF /* iPodClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378425E02CD100C88BAF /* iPodClassic.swift */; };
+		EA1E378525E02CD100C88BAF /* Classic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378425E02CD100C88BAF /* Classic.swift */; };
 		EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378925E0300C00C88BAF /* MainMenu.swift */; };
-		EA1E378E25E0304300C88BAF /* iPodClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */; };
-		EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* iPodStatusBar.swift */; };
+		EA1E378E25E0304300C88BAF /* Clickwheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* Clickwheel.swift */; };
+		EA1E379225E0306400C88BAF /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* StatusBar.swift */; };
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
 		EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E425E1BACE004587E2 /* SongsListView.swift */; };
@@ -51,7 +51,7 @@
 		EA5E770825E2B8D9004587E2 /* GenresListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E770725E2B8D9004587E2 /* GenresListView.swift */; };
 		EA5E771225E2BEAD004587E2 /* AudiobooksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E771125E2BEAD004587E2 /* AudiobooksListViewModel.swift */; };
 		EA5E771525E2BEFD004587E2 /* AudiobooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E771425E2BEFD004587E2 /* AudiobooksListView.swift */; };
-		EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */; };
+		EA71B0A025E0F4EE00FCF427 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B09F25E0F4EE00FCF427 /* Display.swift */; };
 		EA71B0A525E0F64300FCF427 /* DisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */; };
 		EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */; };
 		EA71B0AB25E1692E00FCF427 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */; };
@@ -61,9 +61,9 @@
 		EAE0A3E925E0B7F300632290 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */; };
 		EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */; };
 		EAEE65A625E1958A003A654A /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A125E1958A003A654A /* OnboardingPage.swift */; };
-		EAEE65A725E1958A003A654A /* OnboardingiPodDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A225E1958A003A654A /* OnboardingiPodDisplay.swift */; };
+		EAEE65A725E1958A003A654A /* OnboardingDeviceDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A225E1958A003A654A /* OnboardingDeviceDisplay.swift */; };
 		EAEE65A825E1958A003A654A /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A325E1958A003A654A /* OnboardingScene.swift */; };
-		EAEE65A925E1958A003A654A /* iPodSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A425E1958A003A654A /* iPodSlides.swift */; };
+		EAEE65A925E1958A003A654A /* DeviceSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A425E1958A003A654A /* DeviceSides.swift */; };
 		EAEE65AA25E1958A003A654A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE65A525E1958A003A654A /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,10 +93,10 @@
 		EA1E376325E02B8B00C88BAF /* AnimatableFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableFontSize.swift; sourceTree = "<group>"; };
 		EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToPopViewController.swift; sourceTree = "<group>"; };
-		EA1E378425E02CD100C88BAF /* iPodClassic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodClassic.swift; sourceTree = SOURCE_ROOT; };
+		EA1E378425E02CD100C88BAF /* Classic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classic.swift; sourceTree = SOURCE_ROOT; };
 		EA1E378925E0300C00C88BAF /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodClickWheel.swift; sourceTree = "<group>"; };
-		EA1E379125E0306400C88BAF /* iPodStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodStatusBar.swift; sourceTree = "<group>"; };
+		EA1E378D25E0304300C88BAF /* Clickwheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clickwheel.swift; sourceTree = "<group>"; };
+		EA1E379125E0306400C88BAF /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		EA5E76E425E1BACE004587E2 /* SongsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListView.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		EA5E770725E2B8D9004587E2 /* GenresListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListView.swift; sourceTree = "<group>"; };
 		EA5E771125E2BEAD004587E2 /* AudiobooksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobooksListViewModel.swift; sourceTree = "<group>"; };
 		EA5E771425E2BEFD004587E2 /* AudiobooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobooksListView.swift; sourceTree = "<group>"; };
-		EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodDisplay.swift; sourceTree = "<group>"; };
+		EA71B09F25E0F4EE00FCF427 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		EA71B0A425E0F64300FCF427 /* DisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewModel.swift; sourceTree = "<group>"; };
 		EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
@@ -123,9 +123,9 @@
 		EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenu.swift; sourceTree = "<group>"; };
 		EAEE65A125E1958A003A654A /* OnboardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
-		EAEE65A225E1958A003A654A /* OnboardingiPodDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingiPodDisplay.swift; sourceTree = "<group>"; };
+		EAEE65A225E1958A003A654A /* OnboardingDeviceDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingDeviceDisplay.swift; sourceTree = "<group>"; };
 		EAEE65A325E1958A003A654A /* OnboardingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
-		EAEE65A425E1958A003A654A /* iPodSlides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPodSlides.swift; sourceTree = "<group>"; };
+		EAEE65A425E1958A003A654A /* DeviceSides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSides.swift; sourceTree = "<group>"; };
 		EAEE65A525E1958A003A654A /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1E378C25E0303200C88BAF /* Shared */,
-				EA1E378425E02CD100C88BAF /* iPodClassic.swift */,
+				EA1E378425E02CD100C88BAF /* Classic.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -275,10 +275,10 @@
 		EA1E378C25E0303200C88BAF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				EA1E378D25E0304300C88BAF /* iPodClickWheel.swift */,
-				EA1E379125E0306400C88BAF /* iPodStatusBar.swift */,
+				EA1E378D25E0304300C88BAF /* Clickwheel.swift */,
+				EA1E379125E0306400C88BAF /* StatusBar.swift */,
 				EA1E379425E0308900C88BAF /* PlayShape.swift */,
-				EA71B09F25E0F4EE00FCF427 /* iPodDisplay.swift */,
+				EA71B09F25E0F4EE00FCF427 /* Display.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -336,8 +336,8 @@
 				EAEE65A525E1958A003A654A /* OnboardingView.swift */,
 				EAEE65A125E1958A003A654A /* OnboardingPage.swift */,
 				EAEE65A325E1958A003A654A /* OnboardingScene.swift */,
-				EAEE65A225E1958A003A654A /* OnboardingiPodDisplay.swift */,
-				EAEE65A425E1958A003A654A /* iPodSlides.swift */,
+				EAEE65A225E1958A003A654A /* OnboardingDeviceDisplay.swift */,
+				EAEE65A425E1958A003A654A /* DeviceSides.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -421,11 +421,11 @@
 				EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */,
 				EA5E770525E2B899004587E2 /* GenresListViewModel.swift in Sources */,
 				EA1E374125E028BB00C88BAF /* AppDelegate.swift in Sources */,
-				EA1E378525E02CD100C88BAF /* iPodClassic.swift in Sources */,
+				EA1E378525E02CD100C88BAF /* Classic.swift in Sources */,
 				EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */,
-				EA1E379225E0306400C88BAF /* iPodStatusBar.swift in Sources */,
+				EA1E379225E0306400C88BAF /* StatusBar.swift in Sources */,
 				EA5E770825E2B8D9004587E2 /* GenresListView.swift in Sources */,
-				EA71B0A025E0F4EE00FCF427 /* iPodDisplay.swift in Sources */,
+				EA71B0A025E0F4EE00FCF427 /* Display.swift in Sources */,
 				EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */,
 				EA5E76FC25E2B4CF004587E2 /* AlbumsListView.swift in Sources */,
 				EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */,
@@ -439,7 +439,7 @@
 				EAEE65AA25E1958A003A654A /* OnboardingView.swift in Sources */,
 				EA5E76EC25E1FAA1004587E2 /* PlaylistsListView.swift in Sources */,
 				EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */,
-				EAEE65A725E1958A003A654A /* OnboardingiPodDisplay.swift in Sources */,
+				EAEE65A725E1958A003A654A /* OnboardingDeviceDisplay.swift in Sources */,
 				EA1E376A25E02B8B00C88BAF /* TRunBlock.swift in Sources */,
 				EA5E771225E2BEAD004587E2 /* AudiobooksListViewModel.swift in Sources */,
 				EA1E377025E02B8B00C88BAF /* TRoundCorners.swift in Sources */,
@@ -449,7 +449,7 @@
 				EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */,
 				EA1E376925E02B8B00C88BAF /* THaptics.swift in Sources */,
 				EA5E76F225E205F6004587E2 /* ArtistsListViewModel.swift in Sources */,
-				EAEE65A925E1958A003A654A /* iPodSlides.swift in Sources */,
+				EAEE65A925E1958A003A654A /* DeviceSides.swift in Sources */,
 				EA1E374525E028BB00C88BAF /* ContentView.swift in Sources */,
 				EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */,
 				EA71B0A825E168EB00FCF427 /* NowPlayingView.swift in Sources */,
@@ -465,7 +465,7 @@
 				EA71B0AB25E1692E00FCF427 /* NowPlayingViewModel.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
 				EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */,
-				EA1E378E25E0304300C88BAF /* iPodClickWheel.swift in Sources */,
+				EA1E378E25E0304300C88BAF /* Clickwheel.swift in Sources */,
 				EA1E376F25E02B8B00C88BAF /* TConditionalModifier.swift in Sources */,
 				EA1E376E25E02B8B00C88BAF /* TFloatingButtonShadow.swift in Sources */,
 				EA1E376D25E02B8B00C88BAF /* TFillerZView.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  iPodStatusBar.swift
+//  StatusBar.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/19/21.
@@ -9,14 +9,14 @@ import Combine
 import MediaPlayer
 import SwiftUI
 
-struct iPodStatusBar: View {
+struct StatusBar: View {
     @Environment(\.colorScheme) private var colorScheme
 
     @State private var playState: MPMusicPlaybackState = .stopped
-    
+
     @State private var batteryLevel: Double = 1.0
 
-    var title: String = "iPod"
+    var title: String = "iRetro"
 
     private var lightMode: Bool {
         colorScheme == .light
@@ -55,6 +55,7 @@ struct iPodStatusBar: View {
             }
             .store(in: &sinks)
     }
+
     private func startBatteryStateSubscription() {
         playState = MusicManager.shared.playState
         BatteryManager.shared.batteryChanged()
@@ -64,6 +65,7 @@ struct iPodStatusBar: View {
             }
             .store(in: &sinks)
     }
+
     private var playIcon: some View {
         switch playState {
         case .playing: return AnyView(PlayShape().withGradient())
@@ -81,17 +83,16 @@ struct iPodStatusBar: View {
     }
 
     private var battery: some View {
-        
-         HStack(spacing: 0) {
-             Rectangle()
-                 .fill(
-                     LinearGradient(
-                         gradient: Gradient(colors: [.white, .green]),
-                         startPoint: .top, endPoint: .bottom
-                     )
-                 )
+        HStack(spacing: 0) {
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [.white, .green]),
+                        startPoint: .top, endPoint: .bottom
+                    )
+                )
                 .frame(width: CGFloat(batteryLevel)*300/18, height: 10)
-                 .overlay(Rectangle().stroke(lineWidth: 0.5))
+                .overlay(Rectangle().stroke(lineWidth: 0.5))
             Rectangle()
                 .fill(
                     LinearGradient(
@@ -101,14 +102,12 @@ struct iPodStatusBar: View {
                 )
                 .frame(width: CGFloat(1 - batteryLevel)*300/18, height: 10)
                 .overlay(Rectangle().stroke(lineWidth: 0.5))
-             Rectangle()
-                 .fill(Color.green)
-                 .frame(width: 2, height: 5)
-                 .overlay(Rectangle().stroke(lineWidth: 0.5))
-            
-         }
+            Rectangle()
+                .fill(Color.green)
+                .frame(width: 2, height: 5)
+                .overlay(Rectangle().stroke(lineWidth: 0.5))
         }
-     
+    }
 
     private var background: some View {
         Color.secondarySystemFill
@@ -122,9 +121,9 @@ struct iPodStatusBar: View {
     }
 }
 
-struct iPodStatusBar_Previews: PreviewProvider {
+struct StatusBar_Previews: PreviewProvider {
     static var previews: some View {
-        iPodStatusBar()
+        StatusBar()
     }
 }
 

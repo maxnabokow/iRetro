@@ -1,5 +1,5 @@
 //
-//  iPodDisplay.swift
+//  Display.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/20/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct iPodDisplay: View {
+struct Display: View {
     @StateObject private var vm = DisplayViewModel()
     @State private var move: Bool = false
     private let animateCover: Bool = false
@@ -17,7 +17,7 @@ struct iPodDisplay: View {
             GeometryReader { proxy in
                 HStack(spacing: 0) {
                     VStack(spacing: 0) {
-                        iPodStatusBar()
+                        StatusBar()
                         MainMenu()
                     }
 

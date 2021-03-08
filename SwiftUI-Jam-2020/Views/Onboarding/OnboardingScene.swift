@@ -75,7 +75,7 @@ struct OnboardingScene: View {
 
     func createHostingController(for node: SCNBox) {
         // create a hosting controller with SwiftUI view
-        let arVC = UIHostingController(rootView: iPodClassic(isOnboarding: true, namespace: namespace, width: nil))
+        let arVC = UIHostingController(rootView: Classic(isOnboarding: true, namespace: namespace, width: nil))
            
         // Do this on the main thread
         DispatchQueue.main.async {
@@ -96,7 +96,7 @@ struct OnboardingScene: View {
         }
     }
        
-    func show(hostingVC: UIHostingController<iPodClassic>, on node: SCNBox) {
+    func show(hostingVC: UIHostingController<Classic>, on node: SCNBox) {
         // create a new material
         let material = SCNMaterial()
            
@@ -107,7 +107,7 @@ struct OnboardingScene: View {
         material.diffuse.contents = hostingVC.view
            
         // Set the material to the geometry of the node (plane geometry)
-        let arVC = UIHostingController(rootView: iPodSides())
+        let arVC = UIHostingController(rootView: Color.clear)
         let width = screenDemensions.width - 48
         let height = width*1.8
         arVC.view.frame = CGRect(x: 0, y: 0, width: width, height: height)

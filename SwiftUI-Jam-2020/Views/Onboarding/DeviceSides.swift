@@ -1,19 +1,19 @@
 //
-//  iPodSLlides.swift
+//  DeviceSides.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Andreas on 2/20/21.
 //
 
-
 import SwiftUI
 
-struct iPodSides: View {
+struct DeviceSides: View {
     @Environment(\.colorScheme) private var colorScheme
 
     private var lightMode: Bool {
         colorScheme == .light
     }
+
     var body: some View {
         Color.clear
 //        .padding(24)

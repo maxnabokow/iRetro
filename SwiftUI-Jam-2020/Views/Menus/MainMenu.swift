@@ -1,5 +1,5 @@
 //
-//  iPodMenu.swift
+//  MainMenu.swift
 //  SwiftUI-Jam-2020
 //
 //  Created by Max Nabokow on 2/19/21.
@@ -13,7 +13,7 @@ struct MainMenu: View {
 
     init() {
         let count = vm.menuOptions.count
-        childrenShowing = Array(repeating: false, count:  count)
+        childrenShowing = Array(repeating: false, count: count)
     }
 
     var body: some View {

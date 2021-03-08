@@ -13,7 +13,7 @@ struct PlaylistsListView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            iPodStatusBar(title: "Playlists")
+            StatusBar(title: "Playlists")
 
             ScrollViewReader { proxy in
                 ScrollView {

@@ -33,7 +33,7 @@
 		EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA1E378025E02C4800C88BAF /* SwiftUIX */; };
 		EA1E378525E02CD100C88BAF /* Classic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378425E02CD100C88BAF /* Classic.swift */; };
 		EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378925E0300C00C88BAF /* MainMenu.swift */; };
-		EA1E378E25E0304300C88BAF /* Clickwheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* Clickwheel.swift */; };
+		EA1E378E25E0304300C88BAF /* ClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* ClickWheel.swift */; };
 		EA1E379225E0306400C88BAF /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* StatusBar.swift */; };
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
@@ -95,7 +95,7 @@
 		EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToPopViewController.swift; sourceTree = "<group>"; };
 		EA1E378425E02CD100C88BAF /* Classic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classic.swift; sourceTree = SOURCE_ROOT; };
 		EA1E378925E0300C00C88BAF /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		EA1E378D25E0304300C88BAF /* Clickwheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clickwheel.swift; sourceTree = "<group>"; };
+		EA1E378D25E0304300C88BAF /* ClickWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickWheel.swift; sourceTree = "<group>"; };
 		EA1E379125E0306400C88BAF /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 		EA1E378C25E0303200C88BAF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				EA1E378D25E0304300C88BAF /* Clickwheel.swift */,
+				EA1E378D25E0304300C88BAF /* ClickWheel.swift */,
 				EA1E379125E0306400C88BAF /* StatusBar.swift */,
 				EA1E379425E0308900C88BAF /* PlayShape.swift */,
 				EA71B09F25E0F4EE00FCF427 /* Display.swift */,
@@ -465,7 +465,7 @@
 				EA71B0AB25E1692E00FCF427 /* NowPlayingViewModel.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,
 				EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */,
-				EA1E378E25E0304300C88BAF /* Clickwheel.swift in Sources */,
+				EA1E378E25E0304300C88BAF /* ClickWheel.swift in Sources */,
 				EA1E376F25E02B8B00C88BAF /* TConditionalModifier.swift in Sources */,
 				EA1E376E25E02B8B00C88BAF /* TFloatingButtonShadow.swift in Sources */,
 				EA1E376D25E02B8B00C88BAF /* TFillerZView.swift in Sources */,

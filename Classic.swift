@@ -30,7 +30,7 @@ struct Classic: View {
                 OnboardingDeviceDisplay()
             }
             Spacer()
-            Clickwheel()
+            ClickWheel()
                 .if(namespace != nil) {
                     $0.matchedGeometryEffect(id: "clickwheel", in: namespace!)
                 }

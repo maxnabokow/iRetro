@@ -41,7 +41,7 @@ struct ContentView: View {
                 VStack(spacing: 0) {
                     Display()
                         .matchedGeometryEffect(id: "display", in: namespace)
-                    Clickwheel()
+                    ClickWheel()
                         .matchedGeometryEffect(id: "clickwheel", in: namespace)
                 }
                 .padding()

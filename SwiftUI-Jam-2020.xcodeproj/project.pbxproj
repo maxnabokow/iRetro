@@ -31,7 +31,6 @@
 		EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */; };
 		EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */; };
 		EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA1E378025E02C4800C88BAF /* SwiftUIX */; };
-		EA1E378525E02CD100C88BAF /* Classic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378425E02CD100C88BAF /* Classic.swift */; };
 		EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378925E0300C00C88BAF /* MainMenu.swift */; };
 		EA1E378E25E0304300C88BAF /* ClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* ClickWheel.swift */; };
 		EA1E379225E0306400C88BAF /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* StatusBar.swift */; };
@@ -57,6 +56,7 @@
 		EA71B0AB25E1692E00FCF427 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */; };
 		EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */; };
 		EA8F6D9F25E0573E00ED99D4 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */; };
+		EADBD16325F9BA1D006D48D3 /* Classic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBD16225F9BA1D006D48D3 /* Classic.swift */; };
 		EAE0A3E525E09A1800632290 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */; };
 		EAE0A3E925E0B7F300632290 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */; };
 		EAE0A3ED25E0B8EB00632290 /* MusicMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */; };
@@ -93,7 +93,6 @@
 		EA1E376325E02B8B00C88BAF /* AnimatableFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableFontSize.swift; sourceTree = "<group>"; };
 		EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToPopViewController.swift; sourceTree = "<group>"; };
-		EA1E378425E02CD100C88BAF /* Classic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classic.swift; sourceTree = SOURCE_ROOT; };
 		EA1E378925E0300C00C88BAF /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		EA1E378D25E0304300C88BAF /* ClickWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickWheel.swift; sourceTree = "<group>"; };
 		EA1E379125E0306400C88BAF /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 		EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenuViewModel.swift; sourceTree = "<group>"; };
 		EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		EADBD16225F9BA1D006D48D3 /* Classic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classic.swift; path = Devices/Classic.swift; sourceTree = "<group>"; };
 		EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenu.swift; sourceTree = "<group>"; };
@@ -235,6 +235,7 @@
 			children = (
 				EA1E378325E02CBB00C88BAF /* Devices */,
 				EAEE65A025E1958A003A654A /* Onboarding */,
+				EADBD16225F9BA1D006D48D3 /* Classic.swift */,
 				EAE0A3EB25E0B8DB00632290 /* Menus */,
 				EA5E771D25E2C2F6004587E2 /* Lists */,
 				EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */,
@@ -267,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				EA1E378C25E0303200C88BAF /* Shared */,
-				EA1E378425E02CD100C88BAF /* Classic.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -421,7 +421,6 @@
 				EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */,
 				EA5E770525E2B899004587E2 /* GenresListViewModel.swift in Sources */,
 				EA1E374125E028BB00C88BAF /* AppDelegate.swift in Sources */,
-				EA1E378525E02CD100C88BAF /* Classic.swift in Sources */,
 				EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */,
 				EA1E379225E0306400C88BAF /* StatusBar.swift in Sources */,
 				EA5E770825E2B8D9004587E2 /* GenresListView.swift in Sources */,
@@ -431,6 +430,7 @@
 				EA5E76EF25E1FAC2004587E2 /* PlaylistListViewModel.swift in Sources */,
 				EA5E771525E2BEFD004587E2 /* AudiobooksListView.swift in Sources */,
 				EA5E76FF25E2B73B004587E2 /* CompilationsListViewModel.swift in Sources */,
+				EADBD16325F9BA1D006D48D3 /* Classic.swift in Sources */,
 				EA8F6D9C25E052AE00ED99D4 /* MusicMenuViewModel.swift in Sources */,
 				EA5E76F925E2B456004587E2 /* AlbumsListViewModel.swift in Sources */,
 				EA1E376725E02B8B00C88BAF /* TextField+ClearButton.swift in Sources */,
@@ -611,6 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = U5KYHQSZAZ;
 				ENABLE_PREVIEWS = YES;
@@ -619,10 +620,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mnabokow.iRetro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -632,6 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = U5KYHQSZAZ;
 				ENABLE_PREVIEWS = YES;
@@ -640,10 +643,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mnabokow.iRetro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

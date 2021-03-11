@@ -7,8 +7,9 @@
 
 import Combine
 import SwiftUI
-
+import MediaPlayer
 class DisplayViewModel: ObservableObject {
+    @Published var nowPlayingItem: MPMediaItem?
     @Published var showFullScreen: Bool = false {
         didSet {
             if !showFullScreen {
@@ -16,7 +17,10 @@ class DisplayViewModel: ObservableObject {
             }
         }
     }
-
+    var artwork: MPMediaItemArtwork? {
+        return nowPlayingItem?.artwork
+    }
+    
     var fullScreenView = AnyView(EmptyView())
 
     var sinks = Set<AnyCancellable>()
@@ -24,7 +28,16 @@ class DisplayViewModel: ObservableObject {
     private func resetFullScreenView() {
         fullScreenView = AnyView(EmptyView())
     }
+    func startNowPlayingSubscriptions() {
+        nowPlayingItem = MusicManager.shared.nowPlayingItem
 
+        MusicManager.shared.nowPlayingChanged()
+            .print()
+            .sink {
+                self.nowPlayingItem = MusicManager.shared.nowPlayingItem
+            }
+            .store(in: &sinks)
+    }
     func startListeningToFullScreenNotifications() {
         NotificationCenter.default.publisher(for: .init(MyNotifications.showFullScreenView.rawValue))
             .sink { notification in

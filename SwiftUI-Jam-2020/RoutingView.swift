@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RoutingView: View {
-    @EnvironmentObject var userData: UserData
+//    @AppStorage("firstRun") var firstRun: Bool = true
+    @AppStorage("isOnboardingCompleted") var isOnboardingCompleted: Bool = false
+
     var body: some View {
-        if userData.isOnboardingCompleted {
+        if isOnboardingCompleted {
             ContentView()
-            
         } else {
             OnboardingView()
-                
         }
     }
 }

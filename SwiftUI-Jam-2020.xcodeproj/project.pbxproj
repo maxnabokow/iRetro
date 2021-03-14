@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E15F610A25E2E44E00501A13 /* BatteryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15F610925E2E44E00501A13 /* BatteryManager.swift */; };
-		E15F612725E30C3C00501A13 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15F612625E30C3C00501A13 /* UserData.swift */; };
 		E15F612A25E30CD200501A13 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15F612925E30CD200501A13 /* RoutingView.swift */; };
 		EA1E374125E028BB00C88BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E374025E028BB00C88BAF /* AppDelegate.swift */; };
 		EA1E374325E028BB00C88BAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E374225E028BB00C88BAF /* SceneDelegate.swift */; };
@@ -69,7 +68,6 @@
 
 /* Begin PBXFileReference section */
 		E15F610925E2E44E00501A13 /* BatteryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryManager.swift; sourceTree = "<group>"; };
-		E15F612625E30C3C00501A13 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E15F612925E30CD200501A13 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
 		EA1E373D25E028BB00C88BAF /* SwiftUI-Jam-2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Jam-2020.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1E374025E028BB00C88BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				EA1E374225E028BB00C88BAF /* SceneDelegate.swift */,
 				E15F612925E30CD200501A13 /* RoutingView.swift */,
 				EA1E374425E028BB00C88BAF /* ContentView.swift */,
-				E15F612625E30C3C00501A13 /* UserData.swift */,
 				EA1E377725E02BA500C88BAF /* ViewModels */,
 				EA1E377825E02BAD00C88BAF /* Views */,
 				EA1E377925E02BB300C88BAF /* Services */,
@@ -460,7 +457,6 @@
 				EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */,
 				EA1E376B25E02B8B00C88BAF /* TBlurView.swift in Sources */,
 				EA5E76E825E1BB6A004587E2 /* SongsListViewModel.swift in Sources */,
-				E15F612725E30C3C00501A13 /* UserData.swift in Sources */,
 				EA5E76F625E2B0ED004587E2 /* ArtistsListView.swift in Sources */,
 				EA71B0AB25E1692E00FCF427 /* NowPlayingViewModel.swift in Sources */,
 				EA1E376C25E02B8B00C88BAF /* TNonDismissableSheet.swift in Sources */,

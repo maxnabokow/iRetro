@@ -19,13 +19,17 @@ class ArtistsListViewModel: ObservableObject {
     func playArtist() {
         guard let item = items[safe: currentIndex] else { fatalError() }
         MusicManager.shared.playArtistsSongs(artist: item.representativeItem ?? MPMediaItem())
-
+        
         let dict: [String: AnyView] = ["view": AnyView(NowPlayingView())]
         let name = MyNotifications.showFullScreenView.rawValue
         let notification = Notification(name: .init(name), userInfo: dict)
         NotificationCenter.default.post(notification)
     }
-
+    func getArtistsSongsCount(index: Int) -> Int {
+        guard let item = items[safe: index] else { fatalError() }
+       
+        return MusicManager.shared.getArtistsSongsCount(artist: item.representativeItem ?? MPMediaItem())
+    }
     // MARK: - Wheel clicks
 
     func prevTick() {

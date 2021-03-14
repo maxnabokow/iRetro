@@ -26,6 +26,7 @@ struct MusicMenu: View {
             }
             Spacer()
         }
+        .disabled(true)
         .font(.headline)
         .navigationBarHidden(true)
         .onAppear(perform: startClickWheelSubscriptions)

@@ -31,6 +31,7 @@ struct MainMenu: View {
 
                 Spacer()
             }
+            .disabled(true)
             .font(.headline)
             .navigationBarHidden(true)
             .onAppear(perform: vm.startPlayStateSubscriptions)

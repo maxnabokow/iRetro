@@ -31,6 +31,7 @@ struct SongsListView: View {
             }
         }
         .navigationBarHidden(true)
+        .disabled(true)
         .onAppear(perform: startClickWheelSubscriptions)
         .onDisappear(perform: vm.stopClickWheelSubscriptions)
     }

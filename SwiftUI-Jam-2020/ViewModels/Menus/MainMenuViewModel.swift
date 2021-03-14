@@ -12,11 +12,11 @@ import SwiftUI
 class MainMenuViewModel: MenuViewModel, ObservableObject {
     lazy var menuOptions = [
         MenuOption(title: "Music", nextMenu: AnyView(MusicMenu())),
-        MenuOption(title: "Videos", nextMenu: AnyView(Text("Hi"))),
-        MenuOption(title: "Photos", nextMenu: AnyView(Text("Hi"))),
-        MenuOption(title: "Podcasts", nextMenu: AnyView(Text("Hi"))),
-        MenuOption(title: "Extras", nextMenu: AnyView(Text("Hi"))),
-        MenuOption(title: "Settings", nextMenu: AnyView(Text("Hi"))),
+        MenuOption(title: "Videos", nextMenu: nil),
+        MenuOption(title: "Photos", nextMenu: nil),
+        MenuOption(title: "Podcasts", nextMenu: nil),
+        MenuOption(title: "Extras", nextMenu: nil),
+        MenuOption(title: "Settings", nextMenu: nil),
         MenuOption(title: "Shuffle Songs", nextMenu: nil,
                    withDisclosure: false, onSelect: shuffleAndPlay),
     ]

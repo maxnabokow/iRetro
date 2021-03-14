@@ -60,7 +60,7 @@ class MusicManager {
     }
 
     func totalTimeInSong() -> TimeInterval {
-        return player.nowPlayingItem!.playbackDuration
+        return player.nowPlayingItem?.playbackDuration ?? 0.0
     }
     
     func getPlaylists() -> [MPMediaPlaylist] {
@@ -141,18 +141,24 @@ class MusicManager {
     
     func playArtistsSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
-        var filteredSongs = [MPMediaItem]()
        
-        for song in songs {
-            if song.artist == artist.artist {
-                filteredSongs.append(song)
-            }
+        let filtered = songs.filter { song in
+           
+          return song.artist == artist.artist
         }
-        
-        setQueue(with: MPMediaItemCollection(items: filteredSongs))
+        setQueue(with: MPMediaItemCollection(items: filtered))
         player.play()
     }
-
+    func getArtistsSongsCount(artist: MPMediaItem) -> Int {
+        let songs = getAllSongs()
+        
+        let filtered = songs.filter { song in
+           
+          return song.artist == artist.artist
+        }
+   
+        return filtered.count
+    }
     func playComposersSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()

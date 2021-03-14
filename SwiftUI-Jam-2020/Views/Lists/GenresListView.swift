@@ -29,6 +29,7 @@ struct GenresListView: View {
                 }
             }
         }
+        .disabled(true)
         .navigationBarHidden(true)
         .onAppear(perform: startClickWheelSubscriptions)
         .onDisappear(perform: vm.stopClickWheelSubscriptions)

@@ -59,7 +59,10 @@ struct ContentView: View {
                                 .matchedGeometryEffect(id: "device", in: externalNameSpace)
                                 .padding(24)
                         }
-                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                       .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .onAppear() {
+                        UIScrollView.appearance().bounces = false
+                        }
                     }
 
                 } else {

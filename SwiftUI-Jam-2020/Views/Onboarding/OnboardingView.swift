@@ -11,7 +11,6 @@ struct OnboardingView: View {
     @State var show: Bool = false
 
     @State var nextCount = 0
-    @EnvironmentObject var userData: UserData
     var body: some View {
         if !show {
             OnboardingPage(titleText: "Welcome", bodyText: "This is Retro, an app to remind you of the past while building your future through music", image: "posture", show: $show, nextCount: $nextCount)
@@ -24,7 +23,7 @@ struct OnboardingView: View {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
                            
                                 show = true
-                            userData.isOnboardingCompleted = true
+                        
                         }
                     }
                 })

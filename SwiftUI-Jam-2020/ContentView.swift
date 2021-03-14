@@ -54,15 +54,11 @@ struct ContentView: View {
                 if fullView {
                     VStack(spacing: 0) {
                         Spacer()
-                        TabView(selection: $selectedDevice) {
+                        
                             DeviceView
                                 .matchedGeometryEffect(id: "device", in: externalNameSpace)
                                 .padding(24)
-                        }
-                       .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                        .onAppear() {
-                        UIScrollView.appearance().bounces = false
-                        }
+                        
                     }
 
                 } else {

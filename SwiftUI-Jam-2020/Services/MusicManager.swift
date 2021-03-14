@@ -152,7 +152,20 @@ class MusicManager {
         setQueue(with: MPMediaItemCollection(items: filteredSongs))
         player.play()
     }
-
+    func getArtistsSongsCount(artist: MPMediaItem) -> Int {
+        let songs = getAllSongs()
+        var filteredSongs = [MPMediaItem]()
+       
+        for song in songs {
+            if song.artist == artist.artist {
+                filteredSongs.append(song)
+            }
+        }
+        
+//        setQueue(with: MPMediaItemCollection(items: filteredSongs))
+//        player.play()
+        return filteredSongs.count
+    }
     func playComposersSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()

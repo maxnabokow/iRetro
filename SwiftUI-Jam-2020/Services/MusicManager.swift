@@ -60,7 +60,7 @@ class MusicManager {
     }
 
     func totalTimeInSong() -> TimeInterval {
-        return player.nowPlayingItem!.playbackDuration
+        return player.nowPlayingItem?.playbackDuration ?? 2.0
     }
     
     func getPlaylists() -> [MPMediaPlaylist] {

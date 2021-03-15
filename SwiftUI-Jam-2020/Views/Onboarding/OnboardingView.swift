@@ -21,13 +21,10 @@ struct OnboardingView: View {
                 .onChange(of: nextCount, perform: { _ in
                     if nextCount == 1 {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
-                           
-                                show = true
-                        
+                            show = true
                         }
                     }
                 })
-
         } else {
             ContentView()
                 .transition(.opacity)

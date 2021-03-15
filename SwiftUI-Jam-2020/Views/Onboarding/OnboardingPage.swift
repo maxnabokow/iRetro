@@ -22,9 +22,11 @@ struct OnboardingPage: View {
     // @EnvironmentObject var userData: UserData
     let screenSize = UIScreen.main.bounds
     
+    @AppStorage("isOnboardingCompleted") var isOnboardingCompleted: Bool = false
+    
     @Binding var nextCount: Int
     var body: some View {
-        GeometryReader { geo in
+        GeometryReader { _ in
             ZStack {
                 Color.systemBackground
                     .ignoresSafeArea(.all)
@@ -78,13 +80,13 @@ struct OnboardingPage: View {
                     }
                     if animate5 {
                         OnboardingScene(nextCount: $nextCount)
-                           // .frame(height: geo.size.height / 3)
-                        
+                        // .frame(height: geo.size.height / 3)
                     }
                     if animate6 {
                         Button(action: {
                             // withAnimation(.easeInOut(duration: 0.1)) {
                             nextCount += 1
+                            isOnboardingCompleted = true
                             //   }
                             print("next")
                         }) {

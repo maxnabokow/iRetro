@@ -14,17 +14,17 @@ struct ArtistsListView: View {
     var body: some View {
         VStack(spacing: 0) {
             StatusBar(title: "Artists")
-                
+
             ScrollViewReader { proxy in
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 0) {
+                    LazyVStack(alignment: .leading, spacing: 0) {
                         ForEach(0 ..< vm.items.count, id: \.self) { i in
-                           
+
                             row(at: i)
                             Divider()
                         }
                     }
-                   
+
                     .onChange(of: vm.currentIndex) { index in
                         scroll(to: index, with: proxy)
                     }
@@ -58,7 +58,7 @@ struct ArtistsListView: View {
                         .lineLimit(1)
                         .font(.headline)
                         .foregroundColor(selected ? .white : .primary)
-                    Text("\(vm.getArtistsSongsCount(index: index)  ) Songs")
+                    Text("\(vm.getArtistsSongsCount(index: index)) Songs")
                         .lineLimit(1)
                         .foregroundColor(selected ? .white : .secondary)
                 }

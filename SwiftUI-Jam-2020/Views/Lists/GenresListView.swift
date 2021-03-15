@@ -17,7 +17,7 @@ struct GenresListView: View {
 
             ScrollViewReader { proxy in
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 0) {
+                    LazyVStack(alignment: .leading, spacing: 0) {
                         ForEach(0 ..< vm.items.count, id: \.self) { i in
                             row(at: i)
                             Divider()

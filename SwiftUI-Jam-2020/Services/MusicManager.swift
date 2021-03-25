@@ -112,22 +112,18 @@ class MusicManager {
     func playShuffledSongs() {
         let songIDs = getAllSongs().map(\.playbackStoreID)
         let shuffled = songIDs.shuffled()
-        player.setQueue(with: shuffled)
+        
+        player.setQueue(with: [shuffled.first ?? ""])
         player.prepareToPlay()
             
         player.play()
-        
-//        let songs = MPMediaQuery.songs().items?.shuffled()
-//        if let ids = songs?.compactMap({ $0.playbackStoreID }) {
-//            player.setQueue(with: ids)
-//        }
-//
-        ////        var shuffledIDs = [String]()
-        ////        let shuffled = allSongs.shuffled()
-        ////        for song in shuffled {
-        ////            shuffledIDs.append(song.playbackStoreID)
-        ////        }
-        ////        player.setQueue(with: shuffledIDs)
+       
+        let filteredShuffle = shuffled.filter { songID in
+          return songID != shuffled.first ?? ""
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.player.setQueue(with: filteredShuffle)
+        }
     }
 
     func playFavoriteSong() {

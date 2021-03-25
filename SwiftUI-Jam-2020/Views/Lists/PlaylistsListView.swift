@@ -75,7 +75,7 @@ struct PlaylistsListView: View {
         vm.startClickWheelSubscriptions(
             prevTick: nil,
             nextTick: nil,
-            prevClick: { presentationMode.wrappedValue.dismiss() },
+            prevClick: nil,
             nextClick: nil,
             menuClick: { presentationMode.wrappedValue.dismiss() },
             playPauseClick: nil,

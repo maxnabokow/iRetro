@@ -11,12 +11,12 @@ import MediaPlayer
 
 class MusicManager {
     static let shared = MusicManager()
+    private let player: MPMusicPlayerController
+    
     private init() {
         player = MPMusicPlayerController.systemMusicPlayer
         player.beginGeneratingPlaybackNotifications()
     }
-    
-    private let player: MPMusicPlayerController
     
     var playState: MPMusicPlaybackState {
         player.playbackState
@@ -110,14 +110,24 @@ class MusicManager {
     }
     
     func playShuffledSongs() {
-        let allSongs = getAllSongs()
-        var shuffledIDs = [String]()
-        let shuffled = allSongs.shuffled()
-        for song in shuffled {
-            shuffledIDs.append(song.playbackStoreID)
-        }
-        player.setQueue(with: shuffledIDs)
+        let songIDs = getAllSongs().map(\.playbackStoreID)
+        let shuffled = songIDs.shuffled()
+        player.setQueue(with: shuffled)
+        player.prepareToPlay()
+            
         player.play()
+        
+//        let songs = MPMediaQuery.songs().items?.shuffled()
+//        if let ids = songs?.compactMap({ $0.playbackStoreID }) {
+//            player.setQueue(with: ids)
+//        }
+//
+        ////        var shuffledIDs = [String]()
+        ////        let shuffled = allSongs.shuffled()
+        ////        for song in shuffled {
+        ////            shuffledIDs.append(song.playbackStoreID)
+        ////        }
+        ////        player.setQueue(with: shuffledIDs)
     }
 
     func playFavoriteSong() {
@@ -144,21 +154,23 @@ class MusicManager {
        
         let filtered = songs.filter { song in
            
-          return song.artist == artist.artist
+            song.artist == artist.artist
         }
         setQueue(with: MPMediaItemCollection(items: filtered))
         player.play()
     }
+
     func getArtistsSongsCount(artist: MPMediaItem) -> Int {
         let songs = getAllSongs()
         
         let filtered = songs.filter { song in
            
-          return song.artist == artist.artist
+            song.artist == artist.artist
         }
    
         return filtered.count
     }
+
     func playComposersSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
         var filteredSongs = [MPMediaItem]()

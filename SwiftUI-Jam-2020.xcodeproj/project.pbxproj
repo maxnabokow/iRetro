@@ -35,6 +35,7 @@
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
 		EA4A782526118F6C004690A8 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA4A782426118F6C004690A8 /* SwiftUIX */; };
+		EA4A782B26119719004690A8 /* Nano.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A782A26119719004690A8 /* Nano.swift */; };
 		EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E425E1BACE004587E2 /* SongsListView.swift */; };
 		EA5E76E825E1BB6A004587E2 /* SongsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */; };
 		EA5E76EC25E1FAA1004587E2 /* PlaylistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */; };
@@ -96,6 +97,7 @@
 		EA1E379125E0306400C88BAF /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		EA1E379425E0308900C88BAF /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
 		EA1E379725E030C800C88BAF /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		EA4A782A26119719004690A8 /* Nano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano.swift; sourceTree = "<group>"; };
 		EA5E76E425E1BACE004587E2 /* SongsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListView.swift; sourceTree = "<group>"; };
 		EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewModel.swift; sourceTree = "<group>"; };
 		EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsListView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				EA1E378C25E0303200C88BAF /* Shared */,
 				EADBD16225F9BA1D006D48D3 /* Classic.swift */,
+				EA4A782A26119719004690A8 /* Nano.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				EA1E376E25E02B8B00C88BAF /* TFloatingButtonShadow.swift in Sources */,
 				EA1E376D25E02B8B00C88BAF /* TFillerZView.swift in Sources */,
 				EA1E376825E02B8B00C88BAF /* TTapDismissKeyboard.swift in Sources */,
+				EA4A782B26119719004690A8 /* Nano.swift in Sources */,
 				EA1E377125E02B8B00C88BAF /* Extensions.swift in Sources */,
 				EAE0A3E525E09A1800632290 /* MainMenuViewModel.swift in Sources */,
 			);

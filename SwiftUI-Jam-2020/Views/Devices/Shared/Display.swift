@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Display: View {
+struct ClassicDisplay: View {
     @StateObject private var vm = DisplayViewModel()
     @State private var move: Bool = false
     private let animateCover: Bool = true

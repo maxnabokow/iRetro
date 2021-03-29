@@ -39,7 +39,7 @@ struct ContentView: View {
         Group {
             if zoomIn {
                 VStack(spacing: 0) {
-                    Display()
+                    ClassicDisplay()
                         .matchedGeometryEffect(id: "display", in: namespace)
                     ClickWheel()
                         .matchedGeometryEffect(id: "clickwheel", in: namespace)

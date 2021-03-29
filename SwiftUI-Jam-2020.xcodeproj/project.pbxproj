@@ -116,7 +116,7 @@
 		EA71B0AA25E1692E00FCF427 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 		EA8F6D9B25E052AE00ED99D4 /* MusicMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenuViewModel.swift; sourceTree = "<group>"; };
 		EA8F6D9E25E0573E00ED99D4 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
-		EADBD16225F9BA1D006D48D3 /* Classic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classic.swift; path = Devices/Classic.swift; sourceTree = "<group>"; };
+		EADBD16225F9BA1D006D48D3 /* Classic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classic.swift; sourceTree = "<group>"; };
 		EAE0A3E425E09A1800632290 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		EAE0A3E825E0B7F300632290 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		EAE0A3EC25E0B8EB00632290 /* MusicMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenu.swift; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 			children = (
 				EA1E378325E02CBB00C88BAF /* Devices */,
 				EAEE65A025E1958A003A654A /* Onboarding */,
-				EADBD16225F9BA1D006D48D3 /* Classic.swift */,
 				EAE0A3EB25E0B8DB00632290 /* Menus */,
 				EA5E771D25E2C2F6004587E2 /* Lists */,
 				EA71B0A725E168EB00FCF427 /* NowPlayingView.swift */,
@@ -265,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1E378C25E0303200C88BAF /* Shared */,
+				EADBD16225F9BA1D006D48D3 /* Classic.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";

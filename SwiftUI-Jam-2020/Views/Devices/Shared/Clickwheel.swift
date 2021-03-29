@@ -122,6 +122,7 @@ struct ClickWheel: View {
                     .padding(.trailing)
                     .onTapGesture {
                         ClickWheelService.shared.prevClick.send()
+                        MusicManager.shared.previous()
                     }
 
                 Spacer()
@@ -131,6 +132,7 @@ struct ClickWheel: View {
                     .padding(.leading)
                     .onTapGesture {
                         ClickWheelService.shared.nextClick.send()
+                        MusicManager.shared.next()
                     }
             }
             Spacer()
@@ -139,6 +141,7 @@ struct ClickWheel: View {
                 .padding(.top)
                 .onTapGesture {
                     ClickWheelService.shared.playPauseClick.send()
+                    MusicManager.shared.playPause()
                 }
         }
         .foregroundColor(lightMode ? .tertiaryLabel : Color.white.opacity(0.8))

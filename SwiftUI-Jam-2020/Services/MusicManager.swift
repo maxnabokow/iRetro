@@ -114,11 +114,12 @@ class MusicManager {
         let shuffled = getAllSongs().shuffled()
         let collection = MPMediaItemCollection(items: shuffled)
         DispatchQueue.global(qos: .background).async {
-            self.player.setQueue(with: collection)
+            self.setQueue(with: collection)
             self.player.prepareToPlay()
             self.player.play()
         }
     }
+    
     func playFavoriteSong() {
         let songs = getAllSongs()
         var songsPlayCount = [Int]()
@@ -140,35 +141,22 @@ class MusicManager {
     
     func playArtistsSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
-       
-        let filtered = songs.filter { song in
-           
-            song.artist == artist.artist
-        }
+        let filtered = songs.filter { $0.artist == artist.artist }
+        
         setQueue(with: MPMediaItemCollection(items: filtered))
         player.play()
     }
 
     func getArtistsSongsCount(artist: MPMediaItem) -> Int {
         let songs = getAllSongs()
-        
-        let filtered = songs.filter { song in
-           
-            song.artist == artist.artist
-        }
+        let filtered = songs.filter { $0.artist == artist.artist }
    
         return filtered.count
     }
 
     func playComposersSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
-        var filteredSongs = [MPMediaItem]()
-       
-        for song in songs {
-            if song.composer == artist.composer {
-                filteredSongs.append(song)
-            }
-        }
+        let filteredSongs = songs.filter { $0.composer == artist.composer }
         
         setQueue(with: MPMediaItemCollection(items: filteredSongs))
         player.play()
@@ -176,13 +164,7 @@ class MusicManager {
 
     func playGenreSongs(genre: MPMediaItem) {
         let songs = getAllSongs()
-        var filteredSongs = [MPMediaItem]()
-      
-        for song in songs {
-            if song.genre == genre.genre {
-                filteredSongs.append(song)
-            }
-        }
+        let filteredSongs = songs.filter { $0.genre == genre.genre }
         
         setQueue(with: MPMediaItemCollection(items: filteredSongs.removeDuplicates()))
         player.play()
@@ -190,13 +172,7 @@ class MusicManager {
 
     func playAlbumSongs(artist: MPMediaItem) {
         let songs = getAllSongs()
-        var filteredSongs = [MPMediaItem]()
-       
-        for song in songs {
-            if song.albumTitle == artist.albumTitle {
-                filteredSongs.append(song)
-            }
-        }
+        let filteredSongs = songs.filter { $0.albumTitle == artist.albumTitle }
         
         setQueue(with: MPMediaItemCollection(items: filteredSongs))
         player.play()

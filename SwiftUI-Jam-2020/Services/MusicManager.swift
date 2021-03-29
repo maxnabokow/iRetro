@@ -111,12 +111,9 @@ class MusicManager {
     
   
     func playShuffledSongs() {
-
-        let query = MPMediaQuery.songs()
-        guard let items = query.items else { return }
-        let collection = MPMediaItemCollection(items: items.shuffled())
+        let shuffled = getAllSongs().shuffled()
+        let collection = MPMediaItemCollection(items: shuffled)
         DispatchQueue.global(qos: .background).async {
-          
             self.player.setQueue(with: collection)
             self.player.prepareToPlay()
             self.player.play()

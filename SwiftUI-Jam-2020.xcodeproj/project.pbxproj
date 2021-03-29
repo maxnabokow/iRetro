@@ -29,12 +29,12 @@
 		EA1E377225E02B8B00C88BAF /* AnimatableFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376325E02B8B00C88BAF /* AnimatableFontSize.swift */; };
 		EA1E377325E02B8B00C88BAF /* SlideAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376525E02B8B00C88BAF /* SlideAnimatedTransitioning.swift */; };
 		EA1E377425E02B8B00C88BAF /* SwipeRightToPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E376625E02B8B00C88BAF /* SwipeRightToPopViewController.swift */; };
-		EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA1E378025E02C4800C88BAF /* SwiftUIX */; };
 		EA1E378A25E0300C00C88BAF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378925E0300C00C88BAF /* MainMenu.swift */; };
 		EA1E378E25E0304300C88BAF /* ClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E378D25E0304300C88BAF /* ClickWheel.swift */; };
 		EA1E379225E0306400C88BAF /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379125E0306400C88BAF /* StatusBar.swift */; };
 		EA1E379525E0308900C88BAF /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379425E0308900C88BAF /* PlayShape.swift */; };
 		EA1E379825E030C800C88BAF /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E379725E030C800C88BAF /* SoundManager.swift */; };
+		EA4A782526118F6C004690A8 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EA4A782426118F6C004690A8 /* SwiftUIX */; };
 		EA5E76E525E1BACE004587E2 /* SongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E425E1BACE004587E2 /* SongsListView.swift */; };
 		EA5E76E825E1BB6A004587E2 /* SongsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76E725E1BB6A004587E2 /* SongsListViewModel.swift */; };
 		EA5E76EC25E1FAA1004587E2 /* PlaylistsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E76EB25E1FAA1004587E2 /* PlaylistsListView.swift */; };
@@ -132,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA1E378125E02C4800C88BAF /* SwiftUIX in Frameworks */,
+				EA4A782526118F6C004690A8 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +356,7 @@
 			);
 			name = "SwiftUI-Jam-2020";
 			packageProductDependencies = (
-				EA1E378025E02C4800C88BAF /* SwiftUIX */,
+				EA4A782426118F6C004690A8 /* SwiftUIX */,
 			);
 			productName = "SwiftUI-Jam-2020";
 			productReference = EA1E373D25E028BB00C88BAF /* SwiftUI-Jam-2020.app */;
@@ -386,7 +386,7 @@
 			);
 			mainGroup = EA1E373425E028BB00C88BAF;
 			packageReferences = (
-				EA1E377F25E02C4800C88BAF /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				EA4A782326118F6C004690A8 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = EA1E373E25E028BB00C88BAF /* Products */;
 			projectDirPath = "";
@@ -632,7 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Jam-2020/Supporting Files/Preview Content\"";
-				DEVELOPMENT_TEAM = MC27HKM86M;
+				DEVELOPMENT_TEAM = U5KYHQSZAZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-Jam-2020/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -671,7 +671,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EA1E377F25E02C4800C88BAF /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+		EA4A782326118F6C004690A8 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
 			requirement = {
@@ -682,9 +682,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EA1E378025E02C4800C88BAF /* SwiftUIX */ = {
+		EA4A782426118F6C004690A8 /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EA1E377F25E02C4800C88BAF /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			package = EA4A782326118F6C004690A8 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -22,7 +22,7 @@ struct Classic: View {
     var body: some View {
         VStack(spacing: 0) {
             if !isOnboarding {
-                ClassicwDisplay()
+                ClassicDisplay()
                     .if(namespace != nil) {
                         $0.matchedGeometryEffect(id: "display", in: namespace!)
                     }
